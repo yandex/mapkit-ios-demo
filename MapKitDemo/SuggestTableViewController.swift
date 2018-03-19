@@ -13,8 +13,7 @@ class SuggestViewController: UIViewController, UITableViewDataSource {
     @IBOutlet weak var searchBar: UITextField!
     
     var suggestResults: [YMKSuggestItem] = []
-    let searchManager = YMKMapKit.sharedInstance().createSearchManager(
-        with: YMKSearchSearchManagerType.combined)
+    let searchManager = YMKMapKit.sharedInstance().createSearchManager(with: .combined)
     
     let BOUNDING_BOX = YMKBoundingBox(
         southWest: YMKPoint(latitude: 55.55, longitude: 37.42),
