@@ -8,7 +8,8 @@ class MainMenuTableViewController: UITableViewController {
         "UserLocation",
         "Search",
         "Suggest",
-        "Panorama"]
+        "Panorama",
+        "CustomLayer"]
     
     override func viewDidLoad() {
         super.viewDidLoad()

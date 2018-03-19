@@ -12,6 +12,8 @@
 		E73A65E4204E9E060056E380 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E73A65E2204E9E060056E380 /* Main.storyboard */; };
 		E73A65E6204E9E060056E380 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E73A65E5204E9E060056E380 /* Assets.xcassets */; };
 		E73A65E9204E9E060056E380 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E73A65E7204E9E060056E380 /* LaunchScreen.storyboard */; };
+		E748A876205A947D00803AF8 /* CustomLayer.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E748A875205A947D00803AF8 /* CustomLayer.storyboard */; };
+		E748A878205A94AA00803AF8 /* CustomLayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E748A877205A94AA00803AF8 /* CustomLayerViewController.swift */; };
 		E76593462056BE01006AB315 /* Animations in Resources */ = {isa = PBXBuildFile; fileRef = E76593452056BE01006AB315 /* Animations */; };
 		E7773DCC204EAB0B0088FB88 /* Map.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7773DCB204EAB0B0088FB88 /* Map.storyboard */; };
 		E779F00C204ED7F800750E10 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E779F00B204ED7F800750E10 /* MapViewController.swift */; };
@@ -42,6 +44,8 @@
 		E73A65E5204E9E060056E380 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E73A65E8204E9E060056E380 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E73A65EA204E9E060056E380 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E748A875205A947D00803AF8 /* CustomLayer.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CustomLayer.storyboard; sourceTree = "<group>"; };
+		E748A877205A94AA00803AF8 /* CustomLayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLayerViewController.swift; sourceTree = "<group>"; };
 		E76593452056BE01006AB315 /* Animations */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Animations; sourceTree = "<group>"; };
 		E7773DCB204EAB0B0088FB88 /* Map.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Map.storyboard; sourceTree = "<group>"; };
 		E779F00B204ED7F800750E10 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
@@ -135,6 +139,8 @@
 				E7A2503520501EED0022D9B3 /* UserLocationViewController.swift */,
 				E7A2503720502C740022D9B3 /* Suggest.storyboard */,
 				E7A2503920502CB30022D9B3 /* SuggestTableViewController.swift */,
+				E748A875205A947D00803AF8 /* CustomLayer.storyboard */,
+				E748A877205A94AA00803AF8 /* CustomLayerViewController.swift */,
 			);
 			path = MapKitDemo;
 			sourceTree = "<group>";
@@ -206,6 +212,7 @@
 				E7A2503420501ECF0022D9B3 /* UserLocation.storyboard in Resources */,
 				E7A2503820502C740022D9B3 /* Suggest.storyboard in Resources */,
 				E73A65E9204E9E060056E380 /* LaunchScreen.storyboard in Resources */,
+				E748A876205A947D00803AF8 /* CustomLayer.storyboard in Resources */,
 				E73A65E6204E9E060056E380 /* Assets.xcassets in Resources */,
 				E7B58E322050029100D95768 /* Search.storyboard in Resources */,
 				E73A65E4204E9E060056E380 /* Main.storyboard in Resources */,
@@ -268,7 +275,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -285,6 +292,7 @@
 				E73A65DF204E9E060056E380 /* AppDelegate.swift in Sources */,
 				E779F00C204ED7F800750E10 /* MapViewController.swift in Sources */,
 				E7E5C338204FE71D007842E3 /* MapObjectsViewController.swift in Sources */,
+				E748A878205A94AA00803AF8 /* CustomLayerViewController.swift in Sources */,
 				E779F00E204EDC5200750E10 /* MainMenuTableViewController.swift in Sources */,
 				E7E5C33C204FF261007842E3 /* PanoramaViewController.swift in Sources */,
 			);
