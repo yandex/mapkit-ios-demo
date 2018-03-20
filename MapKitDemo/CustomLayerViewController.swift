@@ -18,8 +18,8 @@ class CustomLayerViewController: UIViewController {
         }
     }
     
+    // Client code must retain strong references to providers and projection
     let tilesUrlProvider = CustomTilesUrlProvider()
-    let resourceUrlProvider = YMKDefaultResourceUrlProvider()
     let projection = YMKCreateWgs84Mercator()
     
     override func viewDidLoad() {
@@ -39,7 +39,7 @@ class CustomLayerViewController: UIViewController {
             contentType: "image/png",
             layerOptions: layerOptions,
             urlProvider: tilesUrlProvider,
-            imageUrlProvider: resourceUrlProvider,
+            imageUrlProvider: nil,
             projection: projection)
         layer!.invalidate(withVersion: "0.0.0")
     }
