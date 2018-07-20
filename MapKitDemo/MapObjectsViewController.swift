@@ -90,7 +90,35 @@ class MapObjectsViewController: UIViewController {
         let polyline = mapObjects.addPolyline(with: YMKPolyline(points: polylinePoints))
         polyline!.strokeColor = UIColor.black
         polyline!.zIndex = 100
+
+        let coloredPolylinePoints = [
+            YMKPoint(
+                latitude: 59.949941,
+                longitude: 30.310250),
+            YMKPoint(
+                latitude: 59.950867,
+                longitude: 30.313382),
+            YMKPoint(
+                latitude: 59.949596,
+                longitude: 30.315056),
+            YMKPoint(
+                latitude: 59.951103,
+                longitude:  30.321622)
+        ]
+
+        let coloredPolyline = mapObjects.addColoredPolyline(with: YMKPolyline(points: coloredPolylinePoints))
         
+        // lets define colors for each polyline segment
+        coloredPolyline!.setPaletteColorWithColorIndex(0, color: UIColor.yellow)
+        coloredPolyline!.setPaletteColorWithColorIndex(1, color: UIColor.green)
+        coloredPolyline!.setPaletteColorWithColorIndex(2, color: UIColor.purple)
+        coloredPolyline!.setColorsWithColors([0, 1, 2])
+
+        // Maximum pgradient length in screen points.
+        coloredPolyline!.gradientLength = 250
+        coloredPolyline!.strokeWidth = 15
+        coloredPolyline!.zIndex = 100
+
         let placemark = mapObjects.addPlacemark(with: DRAGGABLE_PLACEMARK_CENTER)
         placemark!.opacity = 0.5
         placemark!.isDraggable = true
