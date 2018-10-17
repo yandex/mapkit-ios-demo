@@ -1,6 +1,7 @@
 import UIKit
 import YandexRuntime
 import YandexMapKit
+import YandexMapKitDirections
 
 /**
  * This example shows how to build routes between two points and display them on the map.
@@ -18,13 +19,13 @@ class DrivingViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        mapView.mapWindow.map!.move(
+        mapView.mapWindow.map.move(
             with: YMKCameraPosition(target: CAMERA_TARGET, zoom: 6, azimuth: 0, tilt: 0))
         
-        let requestPoints = [
-            YMKDrivingRequestPoint(point: ROUTE_START_POINT, arrivalPoints: [], type: YMKDrivingRequestPointType.waypoint),
-            YMKDrivingRequestPoint(point: ROUTE_END_POINT, arrivalPoints: [], type: YMKDrivingRequestPointType.waypoint),
-        ]
+        let requestPoints : [YMKDrivingRequestPoint] = [
+            YMKDrivingRequestPoint(point: ROUTE_START_POINT, arrivalPoints: [], drivingArrivalPoints: [], type: .waypoint),
+            YMKDrivingRequestPoint(point: ROUTE_END_POINT, arrivalPoints: [], drivingArrivalPoints: [], type: .waypoint),
+            ]
         
         let responseHandler = {(routesResponse: [YMKDrivingRoute]?, error: Error?) -> Void in
             if let routes = routesResponse {
@@ -34,7 +35,7 @@ class DrivingViewController: UIViewController {
             }
         }
         
-        let drivingRouter = YMKMapKit.sharedInstance().createDrivingRouter()!
+        let drivingRouter = YMKDirections.sharedInstance().createDrivingRouter()
         drivingSession = drivingRouter.requestRoutes(
             with: requestPoints,
             drivingOptions: YMKDrivingDrivingOptions(),
@@ -42,7 +43,7 @@ class DrivingViewController: UIViewController {
     }
     
     func onRoutesReceived(_ routes: [YMKDrivingRoute]) {
-        let mapObjects = mapView.mapWindow.map!.mapObjects!
+        let mapObjects = mapView.mapWindow.map.mapObjects
         for route in routes {
             mapObjects.addPolyline(with: route.geometry)
         }

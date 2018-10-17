@@ -17,30 +17,44 @@ class CustomLayerViewController: UIViewController {
             return "https://maps-ios-pods-public.s3.yandex.net/mapkit_logo.png"
         }
     }
-    
+
+    // MapKit  doesn't need Url provider for raster maps.
+    internal class DummyUrlProvider : NSObject, YMKResourceUrlProvider {
+        override init() {}
+
+        func formatUrl(withResourceId resourceId: String) -> String {
+            return "";
+        }
+
+        override func isEqual(_ object: Any?) -> Bool {
+            return true;
+        }
+    }
+
     // Client code must retain strong references to providers and projection
     let tilesUrlProvider = CustomTilesUrlProvider()
     let projection = YMKCreateWgs84Mercator()
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        mapView.mapWindow.map!.mapType = .none
-        
+
+        mapView.mapWindow.map.mapType = .none
+
         let layerOptions = YMKLayerOptions(
             active: true,
             nightModeAvailable: true,
             cacheable: true,
-            version_: "0.0.0",
-            animateOnActivation: true)
-        
-        layer = mapView.mapWindow.map!.addLayer(
+            animateOnActivation: true,
+            overzoomMode: .enabled)
+
+        layer = mapView.mapWindow.map.addLayer(
             withLayerId: "mapkit_logo",
             contentType: "image/png",
             layerOptions: layerOptions,
             urlProvider: tilesUrlProvider,
-            imageUrlProvider: nil,
-            projection: projection)
+            imageUrlProvider: DummyUrlProvider(),
+            projection: projection!)
+
         layer!.invalidate(withVersion: "0.0.0")
     }
 }

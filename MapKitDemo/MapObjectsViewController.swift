@@ -20,12 +20,12 @@ class MapObjectsViewController: UIViewController {
         super.viewDidLoad()
         
         createMapObjects()
-        mapView.mapWindow.map!.move(
+        mapView.mapWindow.map.move(
             with: YMKCameraPosition.init(target: CAMERA_TARGET, zoom: 15, azimuth: 0, tilt: 0))
     }
     
     func createMapObjects() {
-        let mapObjects = mapView.mapWindow.map!.mapObjects!
+        let mapObjects = mapView.mapWindow.map.mapObjects
         let animatedPolygonPoints = [
             YMKPoint(
                 latitude: ANIMATED_RECTANGLE_CENTER.latitude - OBJECT_SIZE,
@@ -43,11 +43,11 @@ class MapObjectsViewController: UIViewController {
         
         let animatedRectangle = mapObjects.addPolygon(
             with: YMKPolygon(outerRing: YMKLinearRing(points: animatedPolygonPoints), innerRings: []))
-        animatedRectangle!.fillColor = UIColor.clear
-        animatedRectangle!.strokeColor = UIColor.clear
+        animatedRectangle.fillColor = UIColor.clear
+        animatedRectangle.strokeColor = UIColor.clear
         let animatedImage = YRTAnimatedImageProviderFactory.fromFile(
             Bundle.main.path(forResource: "Animations/animation", ofType: "apng")) as! YRTAnimatedImageProvider
-        animatedRectangle!.setAnimatedImageWithAnimatedImage(
+        animatedRectangle.setAnimatedImageWithAnimatedImage(
             animatedImage, patternWidth: 32, repeatMode: YMKPatternRepeatMode.repeat)
         
         let trianglePoints = [
@@ -64,17 +64,17 @@ class MapObjectsViewController: UIViewController {
         
         let triangle = mapObjects.addPolygon(
             with: YMKPolygon(outerRing: YMKLinearRing(points: trianglePoints), innerRings: []))
-        triangle!.fillColor = UIColor.blue
-        triangle!.strokeColor = UIColor.black
-        triangle!.strokeWidth = 1
-        triangle!.zIndex = 100
+        triangle.fillColor = UIColor.blue
+        triangle.strokeColor = UIColor.black
+        triangle.strokeWidth = 1
+        triangle.zIndex = 100
         
         let circle = mapObjects.addCircle(
             with: YMKCircle(center: CIRCLE_CENTER, radius: 100),
             stroke: UIColor.green,
             strokeWidth: 2,
             fill: UIColor.red)
-        circle!.zIndex = 100
+        circle.zIndex = 100
         
         let polylinePoints = [
             YMKPoint(
@@ -88,8 +88,8 @@ class MapObjectsViewController: UIViewController {
                 longitude: POLYLINE_CENTER.longitude + OBJECT_SIZE)
         ]
         let polyline = mapObjects.addPolyline(with: YMKPolyline(points: polylinePoints))
-        polyline!.strokeColor = UIColor.black
-        polyline!.zIndex = 100
+        polyline.strokeColor = UIColor.black
+        polyline.zIndex = 100
 
         let coloredPolylinePoints = [
             YMKPoint(
@@ -109,19 +109,19 @@ class MapObjectsViewController: UIViewController {
         let coloredPolyline = mapObjects.addColoredPolyline(with: YMKPolyline(points: coloredPolylinePoints))
         
         // lets define colors for each polyline segment
-        coloredPolyline!.setPaletteColorWithColorIndex(0, color: UIColor.yellow)
-        coloredPolyline!.setPaletteColorWithColorIndex(1, color: UIColor.green)
-        coloredPolyline!.setPaletteColorWithColorIndex(2, color: UIColor.purple)
-        coloredPolyline!.setColorsWithColors([0, 1, 2])
+        coloredPolyline.setPaletteColorWithColorIndex(0, color: UIColor.yellow)
+        coloredPolyline.setPaletteColorWithColorIndex(1, color: UIColor.green)
+        coloredPolyline.setPaletteColorWithColorIndex(2, color: UIColor.purple)
+        coloredPolyline.setColorsWithColors([0, 1, 2])
 
         // Maximum pgradient length in screen points.
-        coloredPolyline!.gradientLength = 250
-        coloredPolyline!.strokeWidth = 15
-        coloredPolyline!.zIndex = 100
+        coloredPolyline.gradientLength = 250
+        coloredPolyline.strokeWidth = 15
+        coloredPolyline.zIndex = 100
 
         let placemark = mapObjects.addPlacemark(with: DRAGGABLE_PLACEMARK_CENTER)
-        placemark!.opacity = 0.5
-        placemark!.isDraggable = true
-        placemark!.setIconWith(UIImage(named:"Mark"))
+        placemark.opacity = 0.5
+        placemark.isDraggable = true
+        placemark.setIconWith(UIImage(named:"Mark")!)
     }
 }
