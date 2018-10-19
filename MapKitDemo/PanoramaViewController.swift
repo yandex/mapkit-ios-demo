@@ -1,5 +1,6 @@
 import UIKit
 import YandexMapKit
+import YandexMapKitPlaces
 
 /**
  * This example shows how to find a panorama that is nearest to a given point and display it
@@ -25,8 +26,8 @@ class PanoramaViewController: UIViewController {
             }
         }
         
-        let panoramaService = YMKMapKit.sharedInstance().createPanoramaService()
-        panoramaSession = panoramaService?.findNearest(
+        let panoramaService = YMKPlaces.sharedInstance().createPanoramaService()
+        panoramaSession = panoramaService.findNearest(
             withPosition: SEARCH_LOCATION,
             searchHandler: responseHandler)
     }

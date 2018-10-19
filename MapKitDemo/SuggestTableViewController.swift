@@ -1,5 +1,6 @@
 import UIKit
 import YandexMapKit
+import YandexMapKitSearch
 
 class SuggestCell: UITableViewCell {
     @IBOutlet weak var itemName: UILabel!
@@ -13,7 +14,7 @@ class SuggestViewController: UIViewController, UITableViewDataSource {
     @IBOutlet weak var searchBar: UITextField!
     
     var suggestResults: [YMKSuggestItem] = []
-    let searchManager = YMKMapKit.sharedInstance().createSearchManager(with: .combined)
+    let searchManager = YMKSearch.sharedInstance().createSearchManager(with: .combined)
     
     let BOUNDING_BOX = YMKBoundingBox(
         southWest: YMKPoint(latitude: 55.55, longitude: 37.42),
@@ -55,7 +56,7 @@ class SuggestViewController: UIViewController, UITableViewDataSource {
             }
         }
         
-        searchManager!.suggest(
+        searchManager.suggest(
             withText: sender.text!,
             window: BOUNDING_BOX,
             searchOptions: SEARCH_OPTIONS,

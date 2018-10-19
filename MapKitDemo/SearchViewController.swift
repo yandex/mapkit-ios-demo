@@ -1,5 +1,6 @@
 import UIKit
 import YandexMapKit
+import YandexMapKitSearch
 
 /**
  * This example shows how to add and interact with a layer that displays search results on the map.
@@ -14,18 +15,21 @@ class SearchViewController: UIViewController, YMKMapCameraListener {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        searchManager = YMKMapKit.sharedInstance().createSearchManager(with: .combined)
+        searchManager = YMKSearch.sharedInstance().createSearchManager(with: .combined)
         
-        mapView.mapWindow.map!.addCameraListener(with: self)
+        mapView.mapWindow.map.addCameraListener(with: self)
         
-        mapView.mapWindow.map!.move(with: YMKCameraPosition(
+        mapView.mapWindow.map.move(with: YMKCameraPosition(
             target: YMKPoint(latitude: 59.945933, longitude: 30.320045),
             zoom: 14,
             azimuth: 0,
             tilt: 0))
     }
     
-    func onCameraPositionChanged(with map: YMKMap?, cameraPosition: YMKCameraPosition, cameraUpdateSource: YMKCameraUpdateSource, finished: Bool) {
+    func onCameraPositionChanged(with map: YMKMap,
+                                 cameraPosition: YMKCameraPosition,
+                                 cameraUpdateSource: YMKCameraUpdateSource,
+                                 finished: Bool) {
         if finished {
             let responseHandler = {(searchResponse: YMKSearchResponse?, error: Error?) -> Void in
                 if let response = searchResponse {
@@ -37,19 +41,19 @@ class SearchViewController: UIViewController, YMKMapCameraListener {
             
             searchSession = searchManager!.submit(
                 withText: "cafe",
-                geometry: YMKVisibleRegionUtils.toPolygon(with: map!.visibleRegion),
+                geometry: YMKVisibleRegionUtils.toPolygon(with: map.visibleRegion),
                 searchOptions: YMKSearchOptions(),
                 responseHandler: responseHandler)
         }
     }
     
     func onSearchResponse(_ response: YMKSearchResponse) {
-        let mapObjects = mapView.mapWindow.map!.mapObjects!
+        let mapObjects = mapView.mapWindow.map.mapObjects
         mapObjects.clear()
         for searchResult in response.collection.children {
             if let point = searchResult.obj.geometry.first?.point {
                 let placemark = mapObjects.addPlacemark(with: point)
-                placemark!.setIconWith(UIImage(named: "SearchResult"))
+                placemark.setIconWith(UIImage(named: "SearchResult")!)
             }
         }
     }
