@@ -156,7 +156,6 @@
 				E73A65D7204E9E060056E380 /* Sources */,
 				E73A65D8204E9E060056E380 /* Frameworks */,
 				E73A65D9204E9E060056E380 /* Resources */,
-				3DCDEE0D3CBC76AA8EBEA5EC /* [CP] Embed Pods Frameworks */,
 				48ABBBDB0EBC787893EA96BE /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
@@ -225,21 +224,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		3DCDEE0D3CBC76AA8EBEA5EC /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MapKitDemo/Pods-MapKitDemo-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		48ABBBDB0EBC787893EA96BE /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -248,11 +232,19 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-MapKitDemo/Pods-MapKitDemo-resources.sh",
 				"${PODS_ROOT}/YandexMapKit/YandexMapKit.framework/Versions/A/Resources/YandexMapKit.bundle",
+				"${PODS_ROOT}/YandexMapKitDirections/YandexMapKitDirections.framework/Versions/A/Resources/YandexMapKitDirections.bundle",
+				"${PODS_ROOT}/YandexMapKitPlaces/YandexMapKitPlaces.framework/Versions/A/Resources/YandexMapKitPlaces.bundle",
+				"${PODS_ROOT}/YandexMapKitSearch/YandexMapKitSearch.framework/Versions/A/Resources/YandexMapKitSearch.bundle",
+				"${PODS_ROOT}/YandexMapKitTransport/YandexMapKitTransport.framework/Versions/A/Resources/YandexMapKitTransport.bundle",
 				"${PODS_ROOT}/YandexRuntime/YandexRuntime.framework/Versions/A/Resources/YandexRuntime.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/YandexMapKit.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/YandexMapKitDirections.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/YandexMapKitPlaces.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/YandexMapKitSearch.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/YandexMapKitTransport.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/YandexRuntime.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -275,7 +267,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */

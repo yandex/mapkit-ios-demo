@@ -25,8 +25,33 @@ class UserLocationViewController: UIViewController, YMKUserLocationObjectListene
     }
     
     func onObjectAdded(with view: YMKUserLocationView) {
-        view.pin.setIconWith(UIImage(named:"UserArrow")!)
         view.arrow.setIconWith(UIImage(named:"UserArrow")!)
+        
+        let pinPlacemark = view.pin.useCompositeIcon()
+        
+        pinPlacemark.setIconWithName("icon",
+            image: UIImage(named:"Icon")!,
+            style:YMKIconStyle(
+                anchor: CGPoint(x: 0, y: 0) as NSValue,
+                rotationType:YMKRotationType.rotate.rawValue as NSNumber,
+                zIndex: 0,
+                flat: true,
+                visible: true,
+                scale: 1.5,
+                tappableArea: nil))
+        
+        pinPlacemark.setIconWithName(
+            "pin",
+            image: UIImage(named:"SearchResult")!,
+            style:YMKIconStyle(
+                anchor: CGPoint(x: 0.5, y: 0.5) as NSValue,
+                rotationType:YMKRotationType.rotate.rawValue as NSNumber,
+                zIndex: 1,
+                flat: true,
+                visible: true,
+                scale: 1,
+                tappableArea: nil))
+
         view.accuracyCircle.fillColor = UIColor.blue
     }
 
