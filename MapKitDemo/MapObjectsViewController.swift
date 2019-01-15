@@ -123,5 +123,47 @@ class MapObjectsViewController: UIViewController {
         placemark.opacity = 0.5
         placemark.isDraggable = true
         placemark.setIconWith(UIImage(named:"Mark")!)
+
+        createPlacemarkMapObjectWithViewProvider();
+    }
+
+    func createPlacemarkMapObjectWithViewProvider() {
+        let textView =
+            UITextView(frame: CGRect(x: 0, y: 0, width: 200, height: 30));
+        let colors = [UIColor.red, UIColor.green, UIColor.black];
+
+        textView.isOpaque = false;
+        textView.backgroundColor = UIColor.clear.withAlphaComponent(0.0);
+        textView.text = "Hello, World!";
+        textView.textColor = UIColor.red;
+
+        let viewProvider = YRTViewProvider(uiView: textView);
+
+        let mapObjects = mapView.mapWindow.map.mapObjects;
+        let viewPlacemark = mapObjects.addPlacemark(
+            with: YMKPoint(latitude: 59.946263, longitude: 30.315181),
+            view: viewProvider!);
+
+        let delayToShowInitialText = 5.0;  // seconds
+        let delayToShowRandomText = 0.5; // seconds
+
+        // Show initial text `delayToShowInitialText` seconds and then
+        // randomly change text in textView every `delayToShowRandomText` seconds
+        DispatchQueue.main.asyncAfter(deadline: .now() + delayToShowInitialText) {
+
+            func doMainLoop() {
+                let randomInt = Int(arc4random_uniform(1000));
+                textView.text = "Some text " + String(randomInt);
+                textView.textColor = colors[randomInt % colors.count];
+                viewProvider?.snapshot();
+                viewPlacemark.setViewWithView(viewProvider!);
+
+                DispatchQueue.main.asyncAfter(deadline: .now() + delayToShowRandomText) {
+                    doMainLoop();
+                }
+            }
+
+            doMainLoop();
+        }
     }
 }
