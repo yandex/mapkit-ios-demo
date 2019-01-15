@@ -144,22 +144,26 @@ class MapObjectsViewController: UIViewController {
             with: YMKPoint(latitude: 59.946263, longitude: 30.315181),
             view: viewProvider!);
 
-        DispatchQueue.main.asyncAfter(deadline: .now() + 4.5) {
+        let delayToShowInitialText = 5.0;  // seconds
+        let delayToShowRandomText = 0.5; // seconds
+
+        // Show initial text `delayToShowInitialText` seconds and then
+        // randomly change text in textView every `delayToShowRandomText` seconds
+        DispatchQueue.main.asyncAfter(deadline: .now() + delayToShowInitialText) {
 
             func doMainLoop() {
-                DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-                    let randomInt = Int(arc4random_uniform(1000));
-                    textView.text = "Some text " + String(randomInt);
-                    textView.textColor = colors[randomInt % colors.count];
-                    viewProvider?.snapshot();
-                    viewPlacemark.setViewWithView(viewProvider!);
+                let randomInt = Int(arc4random_uniform(1000));
+                textView.text = "Some text " + String(randomInt);
+                textView.textColor = colors[randomInt % colors.count];
+                viewProvider?.snapshot();
+                viewPlacemark.setViewWithView(viewProvider!);
+
+                DispatchQueue.main.asyncAfter(deadline: .now() + delayToShowRandomText) {
                     doMainLoop();
                 }
             }
-            
+
             doMainLoop();
         }
     }
-
-
 }
