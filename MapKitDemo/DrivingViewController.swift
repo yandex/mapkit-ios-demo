@@ -22,9 +22,9 @@ class DrivingViewController: UIViewController {
         mapView.mapWindow.map.move(
             with: YMKCameraPosition(target: CAMERA_TARGET, zoom: 6, azimuth: 0, tilt: 0))
         
-        let requestPoints : [YMKDrivingRequestPoint] = [
-            YMKDrivingRequestPoint(point: ROUTE_START_POINT, arrivalPoints: [], drivingArrivalPoints: [], type: .waypoint),
-            YMKDrivingRequestPoint(point: ROUTE_END_POINT, arrivalPoints: [], drivingArrivalPoints: [], type: .waypoint),
+        let requestPoints : [YMKRequestPoint] = [
+            YMKRequestPoint(point: ROUTE_START_POINT, type: .waypoint, pointContext: nil),
+            YMKRequestPoint(point: ROUTE_END_POINT, type: .waypoint, pointContext: nil),
             ]
         
         let responseHandler = {(routesResponse: [YMKDrivingRoute]?, error: Error?) -> Void in
