@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5CC9508F2214919000C41B3B /* GeoJson.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5CC9508E2214919000C41B3B /* GeoJson.storyboard */; };
+		5CC95091221491C800C41B3B /* GeoJsonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC95090221491C800C41B3B /* GeoJsonViewController.swift */; };
+		5CC9509722149E3800C41B3B /* geo_json_example.geojson in Resources */ = {isa = PBXBuildFile; fileRef = 5CC9509622149E3800C41B3B /* geo_json_example.geojson */; };
 		8CF2478621228305DB1032C6 /* Pods_MapKitDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FF4BDC2D6DBEE64AE16860B /* Pods_MapKitDemo.framework */; };
 		E73A65DF204E9E060056E380 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73A65DE204E9E060056E380 /* AppDelegate.swift */; };
 		E73A65E4204E9E060056E380 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E73A65E2204E9E060056E380 /* Main.storyboard */; };
@@ -36,6 +39,9 @@
 		2FF4BDC2D6DBEE64AE16860B /* Pods_MapKitDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MapKitDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		457AD6E4C4817CA27BF3E070 /* Pods_MapkitSample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MapkitSample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5BE8D89165E82A9A8968421C /* Pods-MapkitSample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MapkitSample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MapkitSample/Pods-MapkitSample.debug.xcconfig"; sourceTree = "<group>"; };
+		5CC9508E2214919000C41B3B /* GeoJson.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = GeoJson.storyboard; sourceTree = "<group>"; };
+		5CC95090221491C800C41B3B /* GeoJsonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeoJsonViewController.swift; sourceTree = "<group>"; };
+		5CC9509622149E3800C41B3B /* geo_json_example.geojson */ = {isa = PBXFileReference; lastKnownFileType = text; path = geo_json_example.geojson; sourceTree = "<group>"; };
 		6F9A4B09E5BEDE145BF78E92 /* Pods-MapKitDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MapKitDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-MapKitDemo/Pods-MapKitDemo.release.xcconfig"; sourceTree = "<group>"; };
 		9FE1FE4E9A3DC621035BAB0D /* Pods-MapkitSample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MapkitSample.release.xcconfig"; path = "Pods/Target Support Files/Pods-MapkitSample/Pods-MapkitSample.release.xcconfig"; sourceTree = "<group>"; };
 		E73A65DB204E9E060056E380 /* MapKitDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MapKitDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -86,6 +92,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		5CC9509322149DCC00C41B3B /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				5CC9509622149E3800C41B3B /* geo_json_example.geojson */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		A47704CF0060764B37126200 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -118,6 +132,7 @@
 		E73A65DD204E9E060056E380 /* MapKitDemo */ = {
 			isa = PBXGroup;
 			children = (
+				5CC9509322149DCC00C41B3B /* Resources */,
 				E73A65DE204E9E060056E380 /* AppDelegate.swift */,
 				E73A65E2204E9E060056E380 /* Main.storyboard */,
 				E73A65E5204E9E060056E380 /* Assets.xcassets */,
@@ -141,6 +156,8 @@
 				E7A2503920502CB30022D9B3 /* SuggestTableViewController.swift */,
 				E748A875205A947D00803AF8 /* CustomLayer.storyboard */,
 				E748A877205A94AA00803AF8 /* CustomLayerViewController.swift */,
+				5CC9508E2214919000C41B3B /* GeoJson.storyboard */,
+				5CC95090221491C800C41B3B /* GeoJsonViewController.swift */,
 			);
 			path = MapKitDemo;
 			sourceTree = "<group>";
@@ -209,6 +226,8 @@
 			files = (
 				E7E5C332204FDB59007842E3 /* Driving.storyboard in Resources */,
 				E7E5C33A204FF234007842E3 /* Panorama.storyboard in Resources */,
+				5CC9509722149E3800C41B3B /* geo_json_example.geojson in Resources */,
+				5CC9508F2214919000C41B3B /* GeoJson.storyboard in Resources */,
 				E7A2503420501ECF0022D9B3 /* UserLocation.storyboard in Resources */,
 				E7A2503820502C740022D9B3 /* Suggest.storyboard in Resources */,
 				E73A65E9204E9E060056E380 /* LaunchScreen.storyboard in Resources */,
@@ -231,7 +250,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-MapKitDemo/Pods-MapKitDemo-resources.sh",
+				"${SRCROOT}/Pods/Target Support Files/Pods-MapKitDemo/Pods-MapKitDemo-resources.sh",
 				"${PODS_ROOT}/YandexMapKit/YandexMapKit.framework/Versions/A/Resources/YandexMapKit.bundle",
 				"${PODS_ROOT}/YandexMapKitDirections/YandexMapKitDirections.framework/Versions/A/Resources/YandexMapKitDirections.bundle",
 				"${PODS_ROOT}/YandexMapKitPlaces/YandexMapKitPlaces.framework/Versions/A/Resources/YandexMapKitPlaces.bundle",
@@ -250,7 +269,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MapKitDemo/Pods-MapKitDemo-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MapKitDemo/Pods-MapKitDemo-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		97D787B9DB0EE301983CD8D0 /* [CP] Check Pods Manifest.lock */ = {
@@ -285,6 +304,7 @@
 				E73A65DF204E9E060056E380 /* AppDelegate.swift in Sources */,
 				E779F00C204ED7F800750E10 /* MapViewController.swift in Sources */,
 				E7E5C338204FE71D007842E3 /* MapObjectsViewController.swift in Sources */,
+				5CC95091221491C800C41B3B /* GeoJsonViewController.swift in Sources */,
 				E748A878205A94AA00803AF8 /* CustomLayerViewController.swift in Sources */,
 				E779F00E204EDC5200750E10 /* MainMenuTableViewController.swift in Sources */,
 				E7E5C33C204FF261007842E3 /* PanoramaViewController.swift in Sources */,
