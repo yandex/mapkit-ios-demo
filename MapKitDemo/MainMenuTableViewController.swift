@@ -9,7 +9,8 @@ class MainMenuTableViewController: UITableViewController {
         "Search",
         "Suggest",
         "Panorama",
-        "CustomLayer"]
+        "CustomLayer",
+        "GeoJson"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
