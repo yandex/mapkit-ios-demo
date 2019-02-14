@@ -1,7 +1,6 @@
 import UIKit
 import Foundation
 import YandexMapKit
-import os.log
 
 /**
  * This example shows how to add layer with simple objects such as points, polylines, polygons
@@ -18,6 +17,39 @@ class GeoJsonViewController: UIViewController {
         }
     }
 
+    internal class CustomTileProvider: NSObject, YMKTileProvider {
+
+        private let rawJson: String
+
+        override init() {
+            self.rawJson = CustomTileProvider.readRawJson()!
+        }
+
+        private static func readRawJson() -> String? {
+            if let filepath: String = Bundle.main.path(forResource: "geo_json_example", ofType: "geojson") {
+                do {
+                    let contents = try String(contentsOfFile: filepath)
+                    return contents
+                } catch {
+                    NSLog("GeoJsonError: Contents could not be loaded from geojson file")
+                    return nil
+                }
+            } else {
+                NSLog("GeoJsonError: geojson file not found")
+                return nil
+            }
+        }
+
+        func load(with tileId: YMKTileId, version: YMKVersion, etag: String) -> YMKRawTile {
+            return YMKRawTile(version: version, etag: etag, state: YMKRawTileState.ok, rawData: rawJson.data(using: .utf8)!)
+        }
+    }
+
+    // Client code must retain strong references to providers and projection
+    let projection: YMKProjection = YMKCreateWgs84Mercator()
+    let urlProvider: YMKResourceUrlProvider = CustomResourceUrlProvider()
+    let tileProvider: YMKTileProvider = CustomTileProvider()
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -29,50 +61,15 @@ class GeoJsonViewController: UIViewController {
     }
 
     private func createGeoJsonLayer() {
-        let tileProvider: YMKTileProvider? = createTileProvider()
-        if (tileProvider == nil) {
-            os_log("TileProvider could not be created", log: OSLog.default, type: OSLogType.error)
-            return
-        }
-        let urlProvider: YMKResourceUrlProvider = CustomResourceUrlProvider()
-        let projection: YMKProjection = YMKCreateWgs84Mercator()
-
         let layer: YMKLayer? = mapView.mapWindow.map.addLayer(
             withLayerId: "geo_json_layer",
             contentType: "application/geo-json",
             layerOptions: YMKLayerOptions(),
-            tileProvider: tileProvider!,
+            tileProvider: tileProvider,
             imageUrlProvider: urlProvider,
             projection: projection)
 
         layer!.invalidate(withVersion: "0.0.0")
-    }
-
-    private func createTileProvider() -> YMKTileProvider? {
-        if let filepath: String = Bundle.main.path(forResource: "geo_json_example", ofType: "geojson") {
-            do {
-                let contents = try String(contentsOfFile: filepath)
-                return CustomTileProvider(rawJson: contents)
-            } catch {
-                os_log("Contents could not be loaded from geojson file", log: OSLog.default, type: OSLogType.error)
-                return nil
-            }
-        } else {
-            os_log("geojson file not found", log: OSLog.default, type: OSLogType.error)
-            return nil
-        }
-    }
-
-    internal class CustomTileProvider: NSObject, YMKTileProvider {
-
-        private let rawJson: String
-
-        init(rawJson: String) {
-            self.rawJson = rawJson
-        }
-
-        func load(with tileId: YMKTileId, version: YMKVersion, etag: String) -> YMKRawTile {
-            return YMKRawTile(version: version, etag: etag, state: YMKRawTileState.ok, rawData: rawJson.data(using: .utf8)!)
-        }
+        layer!.activateWith(on: true)
     }
 }
