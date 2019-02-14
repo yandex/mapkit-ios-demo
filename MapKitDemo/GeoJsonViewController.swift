@@ -13,7 +13,7 @@ class GeoJsonViewController: UIViewController {
 
     internal class CustomResourceUrlProvider: NSObject, YMKResourceUrlProvider {
         public func formatUrl(withResourceId resourceId: String) -> String {
-            return "https://raw.githubusercontent.com/yandex/mapkit-android-demo/master/src/main/\(resourceId)"
+            return "https://raw.githubusercontent.com/yandex/mapkit-ios-demo/master/MapKitDemo/Assets.xcassets/\(resourceId)"
         }
     }
 

@@ -22,7 +22,7 @@
                                 {
                                     "point": {
                                         "icon": {
-                                            "id": "assets/animation.png"
+                                            "id": "Mark.imageset/mark.png"
                                         },
                                         "anchorX": 1.0,
                                         "anchorY": 1.0
@@ -57,7 +57,7 @@
                                 {
                                     "point": {
                                         "icon": {
-                                            "id": "res/drawable/icon.png"
+                                            "id": "Icon.imageset/icon_iphone.png"
                                         },
                                         "anchorX": 1.0,
                                         "anchorY": 1.0
