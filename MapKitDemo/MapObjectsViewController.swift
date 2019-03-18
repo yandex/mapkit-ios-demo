@@ -14,14 +14,21 @@ class MapObjectsViewController: UIViewController {
     let POLYLINE_CENTER = YMKPoint(latitude: 59.952, longitude: 30.318)
     let CIRCLE_CENTER = YMKPoint(latitude: 59.956, longitude: 30.323)
     let DRAGGABLE_PLACEMARK_CENTER = YMKPoint(latitude: 59.948, longitude: 30.323)
-    let OBJECT_SIZE: Double = 0.0015;
-    
+    let OBJECT_SIZE: Double = 0.0015
+
+    private var animationIsActive = true
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
         createMapObjects()
         mapView.mapWindow.map.move(
             with: YMKCameraPosition.init(target: CAMERA_TARGET, zoom: 15, azimuth: 0, tilt: 0))
+    }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        self.animationIsActive = false
     }
     
     func createMapObjects() {
@@ -152,6 +159,10 @@ class MapObjectsViewController: UIViewController {
         DispatchQueue.main.asyncAfter(deadline: .now() + delayToShowInitialText) {
 
             func doMainLoop() {
+                if !self.animationIsActive {
+                    return
+                }
+
                 let randomInt = Int(arc4random_uniform(1000));
                 textView.text = "Some text " + String(randomInt);
                 textView.textColor = colors[randomInt % colors.count];
@@ -159,7 +170,7 @@ class MapObjectsViewController: UIViewController {
                 viewPlacemark.setViewWithView(viewProvider!);
 
                 DispatchQueue.main.asyncAfter(deadline: .now() + delayToShowRandomText) {
-                    doMainLoop();
+                    doMainLoop()
                 }
             }
 
