@@ -27,6 +27,8 @@
 		E7A2503A20502CB30022D9B3 /* SuggestTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A2503920502CB30022D9B3 /* SuggestTableViewController.swift */; };
 		E7B58E322050029100D95768 /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7B58E312050029100D95768 /* Search.storyboard */; };
 		E7B58E342050031200D95768 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7B58E332050031200D95768 /* SearchViewController.swift */; };
+		E7DE519622560A83006B559C /* ClusteringViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7DE519522560A83006B559C /* ClusteringViewController.swift */; };
+		E7DE519822560B67006B559C /* Clustering.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7DE519722560B67006B559C /* Clustering.storyboard */; };
 		E7E5C332204FDB59007842E3 /* Driving.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7E5C331204FDB59007842E3 /* Driving.storyboard */; };
 		E7E5C334204FDBAE007842E3 /* DrivingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E5C333204FDBAE007842E3 /* DrivingViewController.swift */; };
 		E7E5C336204FE6F2007842E3 /* MapObjects.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7E5C335204FE6F2007842E3 /* MapObjects.storyboard */; };
@@ -62,6 +64,8 @@
 		E7A2503920502CB30022D9B3 /* SuggestTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuggestTableViewController.swift; sourceTree = "<group>"; };
 		E7B58E312050029100D95768 /* Search.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Search.storyboard; sourceTree = "<group>"; };
 		E7B58E332050031200D95768 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		E7DE519522560A83006B559C /* ClusteringViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClusteringViewController.swift; sourceTree = "<group>"; };
+		E7DE519722560B67006B559C /* Clustering.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Clustering.storyboard; sourceTree = "<group>"; };
 		E7E5C331204FDB59007842E3 /* Driving.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Driving.storyboard; sourceTree = "<group>"; };
 		E7E5C333204FDBAE007842E3 /* DrivingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrivingViewController.swift; sourceTree = "<group>"; };
 		E7E5C335204FE6F2007842E3 /* MapObjects.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MapObjects.storyboard; sourceTree = "<group>"; };
@@ -158,6 +162,8 @@
 				E748A877205A94AA00803AF8 /* CustomLayerViewController.swift */,
 				5CC9508E2214919000C41B3B /* GeoJson.storyboard */,
 				5CC95090221491C800C41B3B /* GeoJsonViewController.swift */,
+				E7DE519722560B67006B559C /* Clustering.storyboard */,
+				E7DE519522560A83006B559C /* ClusteringViewController.swift */,
 			);
 			path = MapKitDemo;
 			sourceTree = "<group>";
@@ -226,6 +232,7 @@
 			files = (
 				E7E5C332204FDB59007842E3 /* Driving.storyboard in Resources */,
 				E7E5C33A204FF234007842E3 /* Panorama.storyboard in Resources */,
+				E7DE519822560B67006B559C /* Clustering.storyboard in Resources */,
 				5CC9509722149E3800C41B3B /* geo_json_example.geojson in Resources */,
 				5CC9508F2214919000C41B3B /* GeoJson.storyboard in Resources */,
 				E7A2503420501ECF0022D9B3 /* UserLocation.storyboard in Resources */,
@@ -300,6 +307,7 @@
 				E7E5C334204FDBAE007842E3 /* DrivingViewController.swift in Sources */,
 				E7A2503620501EED0022D9B3 /* UserLocationViewController.swift in Sources */,
 				E7B58E342050031200D95768 /* SearchViewController.swift in Sources */,
+				E7DE519622560A83006B559C /* ClusteringViewController.swift in Sources */,
 				E7A2503A20502CB30022D9B3 /* SuggestTableViewController.swift in Sources */,
 				E73A65DF204E9E060056E380 /* AppDelegate.swift in Sources */,
 				E779F00C204ED7F800750E10 /* MapViewController.swift in Sources */,
