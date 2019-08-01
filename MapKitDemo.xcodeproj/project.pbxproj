@@ -196,7 +196,7 @@
 				TargetAttributes = {
 					E73A65DA204E9E060056E380 = {
 						CreatedOnToolsVersion = 9.2;
-						LastSwiftMigration = 1010;
+						LastSwiftMigration = 1030;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -250,7 +250,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-MapKitDemo/Pods-MapKitDemo-resources.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-MapKitDemo/Pods-MapKitDemo-resources.sh",
 				"${PODS_ROOT}/YandexMapKit/YandexMapKit.framework/Versions/A/Resources/YandexMapKit.bundle",
 				"${PODS_ROOT}/YandexMapKitDirections/YandexMapKitDirections.framework/Versions/A/Resources/YandexMapKitDirections.bundle",
 				"${PODS_ROOT}/YandexMapKitPlaces/YandexMapKitPlaces.framework/Versions/A/Resources/YandexMapKitPlaces.bundle",
@@ -269,7 +269,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MapKitDemo/Pods-MapKitDemo-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MapKitDemo/Pods-MapKitDemo-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		97D787B9DB0EE301983CD8D0 /* [CP] Check Pods Manifest.lock */ = {
@@ -456,7 +456,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.yandex.mapkitdemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -473,7 +473,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.yandex.mapkitdemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

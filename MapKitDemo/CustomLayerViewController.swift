@@ -51,7 +51,7 @@ class CustomLayerViewController: UIViewController {
             withLayerId: "mapkit_logo",
             contentType: "image/png",
             layerOptions: layerOptions,
-            urlProvider: tilesUrlProvider,
+            tileUrlProvider: tilesUrlProvider,
             imageUrlProvider: DummyUrlProvider(),
             projection: projection!)
 

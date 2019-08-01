@@ -15,8 +15,9 @@ class UserLocationViewController: UIViewController, YMKUserLocationObjectListene
             YMKCameraPosition(target: YMKPoint(latitude: 0, longitude: 0), zoom: 14, azimuth: 0, tilt: 0))
         
         let scale = UIScreen.main.scale
-        let userLocationLayer = mapView.mapWindow.map.userLocationLayer
-        userLocationLayer.isEnabled = true
+        let mapKit = YMKMapKit.sharedInstance()!
+        let userLocationLayer = mapKit.createUserLocationLayer(with: mapView.mapWindow)
+
         userLocationLayer.isHeadingEnabled = true
         userLocationLayer.setAnchorWithAnchorNormal(
             CGPoint(x: 0.5 * mapView.frame.size.width * scale, y: 0.5 * mapView.frame.size.height * scale),

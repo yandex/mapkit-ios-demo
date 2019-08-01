@@ -51,7 +51,7 @@ class SearchViewController: UIViewController, YMKMapCameraListener {
         let mapObjects = mapView.mapWindow.map.mapObjects
         mapObjects.clear()
         for searchResult in response.collection.children {
-            if let point = searchResult.obj.geometry.first?.point {
+            if let point = searchResult.obj?.geometry.first?.point {
                 let placemark = mapObjects.addPlacemark(with: point)
                 placemark.setIconWith(UIImage(named: "SearchResult")!)
             }
