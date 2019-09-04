@@ -17,6 +17,7 @@ class MapObjectsViewController: UIViewController {
     let OBJECT_SIZE: Double = 0.0015
 
     private var animationIsActive = true
+    private var circleMapObjectTapListener: YMKMapObjectTapListener!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -76,12 +77,7 @@ class MapObjectsViewController: UIViewController {
         triangle.strokeWidth = 1
         triangle.zIndex = 100
         
-        let circle = mapObjects.addCircle(
-            with: YMKCircle(center: CIRCLE_CENTER, radius: 100),
-            stroke: UIColor.green,
-            strokeWidth: 2,
-            fill: UIColor.red)
-        circle.zIndex = 100
+        createTappableCircle();
         
         let polylinePoints = [
             YMKPoint(
@@ -132,6 +128,60 @@ class MapObjectsViewController: UIViewController {
         placemark.setIconWith(UIImage(named:"Mark")!)
 
         createPlacemarkMapObjectWithViewProvider();
+    }
+
+    private class CircleMapObjectTapListener: NSObject, YMKMapObjectTapListener {
+        private weak var controller: UIViewController?
+
+        init(controller: UIViewController) {
+            self.controller = controller
+        }
+
+        func onMapObjectTap(with mapObject: YMKMapObject, point: YMKPoint) -> Bool {
+            if let circle = mapObject as? YMKCircleMapObject {
+                let randomRadius: Float = 100.0 + 50.0 * Float.random(in: 0..<10);
+                let curGeometry = circle.geometry;
+                circle.geometry = YMKCircle(center: curGeometry.center, radius: randomRadius);
+
+                if let userData = circle.userData as? CircleMapObjectUserData {
+                    let message = "Circle with id \(userData.id) and description '\(userData.description)' tapped";
+                    let alert = UIAlertController(title: nil, message: message, preferredStyle: .alert);
+                    alert.view.backgroundColor = UIColor.darkGray;
+                    alert.view.alpha = 0.8;
+                    alert.view.layer.cornerRadius = 15;
+
+                    controller?.present(alert, animated: true);
+                    DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1) {
+                        alert.dismiss(animated: true);
+                    }
+                }
+            }
+            return true;
+        }
+    }
+
+    private class CircleMapObjectUserData {
+        let id: Int32;
+        let description: String;
+        init(id: Int32, description: String) {
+            self.id = id;
+            self.description = description;
+        }
+    }
+
+    func createTappableCircle() {
+        let mapObjects = mapView.mapWindow.map.mapObjects;
+        let circle = mapObjects.addCircle(
+            with: YMKCircle(center: CIRCLE_CENTER, radius: 100),
+            stroke: UIColor.green,
+            strokeWidth: 2,
+            fill: UIColor.red)
+        circle.zIndex = 100
+        circle.userData = CircleMapObjectUserData(id: 42, description: "Tappable circle");
+
+        // Client code must retain strong reference to the listener.
+        circleMapObjectTapListener = CircleMapObjectTapListener(controller: self);
+        circle.addTapListener(with: circleMapObjectTapListener);
     }
 
     func createPlacemarkMapObjectWithViewProvider() {
