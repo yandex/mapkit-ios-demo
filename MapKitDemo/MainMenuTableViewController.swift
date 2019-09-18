@@ -4,6 +4,7 @@ class MainMenuTableViewController: UITableViewController {
     let STORYBOARDS = [
         "Map",
         "MapObjects",
+        "MapSublayers",
         "Driving",
         "UserLocation",
         "Search",
