@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5C1086C823310BA2008BAAE5 /* MapSublayers.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C1086C723310BA2008BAAE5 /* MapSublayers.storyboard */; };
+		5C1086CA23310C1F008BAAE5 /* MapSublayersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C1086C923310C1F008BAAE5 /* MapSublayersViewController.swift */; };
 		5CC9508F2214919000C41B3B /* GeoJson.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5CC9508E2214919000C41B3B /* GeoJson.storyboard */; };
 		5CC95091221491C800C41B3B /* GeoJsonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC95090221491C800C41B3B /* GeoJsonViewController.swift */; };
 		5CC9509722149E3800C41B3B /* geo_json_example.geojson in Resources */ = {isa = PBXBuildFile; fileRef = 5CC9509622149E3800C41B3B /* geo_json_example.geojson */; };
@@ -41,6 +43,8 @@
 		2FF4BDC2D6DBEE64AE16860B /* Pods_MapKitDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MapKitDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		457AD6E4C4817CA27BF3E070 /* Pods_MapkitSample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MapkitSample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5BE8D89165E82A9A8968421C /* Pods-MapkitSample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MapkitSample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MapkitSample/Pods-MapkitSample.debug.xcconfig"; sourceTree = "<group>"; };
+		5C1086C723310BA2008BAAE5 /* MapSublayers.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MapSublayers.storyboard; sourceTree = "<group>"; };
+		5C1086C923310C1F008BAAE5 /* MapSublayersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapSublayersViewController.swift; sourceTree = "<group>"; };
 		5CC9508E2214919000C41B3B /* GeoJson.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = GeoJson.storyboard; sourceTree = "<group>"; };
 		5CC95090221491C800C41B3B /* GeoJsonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeoJsonViewController.swift; sourceTree = "<group>"; };
 		5CC9509622149E3800C41B3B /* geo_json_example.geojson */ = {isa = PBXFileReference; lastKnownFileType = text; path = geo_json_example.geojson; sourceTree = "<group>"; };
@@ -149,6 +153,8 @@
 				E7E5C331204FDB59007842E3 /* Driving.storyboard */,
 				E7E5C333204FDBAE007842E3 /* DrivingViewController.swift */,
 				E7E5C335204FE6F2007842E3 /* MapObjects.storyboard */,
+				5C1086C723310BA2008BAAE5 /* MapSublayers.storyboard */,
+				5C1086C923310C1F008BAAE5 /* MapSublayersViewController.swift */,
 				E7E5C337204FE71D007842E3 /* MapObjectsViewController.swift */,
 				E7E5C339204FF234007842E3 /* Panorama.storyboard */,
 				E7E5C33B204FF261007842E3 /* PanoramaViewController.swift */,
@@ -236,6 +242,7 @@
 				5CC9509722149E3800C41B3B /* geo_json_example.geojson in Resources */,
 				5CC9508F2214919000C41B3B /* GeoJson.storyboard in Resources */,
 				E7A2503420501ECF0022D9B3 /* UserLocation.storyboard in Resources */,
+				5C1086C823310BA2008BAAE5 /* MapSublayers.storyboard in Resources */,
 				E7A2503820502C740022D9B3 /* Suggest.storyboard in Resources */,
 				E73A65E9204E9E060056E380 /* LaunchScreen.storyboard in Resources */,
 				E748A876205A947D00803AF8 /* CustomLayer.storyboard in Resources */,
@@ -257,7 +264,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-MapKitDemo/Pods-MapKitDemo-resources.sh",
+				"${SRCROOT}/Pods/Target Support Files/Pods-MapKitDemo/Pods-MapKitDemo-resources.sh",
 				"${PODS_ROOT}/YandexMapKit/YandexMapKit.framework/Versions/A/Resources/YandexMapKit.bundle",
 				"${PODS_ROOT}/YandexMapKitDirections/YandexMapKitDirections.framework/Versions/A/Resources/YandexMapKitDirections.bundle",
 				"${PODS_ROOT}/YandexMapKitPlaces/YandexMapKitPlaces.framework/Versions/A/Resources/YandexMapKitPlaces.bundle",
@@ -276,7 +283,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MapKitDemo/Pods-MapKitDemo-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MapKitDemo/Pods-MapKitDemo-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		97D787B9DB0EE301983CD8D0 /* [CP] Check Pods Manifest.lock */ = {
@@ -316,6 +323,7 @@
 				E748A878205A94AA00803AF8 /* CustomLayerViewController.swift in Sources */,
 				E779F00E204EDC5200750E10 /* MainMenuTableViewController.swift in Sources */,
 				E7E5C33C204FF261007842E3 /* PanoramaViewController.swift in Sources */,
+				5C1086CA23310C1F008BAAE5 /* MapSublayersViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
