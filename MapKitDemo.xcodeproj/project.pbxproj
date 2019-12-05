@@ -13,6 +13,8 @@
 		5CC95091221491C800C41B3B /* GeoJsonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC95090221491C800C41B3B /* GeoJsonViewController.swift */; };
 		5CC9509722149E3800C41B3B /* geo_json_example.geojson in Resources */ = {isa = PBXBuildFile; fileRef = 5CC9509622149E3800C41B3B /* geo_json_example.geojson */; };
 		8CF2478621228305DB1032C6 /* Pods_MapKitDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FF4BDC2D6DBEE64AE16860B /* Pods_MapKitDemo.framework */; };
+		BDB95B8C2397FDF800BC2EBF /* Jams.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BDB95B8B2397FDF800BC2EBF /* Jams.storyboard */; };
+		BDB95B8E2397FE4D00BC2EBF /* JamsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDB95B8D2397FE4D00BC2EBF /* JamsViewController.swift */; };
 		E73A65DF204E9E060056E380 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73A65DE204E9E060056E380 /* AppDelegate.swift */; };
 		E73A65E4204E9E060056E380 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E73A65E2204E9E060056E380 /* Main.storyboard */; };
 		E73A65E6204E9E060056E380 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E73A65E5204E9E060056E380 /* Assets.xcassets */; };
@@ -50,6 +52,8 @@
 		5CC9509622149E3800C41B3B /* geo_json_example.geojson */ = {isa = PBXFileReference; lastKnownFileType = text; path = geo_json_example.geojson; sourceTree = "<group>"; };
 		6F9A4B09E5BEDE145BF78E92 /* Pods-MapKitDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MapKitDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-MapKitDemo/Pods-MapKitDemo.release.xcconfig"; sourceTree = "<group>"; };
 		9FE1FE4E9A3DC621035BAB0D /* Pods-MapkitSample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MapkitSample.release.xcconfig"; path = "Pods/Target Support Files/Pods-MapkitSample/Pods-MapkitSample.release.xcconfig"; sourceTree = "<group>"; };
+		BDB95B8B2397FDF800BC2EBF /* Jams.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Jams.storyboard; sourceTree = "<group>"; };
+		BDB95B8D2397FE4D00BC2EBF /* JamsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JamsViewController.swift; sourceTree = "<group>"; };
 		E73A65DB204E9E060056E380 /* MapKitDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MapKitDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E73A65DE204E9E060056E380 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E73A65E3204E9E060056E380 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -140,6 +144,7 @@
 		E73A65DD204E9E060056E380 /* MapKitDemo */ = {
 			isa = PBXGroup;
 			children = (
+				BDB95B8B2397FDF800BC2EBF /* Jams.storyboard */,
 				5CC9509322149DCC00C41B3B /* Resources */,
 				E73A65DE204E9E060056E380 /* AppDelegate.swift */,
 				E73A65E2204E9E060056E380 /* Main.storyboard */,
@@ -170,6 +175,7 @@
 				5CC95090221491C800C41B3B /* GeoJsonViewController.swift */,
 				E7DE519722560B67006B559C /* Clustering.storyboard */,
 				E7DE519522560A83006B559C /* ClusteringViewController.swift */,
+				BDB95B8D2397FE4D00BC2EBF /* JamsViewController.swift */,
 			);
 			path = MapKitDemo;
 			sourceTree = "<group>";
@@ -208,7 +214,7 @@
 				TargetAttributes = {
 					E73A65DA204E9E060056E380 = {
 						CreatedOnToolsVersion = 9.2;
-						LastSwiftMigration = 1030;
+						LastSwiftMigration = 1110;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -240,6 +246,7 @@
 				E7E5C33A204FF234007842E3 /* Panorama.storyboard in Resources */,
 				E7DE519822560B67006B559C /* Clustering.storyboard in Resources */,
 				5CC9509722149E3800C41B3B /* geo_json_example.geojson in Resources */,
+				BDB95B8C2397FDF800BC2EBF /* Jams.storyboard in Resources */,
 				5CC9508F2214919000C41B3B /* GeoJson.storyboard in Resources */,
 				E7A2503420501ECF0022D9B3 /* UserLocation.storyboard in Resources */,
 				5C1086C823310BA2008BAAE5 /* MapSublayers.storyboard in Resources */,
@@ -264,7 +271,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-MapKitDemo/Pods-MapKitDemo-resources.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-MapKitDemo/Pods-MapKitDemo-resources.sh",
 				"${PODS_ROOT}/YandexMapKit/YandexMapKit.framework/Versions/A/Resources/YandexMapKit.bundle",
 				"${PODS_ROOT}/YandexMapKitDirections/YandexMapKitDirections.framework/Versions/A/Resources/YandexMapKitDirections.bundle",
 				"${PODS_ROOT}/YandexMapKitPlaces/YandexMapKitPlaces.framework/Versions/A/Resources/YandexMapKitPlaces.bundle",
@@ -283,7 +290,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MapKitDemo/Pods-MapKitDemo-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MapKitDemo/Pods-MapKitDemo-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		97D787B9DB0EE301983CD8D0 /* [CP] Check Pods Manifest.lock */ = {
@@ -316,6 +323,7 @@
 				E7B58E342050031200D95768 /* SearchViewController.swift in Sources */,
 				E7DE519622560A83006B559C /* ClusteringViewController.swift in Sources */,
 				E7A2503A20502CB30022D9B3 /* SuggestTableViewController.swift in Sources */,
+				BDB95B8E2397FE4D00BC2EBF /* JamsViewController.swift in Sources */,
 				E73A65DF204E9E060056E380 /* AppDelegate.swift in Sources */,
 				E779F00C204ED7F800750E10 /* MapViewController.swift in Sources */,
 				E7E5C338204FE71D007842E3 /* MapObjectsViewController.swift in Sources */,
@@ -466,12 +474,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "$(SRCROOT)/MapKitDemo/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.yandex.mapkitdemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -483,6 +493,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "$(SRCROOT)/MapKitDemo/Info.plist";
