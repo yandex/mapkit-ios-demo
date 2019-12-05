@@ -2,9 +2,7 @@ import UIKit
 import YandexMapKit
 
 /**
- * This example shows how to add and interact with a layer that displays search results on the map.
- * Note: search API calls count towards MapKit daily usage limits. Learn more at
- * https://tech.yandex.ru/mapkit/doc/3.x/concepts/conditions-docpage/#conditions__limits
+ * This example shows how to add layer traffic on the map.
  */
 class JamsViewController: UIViewController, YMKMapCameraListener, YMKTrafficDelegate {
 
