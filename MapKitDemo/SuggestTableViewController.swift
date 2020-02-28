@@ -15,15 +15,16 @@ class SuggestViewController: UIViewController, UITableViewDataSource {
     
     var suggestResults: [YMKSuggestItem] = []
     let searchManager = YMKSearch.sharedInstance().createSearchManager(with: .combined)
+    var suggestSession: YMKSearchSuggestSession!
     
     let BOUNDING_BOX = YMKBoundingBox(
         southWest: YMKPoint(latitude: 55.55, longitude: 37.42),
         northEast: YMKPoint(latitude: 55.95, longitude: 37.82))
-    let SEARCH_OPTIONS = YMKSearchOptions()
+    let SUGGEST_OPTIONS = YMKSuggestOptions()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        suggestSession = searchManager.createSuggestSession()
         tableView.dataSource = self
     }
     
@@ -56,10 +57,10 @@ class SuggestViewController: UIViewController, UITableViewDataSource {
             }
         }
         
-        searchManager.suggest(
+        suggestSession.suggest(
             withText: sender.text!,
             window: BOUNDING_BOX,
-            searchOptions: SEARCH_OPTIONS,
+            suggestOptions: SUGGEST_OPTIONS,
             responseHandler: suggestHandler)
     }
     

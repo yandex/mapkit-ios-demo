@@ -56,7 +56,7 @@ class MapObjectsViewController: UIViewController {
         let animatedImage = YRTAnimatedImageProviderFactory.fromFile(
             Bundle.main.path(forResource: "Animations/animation", ofType: "apng")) as! YRTAnimatedImageProvider
         animatedRectangle.setAnimatedImageWithAnimatedImage(
-            animatedImage, patternWidth: 32, repeatMode: YMKPatternRepeatMode.repeat)
+            animatedImage, patternWidth: 32)
         
         let trianglePoints = [
             YMKPoint(

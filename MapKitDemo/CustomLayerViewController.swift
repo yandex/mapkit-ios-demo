@@ -45,7 +45,10 @@ class CustomLayerViewController: UIViewController {
             nightModeAvailable: true,
             cacheable: true,
             animateOnActivation: true,
-            overzoomMode: .enabled)
+            tileAppearingAnimationDuration: 0,
+            overzoomMode: .enabled,
+            transparent: false
+        )
 
         layer = mapView.mapWindow.map.addLayer(
             withLayerId: "mapkit_logo",
