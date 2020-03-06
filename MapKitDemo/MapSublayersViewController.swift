@@ -46,7 +46,7 @@ class MapSublayersViewController: UIViewController, YMKMapInputListener {
 
         // Example of conflict resolving
         if let sublayerIndex = map.sublayerManager.findFirstOf(
-            withLayerId: YMKLayerNames.mapObjectsLayerName(),
+            withLayerId: YMKLayerIds.mapObjectsLayerId(),
             featureType: .placemarks)?.uintValue
         {
             let sublayer = map.sublayerManager.getWithSublayerIndex(sublayerIndex)
@@ -75,14 +75,14 @@ class MapSublayersViewController: UIViewController, YMKMapInputListener {
     @IBAction func onSwitchSublayersButtonClicked() {
         // Example of changing the order of sublayers
         guard let buildingsSublayerIndex = map.sublayerManager.findFirstOf(
-            withLayerId: YMKLayerNames.buildingsLayerName(), featureType: .models)?.uintValue else
+            withLayerId: YMKLayerIds.buildingsLayerId(), featureType: .models)?.uintValue else
         {
             showAlertMessage(message: "Buildings sublayer not found!")
             return
         }
 
         guard let mapObjectGeometrySublayerIndex = map.sublayerManager.findFirstOf(
-            withLayerId: YMKLayerNames.mapObjectsLayerName(), featureType: .ground)?.uintValue else
+            withLayerId: YMKLayerIds.mapObjectsLayerId(), featureType: .ground)?.uintValue else
         {
             showAlertMessage(message: "MapObject ground sublayer not found!")
             return
