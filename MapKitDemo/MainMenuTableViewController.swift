@@ -5,6 +5,7 @@ class MainMenuTableViewController: UITableViewController {
         "Map",
         "MapObjects",
         "MapSublayers",
+        "Customization",
         "Driving",
         "UserLocation",
         "Search",
