@@ -38,6 +38,9 @@
 		E7E5C33C204FF261007842E3 /* PanoramaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E5C33B204FF261007842E3 /* PanoramaViewController.swift */; };
 		F923CC7024126D16006051F5 /* geo_json_example_template.json in Resources */ = {isa = PBXBuildFile; fileRef = F923CC6E24126D16006051F5 /* geo_json_example_template.json */; };
 		F923CC7124126D16006051F5 /* geo_json_style_example.json in Resources */ = {isa = PBXBuildFile; fileRef = F923CC6F24126D16006051F5 /* geo_json_style_example.json */; };
+		F923CC792419037B006051F5 /* Customization.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F923CC782419037B006051F5 /* Customization.storyboard */; };
+		F923CC7B2419038C006051F5 /* CustomizationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F923CC7A2419038C006051F5 /* CustomizationViewController.swift */; };
+		F923CC7D24191773006051F5 /* customization_example.json in Resources */ = {isa = PBXBuildFile; fileRef = F923CC7C24191773006051F5 /* customization_example.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -79,6 +82,9 @@
 		F07B97C545166E6AE0EA37B6 /* Pods-MapKitDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MapKitDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MapKitDemo/Pods-MapKitDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		F923CC6E24126D16006051F5 /* geo_json_example_template.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = geo_json_example_template.json; sourceTree = "<group>"; };
 		F923CC6F24126D16006051F5 /* geo_json_style_example.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = geo_json_style_example.json; sourceTree = "<group>"; };
+		F923CC782419037B006051F5 /* Customization.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Customization.storyboard; sourceTree = "<group>"; };
+		F923CC7A2419038C006051F5 /* CustomizationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomizationViewController.swift; sourceTree = "<group>"; };
+		F923CC7C24191773006051F5 /* customization_example.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = customization_example.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +111,7 @@
 		5CC9509322149DCC00C41B3B /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				F923CC7C24191773006051F5 /* customization_example.json */,
 				F923CC6E24126D16006051F5 /* geo_json_example_template.json */,
 				F923CC6F24126D16006051F5 /* geo_json_style_example.json */,
 			);
@@ -173,6 +180,8 @@
 				5CC95090221491C800C41B3B /* GeoJsonViewController.swift */,
 				E7DE519722560B67006B559C /* Clustering.storyboard */,
 				E7DE519522560A83006B559C /* ClusteringViewController.swift */,
+				F923CC782419037B006051F5 /* Customization.storyboard */,
+				F923CC7A2419038C006051F5 /* CustomizationViewController.swift */,
 			);
 			path = MapKitDemo;
 			sourceTree = "<group>";
@@ -241,6 +250,7 @@
 			files = (
 				E7E5C332204FDB59007842E3 /* Driving.storyboard in Resources */,
 				E7E5C33A204FF234007842E3 /* Panorama.storyboard in Resources */,
+				F923CC792419037B006051F5 /* Customization.storyboard in Resources */,
 				E7DE519822560B67006B559C /* Clustering.storyboard in Resources */,
 				5CC9508F2214919000C41B3B /* GeoJson.storyboard in Resources */,
 				E7A2503420501ECF0022D9B3 /* UserLocation.storyboard in Resources */,
@@ -254,6 +264,7 @@
 				E73A65E4204E9E060056E380 /* Main.storyboard in Resources */,
 				E76593462056BE01006AB315 /* Animations in Resources */,
 				E7E5C336204FE6F2007842E3 /* MapObjects.storyboard in Resources */,
+				F923CC7D24191773006051F5 /* customization_example.json in Resources */,
 				F923CC7124126D16006051F5 /* geo_json_style_example.json in Resources */,
 				E7773DCC204EAB0B0088FB88 /* Map.storyboard in Resources */,
 			);
@@ -317,6 +328,7 @@
 			files = (
 				E7E5C334204FDBAE007842E3 /* DrivingViewController.swift in Sources */,
 				E7A2503620501EED0022D9B3 /* UserLocationViewController.swift in Sources */,
+				F923CC7B2419038C006051F5 /* CustomizationViewController.swift in Sources */,
 				E7B58E342050031200D95768 /* SearchViewController.swift in Sources */,
 				E7DE519622560A83006B559C /* ClusteringViewController.swift in Sources */,
 				E7A2503A20502CB30022D9B3 /* SuggestTableViewController.swift in Sources */,
