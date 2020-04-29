@@ -15,7 +15,7 @@ class UserLocationViewController: UIViewController, YMKUserLocationObjectListene
             YMKCameraPosition(target: YMKPoint(latitude: 0, longitude: 0), zoom: 14, azimuth: 0, tilt: 0))
         
         let scale = UIScreen.main.scale
-        let mapKit = YMKMapKit.sharedInstance()!
+        let mapKit = YMKMapKit.sharedInstance()
         let userLocationLayer = mapKit.createUserLocationLayer(with: mapView.mapWindow)
 
         userLocationLayer.setVisibleWithOn(true)

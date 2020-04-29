@@ -12,7 +12,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     let MAPKIT_API_KEY = "your_api_key"
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        /**
+         * Set API key before interaction with MapKit.
+         */
         YMKMapKit.setApiKey(MAPKIT_API_KEY)
+
+        /**
+         * You can optionaly customize  locale.
+         * Otherwise MapKit will use default location.
+         */
+        YMKMapKit.setLocale("en_US")
 
         return true
     }
