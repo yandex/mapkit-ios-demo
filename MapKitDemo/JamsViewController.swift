@@ -13,7 +13,7 @@ class JamsViewController: UIViewController, YMKMapCameraListener, YMKTrafficDele
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        trafficLayer = YMKMapKit.sharedInstance()?.createTrafficLayer(with: mapView.mapWindow)
+        trafficLayer = YMKMapKit.sharedInstance().createTrafficLayer(with: mapView.mapWindow)
         trafficLayer.addTrafficListener(withTrafficListener: self)
         mapView.mapWindow.map.addCameraListener(with: self)
         
