@@ -13,7 +13,8 @@ class MainMenuTableViewController: UITableViewController {
         "Panorama",
         "CustomLayer",
         "GeoJson",
-        "Clustering"]
+        "Clustering",
+        "Jams"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
