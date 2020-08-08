@@ -14,7 +14,8 @@ class MainMenuTableViewController: UITableViewController {
         "CustomLayer",
         "GeoJson",
         "Clustering",
-        "Jams"]
+        "Jams",
+        "MapSelection"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
