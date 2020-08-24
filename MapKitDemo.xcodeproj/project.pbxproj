@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		5C1086C823310BA2008BAAE5 /* MapSublayers.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C1086C723310BA2008BAAE5 /* MapSublayers.storyboard */; };
 		5C1086CA23310C1F008BAAE5 /* MapSublayersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C1086C923310C1F008BAAE5 /* MapSublayersViewController.swift */; };
+		5CB3FE1324DE3E5C005BC102 /* MapSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CB3FE1224DE3E5C005BC102 /* MapSelectionViewController.swift */; };
+		5CB3FE1524DE4682005BC102 /* MapSelection.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5CB3FE1424DE4682005BC102 /* MapSelection.storyboard */; };
 		5CC9508F2214919000C41B3B /* GeoJson.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5CC9508E2214919000C41B3B /* GeoJson.storyboard */; };
 		5CC95091221491C800C41B3B /* GeoJsonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC95090221491C800C41B3B /* GeoJsonViewController.swift */; };
 		8CF2478621228305DB1032C6 /* Pods_MapKitDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FF4BDC2D6DBEE64AE16860B /* Pods_MapKitDemo.framework */; };
@@ -51,6 +53,8 @@
 		5BE8D89165E82A9A8968421C /* Pods-MapkitSample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MapkitSample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MapkitSample/Pods-MapkitSample.debug.xcconfig"; sourceTree = "<group>"; };
 		5C1086C723310BA2008BAAE5 /* MapSublayers.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MapSublayers.storyboard; sourceTree = "<group>"; };
 		5C1086C923310C1F008BAAE5 /* MapSublayersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapSublayersViewController.swift; sourceTree = "<group>"; };
+		5CB3FE1224DE3E5C005BC102 /* MapSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapSelectionViewController.swift; sourceTree = "<group>"; };
+		5CB3FE1424DE4682005BC102 /* MapSelection.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MapSelection.storyboard; sourceTree = "<group>"; };
 		5CC9508E2214919000C41B3B /* GeoJson.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = GeoJson.storyboard; sourceTree = "<group>"; };
 		5CC95090221491C800C41B3B /* GeoJsonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeoJsonViewController.swift; sourceTree = "<group>"; };
 		6F9A4B09E5BEDE145BF78E92 /* Pods-MapKitDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MapKitDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-MapKitDemo/Pods-MapKitDemo.release.xcconfig"; sourceTree = "<group>"; };
@@ -188,6 +192,8 @@
 				BDB95B8D2397FE4D00BC2EBF /* JamsViewController.swift */,
 				F923CC782419037B006051F5 /* Customization.storyboard */,
 				F923CC7A2419038C006051F5 /* CustomizationViewController.swift */,
+				5CB3FE1224DE3E5C005BC102 /* MapSelectionViewController.swift */,
+				5CB3FE1424DE4682005BC102 /* MapSelection.storyboard */,
 			);
 			path = MapKitDemo;
 			sourceTree = "<group>";
@@ -258,7 +264,6 @@
 				E7E5C33A204FF234007842E3 /* Panorama.storyboard in Resources */,
 				F923CC792419037B006051F5 /* Customization.storyboard in Resources */,
 				E7DE519822560B67006B559C /* Clustering.storyboard in Resources */,
-				5CC9509722149E3800C41B3B /* geo_json_example.geojson in Resources */,
 				BDB95B8C2397FDF800BC2EBF /* Jams.storyboard in Resources */,
 				5CC9508F2214919000C41B3B /* GeoJson.storyboard in Resources */,
 				E7A2503420501ECF0022D9B3 /* UserLocation.storyboard in Resources */,
@@ -272,6 +277,7 @@
 				E73A65E4204E9E060056E380 /* Main.storyboard in Resources */,
 				E76593462056BE01006AB315 /* Animations in Resources */,
 				E7E5C336204FE6F2007842E3 /* MapObjects.storyboard in Resources */,
+				5CB3FE1524DE4682005BC102 /* MapSelection.storyboard in Resources */,
 				F923CC7D24191773006051F5 /* customization_example.json in Resources */,
 				F923CC7124126D16006051F5 /* geo_json_style_example.json in Resources */,
 				E7773DCC204EAB0B0088FB88 /* Map.storyboard in Resources */,
@@ -349,6 +355,7 @@
 				E779F00E204EDC5200750E10 /* MainMenuTableViewController.swift in Sources */,
 				E7E5C33C204FF261007842E3 /* PanoramaViewController.swift in Sources */,
 				5C1086CA23310C1F008BAAE5 /* MapSublayersViewController.swift in Sources */,
+				5CB3FE1324DE3E5C005BC102 /* MapSelectionViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
