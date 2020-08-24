@@ -3,7 +3,7 @@ import Foundation
 import YandexMapKit
 
 /**
- * This example show how to activate selection.
+ * This example shows how to activate selection.
  */
 class MapSelectionViewController: UIViewController, YMKLayersGeoObjectTapListener, YMKMapInputListener {
     @IBOutlet weak var mapView: YMKMapView!
