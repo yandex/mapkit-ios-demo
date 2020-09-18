@@ -1,5 +1,5 @@
 import UIKit
-import YandexMapKit
+import YandexMapsMobile
 
 /**
  * This example shows how to display and customize user location arrow on the map.

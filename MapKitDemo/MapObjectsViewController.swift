@@ -1,5 +1,5 @@
 import UIKit
-import YandexMapKit
+import YandexMapsMobile
 
 /**
  * This example shows how to add simple objects such as polygons, circles and polylines to the map.

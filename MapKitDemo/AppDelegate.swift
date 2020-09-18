@@ -1,5 +1,5 @@
 import UIKit
-import YandexMapKit
+import YandexMapsMobile
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {

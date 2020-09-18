@@ -1,5 +1,5 @@
 import UIKit
-import YandexMapKit
+import YandexMapsMobile
 
 /**
  * This example shows how to reorder sublayers and use conflict resolving.

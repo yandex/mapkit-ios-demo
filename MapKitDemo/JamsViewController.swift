@@ -1,5 +1,5 @@
 import UIKit
-import YandexMapKit
+import YandexMapsMobile
 
 /**
  * This example shows how to add layer traffic on the map.
@@ -28,7 +28,7 @@ class JamsViewController: UIViewController, YMKMapCameraListener, YMKTrafficDele
     
     func onCameraPositionChanged(with map: YMKMap,
                                  cameraPosition: YMKCameraPosition,
-                                 cameraUpdateSource: YMKCameraUpdateSource,
+                                 cameraUpdateReason: YMKCameraUpdateReason,
                                  finished: Bool) {
     }
     

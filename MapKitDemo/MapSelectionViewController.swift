@@ -1,6 +1,6 @@
 import UIKit
 import Foundation
-import YandexMapKit
+import YandexMapsMobile
 
 /**
  * This example shows how to activate selection.

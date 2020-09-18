@@ -1,6 +1,6 @@
 import Foundation
 import UIKit
-import YandexMapKit
+import YandexMapsMobile
 
 /**
  * This example shows how to add a collection of clusterized placemarks to the map.

@@ -8,7 +8,7 @@
         "coordinates": [@POINT_X@, @POINT_Y@]
       },
       "properties": {
-        "tags": ["point"]
+        "layer": "point"
       }
     },
     {
@@ -22,7 +22,7 @@
           [@LINE_X3@, @LINE_Y3@]]
       },
       "properties": {
-        "tags": ["line"]
+        "layer": "line"
       }
     },
     {
@@ -37,7 +37,7 @@
         ]]
       },
       "properties": {
-        "tags": ["polygon"]
+        "layer": "polygon"
       }
     },
     {
@@ -52,7 +52,7 @@
         ]]
       },
       "properties": {
-        "tags": ["textured-polygon"]
+        "layer": "textured-polygon"
       }
     }
   ]

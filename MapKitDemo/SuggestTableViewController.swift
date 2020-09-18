@@ -1,6 +1,5 @@
 import UIKit
-import YandexMapKit
-import YandexMapKitSearch
+import YandexMapsMobile
 
 class SuggestCell: UITableViewCell {
     @IBOutlet weak var itemName: UILabel!

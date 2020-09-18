@@ -1,7 +1,5 @@
 import UIKit
-import YandexRuntime
-import YandexMapKit
-import YandexMapKitDirections
+import YandexMapsMobile
 
 /**
  * This example shows how to build routes between two points and display them on the map.
@@ -39,6 +37,7 @@ class DrivingViewController: UIViewController {
         drivingSession = drivingRouter.requestRoutes(
             with: requestPoints,
             drivingOptions: YMKDrivingDrivingOptions(),
+            vehicleOptions: YMKDrivingVehicleOptions(),
             routeHandler: responseHandler)
     }
     

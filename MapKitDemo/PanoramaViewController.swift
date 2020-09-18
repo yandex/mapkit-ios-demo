@@ -1,6 +1,5 @@
 import UIKit
-import YandexMapKit
-import YandexMapKitPlaces
+import YandexMapsMobile
 
 /**
  * This example shows how to find a panorama that is nearest to a given point and display it

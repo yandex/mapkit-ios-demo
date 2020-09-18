@@ -1,5 +1,5 @@
 import UIKit
-import YandexMapKit
+import YandexMapsMobile
 
 /**
  * This example shows how to add a user-defined layer to the map.
@@ -33,7 +33,7 @@ class CustomLayerViewController: UIViewController {
 
     // Client code must retain strong references to providers and projection
     let tilesUrlProvider = CustomTilesUrlProvider()
-    let projection = YMKCreateWgs84Mercator()
+    let projection = YMKProjections.wgs84Mercator()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -56,7 +56,7 @@ class CustomLayerViewController: UIViewController {
             layerOptions: layerOptions,
             tileUrlProvider: tilesUrlProvider,
             imageUrlProvider: DummyUrlProvider(),
-            projection: projection!)
+            projection: projection)
 
         layer!.invalidate(withVersion: "0.0.0")
     }

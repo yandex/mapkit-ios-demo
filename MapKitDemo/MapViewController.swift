@@ -1,6 +1,6 @@
 import UIKit
 import Foundation
-import YandexMapKit
+import YandexMapsMobile
 
 /**
  * This is a basic example that displays a map and sets camera focus on the target location.

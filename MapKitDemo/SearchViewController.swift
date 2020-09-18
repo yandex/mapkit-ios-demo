@@ -1,6 +1,5 @@
 import UIKit
-import YandexMapKit
-import YandexMapKitSearch
+import YandexMapsMobile
 
 /**
  * This example shows how to add and interact with a layer that displays search results on the map.
@@ -28,7 +27,7 @@ class SearchViewController: UIViewController, YMKMapCameraListener {
     
     func onCameraPositionChanged(with map: YMKMap,
                                  cameraPosition: YMKCameraPosition,
-                                 cameraUpdateSource: YMKCameraUpdateSource,
+                                 cameraUpdateReason: YMKCameraUpdateReason,
                                  finished: Bool) {
         if finished {
             let responseHandler = {(searchResponse: YMKSearchResponse?, error: Error?) -> Void in

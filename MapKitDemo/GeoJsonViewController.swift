@@ -1,6 +1,6 @@
 import UIKit
 import Foundation
-import YandexMapKit
+import YandexMapsMobile
 
 /**
  * This example shows how to add layer with simple objects such as points, polylines, polygons
@@ -38,7 +38,7 @@ class GeoJsonViewController: UIViewController {
         
         private static let MAX_ZOOM: Int = 30
         
-        let projection: YMKProjection = YMKCreateWgs84Mercator()
+        let projection: YMKProjection = YMKProjections.wgs84Mercator()
 
         override init() {
             self.geoJsonTemplate = GeoJsonViewController.readRawJson(resourceName: "geo_json_example_template")!
