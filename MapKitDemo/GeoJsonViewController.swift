@@ -118,10 +118,13 @@ class GeoJsonViewController: UIViewController {
     private func createGeoJsonLayer() {
         let style: String! = GeoJsonViewController.readRawJson(resourceName: "geo_json_style_example")
         
+        let layerOptions = YMKLayerOptions()
+        layerOptions.nightModeAvailable = true
+
         let layer: YMKLayer? = mapView.mapWindow.map.addGeoJSONLayer(
             withLayerId: "geo_json_layer",
             style: style,
-            layerOptions: YMKLayerOptions(),
+            layerOptions: layerOptions,
             tileProvider: tileProvider,
             imageUrlProvider: urlProvider,
             projection: tileProvider.projection,
