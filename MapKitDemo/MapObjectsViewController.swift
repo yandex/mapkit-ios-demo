@@ -14,6 +14,7 @@ class MapObjectsViewController: UIViewController {
     let POLYLINE_CENTER = YMKPoint(latitude: 59.952, longitude: 30.318)
     let CIRCLE_CENTER = YMKPoint(latitude: 59.956, longitude: 30.323)
     let DRAGGABLE_PLACEMARK_CENTER = YMKPoint(latitude: 59.948, longitude: 30.323)
+    let ANIMATED_PLACEMARK_CENTER = YMKPoint(latitude: 59.948, longitude: 30.318)
     let OBJECT_SIZE: Double = 0.0015
 
     private var animationIsActive = true
@@ -54,7 +55,7 @@ class MapObjectsViewController: UIViewController {
         animatedRectangle.fillColor = UIColor.clear
         animatedRectangle.strokeColor = UIColor.clear
         let animatedImage = YRTAnimatedImageProviderFactory.fromFile(
-            Bundle.main.path(forResource: "Animations/animation", ofType: "apng")) as! YRTAnimatedImageProvider
+            Bundle.main.path(forResource: "Animations/animation", ofType: "png")) as! YRTAnimatedImageProvider
         animatedRectangle.setAnimatedImageWithAnimatedImage(
             animatedImage, patternWidth: 32)
         
@@ -128,6 +129,7 @@ class MapObjectsViewController: UIViewController {
         placemark.setIconWith(UIImage(named:"Mark")!)
 
         createPlacemarkMapObjectWithViewProvider();
+        createAnimatedPlacemark();
     }
 
     private class CircleMapObjectTapListener: NSObject, YMKMapObjectTapListener {
@@ -226,5 +228,13 @@ class MapObjectsViewController: UIViewController {
 
             doMainLoop();
         }
+    }
+    
+    func createAnimatedPlacemark() {
+        let animatedImageProvider = YRTAnimatedImageProviderFactory.fromFile(
+            Bundle.main.path(forResource: "Animations/animation", ofType: "png")) as! YRTAnimatedImageProvider
+        let mapObjects = mapView.mapWindow.map.mapObjects;
+        let animatedPlacemark = mapObjects.addPlacemark(with: ANIMATED_PLACEMARK_CENTER, animatedImage: animatedImageProvider, style: YMKIconStyle())
+        animatedPlacemark.useAnimation().play()
     }
 }
