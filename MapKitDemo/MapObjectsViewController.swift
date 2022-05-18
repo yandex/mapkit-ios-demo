@@ -92,7 +92,7 @@ class MapObjectsViewController: UIViewController {
                 longitude: POLYLINE_CENTER.longitude + OBJECT_SIZE)
         ]
         let polyline = mapObjects.addPolyline(with: YMKPolyline(points: polylinePoints))
-        polyline.strokeColor = UIColor.black
+        polyline.setStrokeColorWith(UIColor.black)
         polyline.zIndex = 100
 
         let coloredPolylinePoints = [
@@ -110,13 +110,13 @@ class MapObjectsViewController: UIViewController {
                 longitude:  30.321622)
         ]
 
-        let coloredPolyline = mapObjects.addColoredPolyline(with: YMKPolyline(points: coloredPolylinePoints))
+        let coloredPolyline = mapObjects.addPolyline(with: YMKPolyline(points: coloredPolylinePoints))
         
         // lets define colors for each polyline segment
         coloredPolyline.setPaletteColorWithColorIndex(0, color: UIColor.yellow)
         coloredPolyline.setPaletteColorWithColorIndex(1, color: UIColor.green)
         coloredPolyline.setPaletteColorWithColorIndex(2, color: UIColor.purple)
-        coloredPolyline.setColorsWithColors([0, 1, 2])
+        coloredPolyline.setStrokeColorsWithColors([0, 1, 2])
 
         // Maximum pgradient length in screen points.
         coloredPolyline.gradientLength = 250

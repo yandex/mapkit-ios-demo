@@ -47,15 +47,12 @@ class MapSublayersViewController: UIViewController, YMKMapInputListener {
         // Example of conflict resolving
         if let sublayerIndex = map.sublayerManager.findFirstOf(
             withLayerId: YMKLayerIds.mapObjectsLayerId(),
-            featureType: .placemarks)?.uintValue
+            featureType: .placemarksAndLabels)?.uintValue
         {
             let sublayer = map.sublayerManager.getWithSublayerIndex(sublayerIndex)
 
-            // The placemarks from lower sublayers will be displaced in case of conflict
-            sublayer?.modeAgainstPlacemarks = .major
-
-            // The labels from lower sublayers will be displaced in case of conflict
-            sublayer?.modeAgainstLabels = .major
+            // The placemarks and labels from lower sublayers will be displaced in case of conflict
+            sublayer?.conflictResolutionMode = .major
         }
 
         map.addInputListener(with: self)
