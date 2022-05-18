@@ -11,9 +11,9 @@ class GeoJsonViewController: UIViewController {
 
     let CAMERA_TARGET = YMKPoint(latitude: 59.952, longitude: 30.318)
 
-    internal class CustomResourceUrlProvider: NSObject, YMKResourceUrlProvider {
-        public func formatUrl(withResourceId resourceId: String) -> String {
-            return "https://raw.githubusercontent.com/yandex/mapkit-ios-demo/master/MapKitDemo/\(resourceId)"
+    internal class CustomImagesUrlProvider: NSObject, YMKImagesImageUrlProvider {
+        func formatUrl(with descriptor: YMKImagesImageDataDescriptor) -> String {
+            return "https://raw.githubusercontent.com/yandex/mapkit-ios-demo/master/MapKitDemo/\(descriptor.imageId)"
         }
     }
 
@@ -102,7 +102,7 @@ class GeoJsonViewController: UIViewController {
     }
 
     // Client code must retain strong references to providers and projection
-    let urlProvider: YMKResourceUrlProvider = CustomResourceUrlProvider()
+    let urlProvider: YMKImagesImageUrlProvider = CustomImagesUrlProvider()
     let tileProvider: CustomTileProvider = CustomTileProvider()
 
     override func viewDidLoad() {

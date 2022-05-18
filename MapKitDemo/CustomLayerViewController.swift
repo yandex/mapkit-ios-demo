@@ -55,7 +55,7 @@ class CustomLayerViewController: UIViewController {
             contentType: "image/png",
             layerOptions: layerOptions,
             tileUrlProvider: tilesUrlProvider,
-            imageUrlProvider: DummyUrlProvider(),
+            imageUrlProvider: YMKImagesDefaultUrlProvider(),
             projection: projection)
 
         layer!.invalidate(withVersion: "0.0.0")
