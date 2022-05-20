@@ -22,6 +22,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
          * Otherwise MapKit will use default location.
          */
         YMKMapKit.setLocale("en_US")
+        
+        /**
+         * If you create instance of YMKMapKit not in application:didFinishLaunchingWithOptions: 
+         * you should also explicitly call YMKMapKit.sharedInstance().onStart()
+         */
+        YMKMapKit.sharedInstance()
 
         return true
     }
