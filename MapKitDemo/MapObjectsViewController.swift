@@ -5,8 +5,7 @@ import YandexMapsMobile
  * This example shows how to add simple objects such as polygons, circles and polylines to the map.
  * It also shows how to display images instead.
  */
-class MapObjectsViewController: UIViewController {
-    @IBOutlet weak var mapView: YMKMapView!
+class MapObjectsViewController: BaseMapViewController {
     
     let CAMERA_TARGET = YMKPoint(latitude: 59.952, longitude: 30.318)
     let ANIMATED_RECTANGLE_CENTER = YMKPoint(latitude: 59.956, longitude: 30.313)

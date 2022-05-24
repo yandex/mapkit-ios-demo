@@ -5,8 +5,7 @@ import YandexMapsMobile
 /**
  * This example shows how to activate selection.
  */
-class MapSelectionViewController: UIViewController, YMKLayersGeoObjectTapListener, YMKMapInputListener {
-    @IBOutlet weak var mapView: YMKMapView!
+class MapSelectionViewController: BaseMapViewController, YMKLayersGeoObjectTapListener, YMKMapInputListener {
     
     let TARGET_LOCATION = YMKPoint(latitude: 59.936760, longitude: 30.314673)
     

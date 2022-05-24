@@ -9,13 +9,16 @@ import YandexMapsMobile
  * Learn more at https://tech.yandex.ru/mapkit/doc/3.x/concepts/conditions-docpage/#conditions__limits
  */
 class PanoramaViewController: UIViewController {
-    @IBOutlet weak var panoView: YMKPanoView!
+    var panoView: YMKPanoView!
     var panoramaSession: YMKPanoramaServiceSearchSession?
     
     let SEARCH_LOCATION = YMKPoint(latitude: 55.733330, longitude: 37.587649)
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        panoView = YMKPanoView(frame: self.view.frame, vulkanPreferred: BaseMapView.isM1Simulator())
+        self.view.addSubview(panoView)
         
         let responseHandler = {(panoramaIdResponse: String?, error: Error?) -> Void in
             if let panoramaId = panoramaIdResponse {

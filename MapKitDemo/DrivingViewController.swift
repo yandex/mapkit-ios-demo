@@ -6,8 +6,8 @@ import YandexMapsMobile
  * Note: Routing API calls count towards MapKit daily usage limits. Learn more at
  * https://tech.yandex.ru/mapkit/doc/3.x/concepts/conditions-docpage/#conditions__limits
  */
-class DrivingViewController: UIViewController {
-    @IBOutlet weak var mapView: YMKMapView!
+class DrivingViewController: BaseMapViewController {
+
     var drivingSession: YMKDrivingSession?
     
     let ROUTE_START_POINT = YMKPoint(latitude: 59.959194, longitude: 30.407094)

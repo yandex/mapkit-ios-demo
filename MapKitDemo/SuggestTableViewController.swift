@@ -8,7 +8,7 @@ class SuggestCell: UITableViewCell {
 /**
  * This example shows how to request a suggest for search requests.
  */
-class SuggestViewController: UIViewController, UITableViewDataSource {
+class SuggestViewController: BaseMapViewController, UITableViewDataSource {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var searchBar: UITextField!
     

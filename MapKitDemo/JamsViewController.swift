@@ -4,9 +4,8 @@ import YandexMapsMobile
 /**
  * This example shows how to add layer traffic on the map.
  */
-class JamsViewController: UIViewController, YMKMapCameraListener, YMKTrafficDelegate {
+class JamsViewController: BaseMapViewController, YMKMapCameraListener, YMKTrafficDelegate {
 
-    @IBOutlet weak var mapView: YMKMapView!
     @IBOutlet weak var trafficButton: UISwitch!
     @IBOutlet weak var trafficLabel: UILabel!
     var trafficLayer : YMKTrafficLayer!
