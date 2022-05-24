@@ -6,8 +6,7 @@ import YandexMapsMobile
  * This example shows how to add layer with simple objects such as points, polylines, polygons
  * to the map using GeoJSON format.
  */
-class GeoJsonViewController: UIViewController {
-    @IBOutlet weak var mapView: YMKMapView!
+class GeoJsonViewController: BaseMapViewController {
 
     let CAMERA_TARGET = YMKPoint(latitude: 59.952, longitude: 30.318)
 

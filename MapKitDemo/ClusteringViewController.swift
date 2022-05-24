@@ -5,8 +5,8 @@ import YandexMapsMobile
 /**
  * This example shows how to add a collection of clusterized placemarks to the map.
  */
-class ClusteringViewController : UIViewController, YMKClusterListener, YMKClusterTapListener {
-    @IBOutlet weak var mapView: YMKMapView!
+class ClusteringViewController : BaseMapViewController, YMKClusterListener, YMKClusterTapListener {
+
     private var imageProvider = UIImage(named: "SearchResult")!
     private let CLUSTER_CENTERS: [YMKPoint] = [
         YMKPoint(latitude: 55.756, longitude: 37.618),

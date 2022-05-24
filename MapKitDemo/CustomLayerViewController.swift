@@ -7,8 +7,7 @@ import YandexMapsMobile
  * tiles. For simplicity, we ignore map coordinates and zoom here, and
  * just provide a URL for the static image.
  */
-class CustomLayerViewController: UIViewController {
-    @IBOutlet weak var mapView: YMKMapView!
+class CustomLayerViewController: BaseMapViewController {
     
     var layer: YMKLayer?
 

@@ -6,8 +6,8 @@ import YandexMapsMobile
  * Note: search API calls count towards MapKit daily usage limits. Learn more at
  * https://tech.yandex.ru/mapkit/doc/3.x/concepts/conditions-docpage/#conditions__limits
  */
-class SearchViewController: UIViewController, YMKMapCameraListener {
-    @IBOutlet weak var mapView: YMKMapView!
+class SearchViewController: BaseMapViewController, YMKMapCameraListener {
+
     var searchManager: YMKSearchManager?
     var searchSession: YMKSearchSession?
     

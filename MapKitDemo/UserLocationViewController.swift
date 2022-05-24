@@ -4,8 +4,7 @@ import YandexMapsMobile
 /**
  * This example shows how to display and customize user location arrow on the map.
  */
-class UserLocationViewController: UIViewController, YMKUserLocationObjectListener {
-    @IBOutlet weak var mapView: YMKMapView!
+class UserLocationViewController: BaseMapViewController, YMKUserLocationObjectListener {
     
     override func viewDidLoad() {
         super.viewDidLoad()

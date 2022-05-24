@@ -7,8 +7,7 @@ import YandexMapsMobile
  * You need to specify your API key in the AppDelegate.swift file before working with the map.
  * Note: When working on your projects, remember to request the required permissions.
  */
-class MapViewController: UIViewController {
-    @IBOutlet weak var mapView: YMKMapView!
+class MapViewController: BaseMapViewController {
     
     let TARGET_LOCATION = YMKPoint(latitude: 59.945933, longitude: 30.320045)
     

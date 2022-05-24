@@ -4,8 +4,7 @@ import YandexMapsMobile
 /**
  * This example shows how to reorder sublayers and use conflict resolving.
  */
-class MapSublayersViewController: UIViewController, YMKMapInputListener {
-    @IBOutlet var mapView: YMKMapView!
+class MapSublayersViewController: BaseMapViewController, YMKMapInputListener {
 
     @IBOutlet var switchSublayersOrderButton: UIButton!
     struct SwitchSublayerOrderButtonTitle {
