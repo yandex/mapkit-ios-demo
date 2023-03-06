@@ -1,6 +1,8 @@
 import UIKit
 
 class MainMenuTableViewController: UITableViewController {
+    
+    #if FULL_VERSION
     let STORYBOARDS = [
         "Map",
         "MapObjects",
@@ -16,6 +18,19 @@ class MainMenuTableViewController: UITableViewController {
         "Clustering",
         "Jams",
         "MapSelection"]
+    #else
+    let STORYBOARDS = [
+        "Map",
+        "MapObjects",
+        "MapSublayers",
+        "Customization",
+        "UserLocation",
+        "CustomLayer",
+        "GeoJson",
+        "Clustering",
+        "Jams",
+        "MapSelection"]
+    #endif
     
     override func viewDidLoad() {
         super.viewDidLoad()

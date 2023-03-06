@@ -23,7 +23,7 @@ class BaseMapView: UIView {
         contentView.frame = self.bounds
         // OpenGl is deprecated under M1 simulator, we should use Vulkan
         mapView = YMKMapView(frame: bounds, vulkanPreferred: BaseMapView.isM1Simulator())
-        mapView.mapWindow.map.mapType = .map
+        mapView.mapWindow.map.mapType = .vectorMap
         contentView.insertSubview(mapView, at: 0)
     }
 
