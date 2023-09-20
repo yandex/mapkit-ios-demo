@@ -21,8 +21,12 @@ class DrivingViewController: BaseMapViewController {
             with: YMKCameraPosition(target: CAMERA_TARGET, zoom: 6, azimuth: 0, tilt: 0))
         
         let requestPoints : [YMKRequestPoint] = [
-            YMKRequestPoint(point: ROUTE_START_POINT, type: .waypoint, pointContext: nil),
-            YMKRequestPoint(point: ROUTE_END_POINT, type: .waypoint, pointContext: nil),
+            YMKRequestPoint(
+                point: ROUTE_START_POINT, type: .waypoint,
+                pointContext: nil, drivingArrivalPointId: nil),
+            YMKRequestPoint(
+                point: ROUTE_END_POINT, type: .waypoint,
+                pointContext: nil, drivingArrivalPointId: nil),
             ]
         
         let responseHandler = {(routesResponse: [YMKDrivingRoute]?, error: Error?) -> Void in

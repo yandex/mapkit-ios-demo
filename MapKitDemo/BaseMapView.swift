@@ -21,14 +21,8 @@ class BaseMapView: UIView {
         Bundle.main.loadNibNamed("BaseMapView", owner: self, options: nil)
         addSubview(contentView)
         contentView.frame = self.bounds
-        // OpenGl is deprecated under M1 simulator, we should use Vulkan
-        mapView = YMKMapView(frame: bounds, vulkanPreferred: BaseMapView.isM1Simulator())
+        mapView = YMKMapView(frame: bounds, vulkanPreferred: true)
         mapView.mapWindow.map.mapType = .vectorMap
         contentView.insertSubview(mapView, at: 0)
-    }
-
-    static func isM1Simulator() -> Bool
-    {
-        return (TARGET_IPHONE_SIMULATOR & TARGET_CPU_ARM64) != 0
     }
 }

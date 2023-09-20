@@ -4,9 +4,9 @@ class MainMenuTableViewController: UITableViewController {
     
     #if FULL_VERSION
     let STORYBOARDS = [
+        "About",
         "Map",
         "MapObjects",
-        "MapSublayers",
         "Customization",
         "Driving",
         "UserLocation",
@@ -14,19 +14,17 @@ class MainMenuTableViewController: UITableViewController {
         "Suggest",
         "Panorama",
         "CustomLayer",
-        "GeoJson",
         "Clustering",
         "Jams",
         "MapSelection"]
     #else
     let STORYBOARDS = [
+        "About",
         "Map",
         "MapObjects",
-        "MapSublayers",
         "Customization",
         "UserLocation",
         "CustomLayer",
-        "GeoJson",
         "Clustering",
         "Jams",
         "MapSelection"]

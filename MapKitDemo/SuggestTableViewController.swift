@@ -49,8 +49,8 @@ class SuggestViewController: BaseMapViewController, UITableViewDataSource {
     
     @IBAction func queryChanged(_ sender: UITextField) {
         let suggestHandler = {(response: [YMKSuggestItem]?, error: Error?) -> Void in
-            if let items = response {
-                self.onSuggestResponse(items)
+            if let resp = response {
+                self.onSuggestResponse(resp)
             } else {
                 self.onSuggestError(error!)
             }

@@ -14,7 +14,7 @@ class MapSelectionViewController: BaseMapViewController, YMKLayersGeoObjectTapLi
         
         mapView.mapWindow.map.move(
             with: YMKCameraPosition(target: TARGET_LOCATION, zoom: 17, azimuth: 0, tilt: 0),
-            animationType: YMKAnimation(type: YMKAnimationType.smooth, duration: 1),
+            animation: YMKAnimation(type: YMKAnimationType.smooth, duration: 1),
             cameraCallback: nil)
         
         mapView.mapWindow.map.addTapListener(with: self)
@@ -25,7 +25,7 @@ class MapSelectionViewController: BaseMapViewController, YMKLayersGeoObjectTapLi
         let event = with
         let metadata = event.geoObject.metadataContainer.getItemOf(YMKGeoObjectSelectionMetadata.self)
         if let selectionMetadata = metadata as? YMKGeoObjectSelectionMetadata {
-            mapView.mapWindow.map.selectGeoObject(withObjectId: selectionMetadata.id, layerId: selectionMetadata.layerId)
+            mapView.mapWindow.map.selectGeoObject(withSelectionMetaData:selectionMetadata)
             return true
         }
         return false

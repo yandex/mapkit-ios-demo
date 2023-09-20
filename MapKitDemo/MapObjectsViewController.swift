@@ -55,8 +55,8 @@ class MapObjectsViewController: BaseMapViewController {
         animatedRectangle.strokeColor = UIColor.clear
         let animatedImage = YRTAnimatedImageProviderFactory.fromFile(
             Bundle.main.path(forResource: "Animations/animation", ofType: "png")) as! YRTAnimatedImageProvider
-        animatedRectangle.setAnimatedImageWithAnimatedImage(
-            animatedImage, patternWidth: 32)
+        animatedRectangle.setPatternWithAnimatedImage(
+            animatedImage, scale: 1)
         
         let trianglePoints = [
             YMKPoint(
@@ -122,7 +122,8 @@ class MapObjectsViewController: BaseMapViewController {
         coloredPolyline.strokeWidth = 15
         coloredPolyline.zIndex = 100
 
-        let placemark = mapObjects.addPlacemark(with: DRAGGABLE_PLACEMARK_CENTER)
+        let placemark = mapObjects.addPlacemark()
+        placemark.geometry = DRAGGABLE_PLACEMARK_CENTER
         placemark.opacity = 0.5
         placemark.isDraggable = true
         placemark.setIconWith(UIImage(named:"Mark")!)
@@ -172,11 +173,10 @@ class MapObjectsViewController: BaseMapViewController {
 
     func createTappableCircle() {
         let mapObjects = mapView.mapWindow.map.mapObjects;
-        let circle = mapObjects.addCircle(
-            with: YMKCircle(center: CIRCLE_CENTER, radius: 100),
-            stroke: UIColor.green,
-            strokeWidth: 2,
-            fill: UIColor.red)
+        let circle = mapObjects.addCircle(with: YMKCircle(center: CIRCLE_CENTER, radius: 100))
+        circle.strokeColor = UIColor.green
+        circle.strokeWidth = 2
+        circle.fillColor = UIColor.red
         circle.zIndex = 100
         circle.userData = CircleMapObjectUserData(id: 42, description: "Tappable circle");
 
@@ -197,10 +197,9 @@ class MapObjectsViewController: BaseMapViewController {
 
         let viewProvider = YRTViewProvider(uiView: textView);
 
-        let mapObjects = mapView.mapWindow.map.mapObjects;
-        let viewPlacemark = mapObjects.addPlacemark(
-            with: YMKPoint(latitude: 59.946263, longitude: 30.315181),
-            view: viewProvider!);
+        let viewPlacemark = mapView.mapWindow.map.mapObjects.addPlacemark()
+        viewPlacemark.geometry = YMKPoint(latitude: 59.946263, longitude: 30.315181)
+        viewPlacemark.setViewWithView(viewProvider!)
 
         let delayToShowInitialText = 5.0;  // seconds
         let delayToShowRandomText = 0.5; // seconds
@@ -232,8 +231,11 @@ class MapObjectsViewController: BaseMapViewController {
     func createAnimatedPlacemark() {
         let animatedImageProvider = YRTAnimatedImageProviderFactory.fromFile(
             Bundle.main.path(forResource: "Animations/animation", ofType: "png")) as! YRTAnimatedImageProvider
-        let mapObjects = mapView.mapWindow.map.mapObjects;
-        let animatedPlacemark = mapObjects.addPlacemark(with: ANIMATED_PLACEMARK_CENTER, animatedImage: animatedImageProvider, style: YMKIconStyle())
-        animatedPlacemark.useAnimation().play()
+        let animatedPlacemark = mapView.mapWindow.map.mapObjects.addPlacemark()
+        animatedPlacemark.geometry = ANIMATED_PLACEMARK_CENTER
+        let animation = animatedPlacemark.useAnimation()
+        animation.setIconWithImage(animatedImageProvider, style: YMKIconStyle()) {
+            animation.play()
+        }
     }
 }

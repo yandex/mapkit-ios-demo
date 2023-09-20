@@ -16,7 +16,7 @@ class MapViewController: BaseMapViewController {
         
         mapView.mapWindow.map.move(
             with: YMKCameraPosition(target: TARGET_LOCATION, zoom: 15, azimuth: 0, tilt: 0),
-            animationType: YMKAnimation(type: YMKAnimationType.smooth, duration: 5),
+            animation: YMKAnimation(type: YMKAnimationType.smooth, duration: 5),
             cameraCallback: nil)
     }
 }

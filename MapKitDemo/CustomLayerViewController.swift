@@ -8,25 +8,12 @@ import YandexMapsMobile
  * just provide a URL for the static image.
  */
 class CustomLayerViewController: BaseMapViewController {
-    
+
     var layer: YMKLayer?
 
     internal class CustomTilesUrlProvider: NSObject, YMKTilesUrlProvider {
         func formatUrl(with tileId: YMKTileId, version: YMKVersion) -> String {
             return "https://maps-ios-pods-public.s3.yandex.net/mapkit_logo.png"
-        }
-    }
-
-    // MapKit  doesn't need Url provider for raster maps.
-    internal class DummyUrlProvider : NSObject, YMKResourceUrlProvider {
-        override init() {}
-
-        func formatUrl(withResourceId resourceId: String) -> String {
-            return "";
-        }
-
-        override func isEqual(_ object: Any?) -> Bool {
-            return true;
         }
     }
 
@@ -51,12 +38,12 @@ class CustomLayerViewController: BaseMapViewController {
 
         layer = mapView.mapWindow.map.addLayer(
             withLayerId: "mapkit_logo",
-            contentType: "image/png",
+            format: YMKTileFormat.png,
             layerOptions: layerOptions,
             tileUrlProvider: tilesUrlProvider,
             imageUrlProvider: YMKImagesDefaultUrlProvider(),
             projection: projection)
 
-        layer!.invalidate(withVersion: "0.0.0")
+        layer!.dataSourceLayer().invalidate(withVersion: "0.0.0")
     }
 }

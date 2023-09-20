@@ -17,7 +17,7 @@ class PanoramaViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        panoView = YMKPanoView(frame: self.view.frame, vulkanPreferred: BaseMapView.isM1Simulator())
+        panoView = YMKPanoView(frame: self.view.frame, vulkanPreferred: true)
         self.view.addSubview(panoView)
         
         let responseHandler = {(panoramaIdResponse: String?, error: Error?) -> Void in
