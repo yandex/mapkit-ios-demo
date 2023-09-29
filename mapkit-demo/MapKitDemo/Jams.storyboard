@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Q2C-JM-jCm">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Jams View Controller-->
+        <scene sceneID="Ki5-H5-Yln">
+            <objects>
+                <viewController id="Q2C-JM-jCm" customClass="JamsViewController" customModule="MapKitDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="95d-V8-Rkd"/>
+                        <viewControllerLayoutGuide type="bottom" id="pgt-An-D3U"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" horizontalHuggingPriority="240" id="ugv-cM-3P9">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YRU-KL-lRz" customClass="BaseMapView" customModule="MapKitDemo" customModuleProvider="target">
+                                <rect key="frame" x="3" y="8" width="375" height="618"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ihM-ur-Kc4">
+                                <rect key="frame" x="308" y="28" width="47" height="42"/>
+                                <color key="backgroundColor" systemColor="systemGreenColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="42" id="Umw-lx-nP9"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="33"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </label>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wE5-zl-rtr">
+                                <rect key="frame" x="308" y="539" width="51" height="31"/>
+                                <connections>
+                                    <action selector="onSwitchTraffic:" destination="Q2C-JM-jCm" eventType="valueChanged" id="7KK-Li-xvn"/>
+                                </connections>
+                            </switch>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <accessibility key="accessibilityConfiguration">
+                            <accessibilityTraits key="traits" image="YES"/>
+                        </accessibility>
+                        <constraints>
+                            <constraint firstItem="pgt-An-D3U" firstAttribute="top" secondItem="wE5-zl-rtr" secondAttribute="bottom" constant="48" id="Fvd-4a-7UH"/>
+                            <constraint firstItem="ihM-ur-Kc4" firstAttribute="leading" secondItem="wE5-zl-rtr" secondAttribute="leading" id="MgD-5s-2VH"/>
+                            <constraint firstItem="ihM-ur-Kc4" firstAttribute="top" secondItem="95d-V8-Rkd" secondAttribute="bottom" constant="28" id="Nm0-gu-onQ"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="ihM-ur-Kc4" secondAttribute="trailing" constant="4" id="OMC-5c-w7X"/>
+                            <constraint firstAttribute="trailing" secondItem="YRU-KL-lRz" secondAttribute="trailing" constant="-3" id="R1e-b7-xgL"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="wE5-zl-rtr" secondAttribute="trailing" constant="2" id="RO9-zq-gcN"/>
+                            <constraint firstItem="YRU-KL-lRz" firstAttribute="top" secondItem="95d-V8-Rkd" secondAttribute="bottom" constant="8" id="a5c-Ta-X8P"/>
+                            <constraint firstItem="YRU-KL-lRz" firstAttribute="leading" secondItem="ugv-cM-3P9" secondAttribute="leading" constant="3" id="tE4-Dp-OSt"/>
+                            <constraint firstItem="pgt-An-D3U" firstAttribute="top" secondItem="YRU-KL-lRz" secondAttribute="bottom" constant="-8" id="yfP-zD-FgR"/>
+                        </constraints>
+                    </view>
+                    <toolbarItems/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="baseMapView" destination="YRU-KL-lRz" id="vWM-dp-Zkt"/>
+                        <outlet property="trafficButton" destination="wE5-zl-rtr" id="ST4-zn-Obm"/>
+                        <outlet property="trafficLabel" destination="ihM-ur-Kc4" id="dxz-ZJ-Mf1"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TrQ-L1-VaX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1252" y="918.89055472263874"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

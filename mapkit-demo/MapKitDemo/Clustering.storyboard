@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="iFQ-iZ-OVr">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Clustering View Controller-->
+        <scene sceneID="mmC-be-cur">
+            <objects>
+                <viewController id="iFQ-iZ-OVr" customClass="ClusteringViewController" customModule="MapKitDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="TeC-AT-Sga">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="crT-In-dtd" customClass="BaseMapView" customModule="MapKitDemo" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="MUO-1B-eWa"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="crT-In-dtd" firstAttribute="leading" secondItem="MUO-1B-eWa" secondAttribute="leading" id="739-kv-DSG"/>
+                            <constraint firstItem="crT-In-dtd" firstAttribute="trailing" secondItem="MUO-1B-eWa" secondAttribute="trailing" id="Edb-H9-za2"/>
+                            <constraint firstItem="crT-In-dtd" firstAttribute="top" secondItem="TeC-AT-Sga" secondAttribute="top" id="Rkk-hl-q6g"/>
+                            <constraint firstItem="crT-In-dtd" firstAttribute="bottom" secondItem="MUO-1B-eWa" secondAttribute="bottom" id="zWr-DL-I2n"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="baseMapView" destination="crT-In-dtd" id="JzX-Yo-m0e"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hGZ-7D-AEv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1682.4000000000001" y="424.13793103448279"/>
+        </scene>
+    </scenes>
+</document>

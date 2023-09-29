@@ -1,0 +1,25 @@
+platform :ios, '12.0'
+
+def mapkit_pod
+  pod 'YandexMapsMobile', '4.4.0-full'
+end
+
+target 'MapWithPlacemark' do
+  mapkit_pod
+end
+
+target 'MapInteraction' do
+  mapkit_pod
+end
+
+target 'MapObjects' do
+  mapkit_pod
+end
+
+target 'MapSearch' do
+  mapkit_pod
+end
+
+target 'MapRouting' do
+  mapkit_pod
+end
