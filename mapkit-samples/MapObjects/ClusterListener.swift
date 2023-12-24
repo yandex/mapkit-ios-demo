@@ -2,8 +2,6 @@
 //  ClusterListener.swift
 //  MapObjects
 //
-//  Created by Daniil Pustotin on 31.07.2023.
-//
 
 import YandexMapsMobile
 

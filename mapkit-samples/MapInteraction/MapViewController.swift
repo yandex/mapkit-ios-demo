@@ -2,8 +2,6 @@
 //  MapViewController.swift
 //  MapInteraction
 //
-//  Created by Daniil Pustotin on 10.07.2023.
-//
 
 import UIKit
 import YandexMapsMobile

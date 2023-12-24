@@ -908,6 +908,7 @@
 			baseConfigurationReference = EF6D4EA204092649FB705844 /* Pods-MapInteraction.debug.xcconfig */;
 			buildSettings = {
 				DEVELOPMENT_TEAM = "";
+				PRODUCT_BUNDLE_IDENTIFIER = com.yandex.maps.MapkitSamples;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -916,7 +917,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 1FEBBECC65E06B4ADA6FEB04 /* Pods-MapInteraction.release.xcconfig */;
 			buildSettings = {
-				DEVELOPMENT_TEAM = "";
+				PRODUCT_BUNDLE_IDENTIFIER = com.yandex.maps.MapkitSamples;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -926,6 +927,7 @@
 			baseConfigurationReference = 5C822D66C99F665A68E1309F /* Pods-MapRouting.debug.xcconfig */;
 			buildSettings = {
 				DEVELOPMENT_TEAM = "";
+				PRODUCT_BUNDLE_IDENTIFIER = com.yandex.maps.MapkitSamples;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -935,6 +937,7 @@
 			baseConfigurationReference = 21AB4751AEEFFEE83B858758 /* Pods-MapRouting.release.xcconfig */;
 			buildSettings = {
 				DEVELOPMENT_TEAM = "";
+				PRODUCT_BUNDLE_IDENTIFIER = com.yandex.maps.MapkitSamples;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -944,6 +947,7 @@
 			baseConfigurationReference = F60BA6C275F6F0D5514DC20D /* Pods-MapSearch.debug.xcconfig */;
 			buildSettings = {
 				DEVELOPMENT_TEAM = "";
+				PRODUCT_BUNDLE_IDENTIFIER = com.yandex.maps.MapkitSamples;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -953,6 +957,7 @@
 			baseConfigurationReference = F8925CF3BF185FA1C24E8BAC /* Pods-MapSearch.release.xcconfig */;
 			buildSettings = {
 				DEVELOPMENT_TEAM = "";
+				PRODUCT_BUNDLE_IDENTIFIER = com.yandex.maps.MapkitSamples;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -961,11 +966,11 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 61AA67B1BD26F1C3452843FE /* Pods-MapWithPlacemark.debug.xcconfig */;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = "";
+				PRODUCT_BUNDLE_IDENTIFIER = com.yandex.maps.MapkitSamples;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Debug;
 		};
@@ -973,11 +978,11 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 98538E3305B7A48793C98835 /* Pods-MapWithPlacemark.release.xcconfig */;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = "";
+				PRODUCT_BUNDLE_IDENTIFIER = com.yandex.maps.MapkitSamples;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Release;
 		};
@@ -986,6 +991,7 @@
 			baseConfigurationReference = D681837822AB96ADC487D42D /* Pods-MapObjects.debug.xcconfig */;
 			buildSettings = {
 				DEVELOPMENT_TEAM = "";
+				PRODUCT_BUNDLE_IDENTIFIER = com.yandex.maps.MapkitSamples;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -994,7 +1000,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 29B7FDA28317D6E47B8F4425 /* Pods-MapObjects.release.xcconfig */;
 			buildSettings = {
-				DEVELOPMENT_TEAM = "";
+				PRODUCT_BUNDLE_IDENTIFIER = com.yandex.maps.MapkitSamples;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -1036,7 +1042,6 @@
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEVELOPMENT_TEAM = XHRWYM4T65;
 				ENABLE_BITCODE = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -1112,7 +1117,6 @@
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = XHRWYM4T65;
 				ENABLE_BITCODE = NO;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;

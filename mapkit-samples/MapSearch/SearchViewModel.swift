@@ -2,8 +2,6 @@
 //  SearchViewModel.swift
 //  MapSearch
 //
-//  Created by Daniil Pustotin on 14.08.2023.
-//
 
 import Combine
 import YandexMapsMobile
@@ -188,13 +186,13 @@ class SearchViewModel {
         )
     }
 
-    private func handleSuggestSessionResponse(items: [YMKSuggestItem]?, error: Error?) {
+    private func handleSuggestSessionResponse(response: YMKSuggestResponse?, error: Error?) {
         if let error = error {
             onSuggestError(error: error)
             return
         }
 
-        guard let items else {
+        guard let items = response?.items else {
             return
         }
         let suggestItems = items

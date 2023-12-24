@@ -2,8 +2,6 @@
 //  AppDelegate.swift
 //  MapkitSamples
 //
-//  Created by Daniil Pustotin on 05.07.2023.
-//
 
 import CoreMotion
 import UIKit

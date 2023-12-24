@@ -12,7 +12,7 @@ class CustomLayerViewController: BaseMapViewController {
     var layer: YMKLayer?
 
     internal class CustomTilesUrlProvider: NSObject, YMKTilesUrlProvider {
-        func formatUrl(with tileId: YMKTileId, version: YMKVersion) -> String {
+        func formatUrl(with tileId: YMKTileId, version: YMKVersion, features: [String : String]) -> String {
             return Const.logoURL
         }
     }

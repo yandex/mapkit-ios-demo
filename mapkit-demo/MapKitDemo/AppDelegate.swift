@@ -4,10 +4,9 @@ import YandexMapsMobile
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
-    
+
     /**
      * Replace "your_api_key" with a valid developer key.
-     * You can get it at the https://developer.tech.yandex.ru/ website.
      */
     let MAPKIT_API_KEY = "your_api_key"
 
@@ -22,9 +21,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
          * Otherwise MapKit will use default location.
          */
         YMKMapKit.setLocale("en_US")
-        
+
         /**
-         * If you create instance of YMKMapKit not in application:didFinishLaunchingWithOptions: 
+         * If you create instance of YMKMapKit not in application:didFinishLaunchingWithOptions:
          * you should also explicitly call YMKMapKit.sharedInstance().onStart()
          */
         YMKMapKit.sharedInstance()

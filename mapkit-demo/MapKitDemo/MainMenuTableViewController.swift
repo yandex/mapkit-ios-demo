@@ -16,7 +16,8 @@ class MainMenuTableViewController: UITableViewController {
         "CustomLayer",
         "Clustering",
         "Jams",
-        "MapSelection"]
+        "MapSelection",
+        "MasstransitRouting"]
     #else
     let STORYBOARDS = [
         "About",

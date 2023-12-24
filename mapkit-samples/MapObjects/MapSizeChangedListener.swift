@@ -2,8 +2,6 @@
 //  MapSizeChangedListener.swift
 //  MapObjects
 //
-//  Created by Daniil Pustotin on 03.08.2023.
-//
 
 import YandexMapsMobile
 

@@ -14,6 +14,8 @@
 		B229F9E02AAF5E1B00AA75D1 /* Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = B229F9DF2AAF5E1B00AA75D1 /* Const.swift */; };
 		B229F9E12AAF5E1B00AA75D1 /* Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = B229F9DF2AAF5E1B00AA75D1 /* Const.swift */; };
 		BC9B295B223B4674BAE9FD0B /* libPods-Lite.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 352F1A70DFFCEB801A40AB99 /* libPods-Lite.a */; };
+		BD1B8EA42B234726003005E3 /* MasstransitRouting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD1B8EA32B234726003005E3 /* MasstransitRouting.storyboard */; };
+		BD1B8EA62B235E39003005E3 /* MasstransitRoutingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD1B8EA52B235E39003005E3 /* MasstransitRoutingViewController.swift */; };
 		BD4792202A6FBE55003F517A /* About.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD47921D2A6FBDD6003F517A /* About.storyboard */; };
 		BD4792212A6FBEEF003F517A /* About.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD47921D2A6FBDD6003F517A /* About.storyboard */; };
 		BD533AEC2930E29600E85891 /* UserLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A2503520501EED0022D9B3 /* UserLocationViewController.swift */; };
@@ -93,6 +95,8 @@
 		A9BF62B42A5D8FE300DF2077 /* AboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		B229F9DF2AAF5E1B00AA75D1 /* Const.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Const.swift; sourceTree = "<group>"; };
 		BCF3CAC382A415E8908219EE /* Pods-Lite.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Lite.release.xcconfig"; path = "Pods/Target Support Files/Pods-Lite/Pods-Lite.release.xcconfig"; sourceTree = "<group>"; };
+		BD1B8EA32B234726003005E3 /* MasstransitRouting.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MasstransitRouting.storyboard; sourceTree = "<group>"; };
+		BD1B8EA52B235E39003005E3 /* MasstransitRoutingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasstransitRoutingViewController.swift; sourceTree = "<group>"; };
 		BD47921D2A6FBDD6003F517A /* About.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = About.storyboard; sourceTree = "<group>"; };
 		BD533B1A2930E29600E85891 /* Lite.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Lite.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD533B1C2930E2D700E85891 /* LiteInfo.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = LiteInfo.plist; sourceTree = "<group>"; };
@@ -251,6 +255,8 @@
 				BD9289E32837B4DB005A26D6 /* BaseMapView.xib */,
 				BD9289E52837BB31005A26D6 /* BaseMapViewController.swift */,
 				BD47921D2A6FBDD6003F517A /* About.storyboard */,
+				BD1B8EA32B234726003005E3 /* MasstransitRouting.storyboard */,
+				BD1B8EA52B235E39003005E3 /* MasstransitRoutingViewController.swift */,
 			);
 			path = MapKitDemo;
 			sourceTree = "<group>";
@@ -266,6 +272,7 @@
 				BD533AEA2930E29600E85891 /* Sources */,
 				BD533AFD2930E29600E85891 /* Frameworks */,
 				BD533AFF2930E29600E85891 /* Resources */,
+				94001DF68CFF95407A6B4668 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -284,7 +291,6 @@
 				E73A65D7204E9E060056E380 /* Sources */,
 				E73A65D8204E9E060056E380 /* Frameworks */,
 				E73A65D9204E9E060056E380 /* Resources */,
-				88B1F58F2887C88419DFC5BE /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -371,6 +377,7 @@
 				E7A2503420501ECF0022D9B3 /* UserLocation.storyboard in Resources */,
 				E7A2503820502C740022D9B3 /* Suggest.storyboard in Resources */,
 				E73A65E9204E9E060056E380 /* LaunchScreen.storyboard in Resources */,
+				BD1B8EA42B234726003005E3 /* MasstransitRouting.storyboard in Resources */,
 				E748A876205A947D00803AF8 /* CustomLayer.storyboard in Resources */,
 				E73A65E6204E9E060056E380 /* Assets.xcassets in Resources */,
 				E7B58E322050029100D95768 /* Search.storyboard in Resources */,
@@ -387,13 +394,13 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		88B1F58F2887C88419DFC5BE /* [CP] Copy Pods Resources */ = {
+		94001DF68CFF95407A6B4668 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Full/Pods-Full-resources.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-Lite/Pods-Lite-resources.sh",
 				"${PODS_ROOT}/YandexMapsMobile/YandexMapsMobile.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
@@ -402,7 +409,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Full/Pods-Full-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Lite/Pods-Lite-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		955340E910903CF3AA8BA9C0 /* [CP] Check Pods Manifest.lock */ = {
@@ -488,6 +495,7 @@
 				BD9289E62837BB31005A26D6 /* BaseMapViewController.swift in Sources */,
 				E779F00E204EDC5200750E10 /* MainMenuTableViewController.swift in Sources */,
 				E7E5C33C204FF261007842E3 /* PanoramaViewController.swift in Sources */,
+				BD1B8EA62B235E39003005E3 /* MasstransitRoutingViewController.swift in Sources */,
 				5CB3FE1324DE3E5C005BC102 /* MapSelectionViewController.swift in Sources */,
 				BD9289E22837B3EC005A26D6 /* BaseMapView.swift in Sources */,
 				B229F9E02AAF5E1B00AA75D1 /* Const.swift in Sources */,

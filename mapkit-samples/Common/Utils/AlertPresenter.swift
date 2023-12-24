@@ -2,8 +2,6 @@
 //  AlertPresenter.swift
 //  MapkitSamples
 //
-//  Created by Daniil Pustotin on 06.07.2023.
-//
 
 import UIKit
 

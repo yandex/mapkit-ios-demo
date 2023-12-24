@@ -19,6 +19,15 @@ enum Const {
     static let circleCenter = YMKPoint(latitude: 59.956, longitude: 30.323)
     static let draggablePlacemarkCenter = YMKPoint(latitude: 59.948, longitude: 30.323)
     static let animatedPlacemarkCenter = YMKPoint(latitude: 59.948, longitude: 30.318)
+    
+    static let masstransitPoint = YMKPoint(latitude: 55.752078, longitude: 37.592664)
+    static let masstransitRouteStartLocation = YMKPoint(latitude: 55.699671, longitude: 37.567286);
+    static let masstransitRouteEndLocation = YMKPoint(latitude: 55.790621, longitude: 37.558571);
+    static let undergroundStrokeColor = UIColor.gray
+    static let busStrokeColor = UIColor.green
+    static let tramwayStrokeColor = UIColor.red
+    static let publicTransportStrokeColor = UIColor.blue
+    static let nonPublicTransportStrokeColor = UIColor.black
 
 	static let coloredPolylinePoints = [
 		YMKPoint(latitude: 59.949941, longitude: 30.310250),

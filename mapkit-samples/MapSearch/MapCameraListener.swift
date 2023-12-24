@@ -2,8 +2,6 @@
 //  MapCameraListener.swift
 //  MapSearch
 //
-//  Created by Daniil Pustotin on 22.08.2023.
-//
 
 import YandexMapsMobile
 

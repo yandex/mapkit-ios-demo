@@ -2,8 +2,6 @@
 //  MapViewController.swift
 //  MapRouting
 //
-//  Created by Daniil Pustotin on 28.08.2023.
-//
 
 import UIKit
 import YandexMapsMobile

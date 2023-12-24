@@ -2,8 +2,6 @@
 //  MapObjectTapListener.swift
 //  MapSearch
 //
-//  Created by Daniil Pustotin on 24.08.2023.
-//
 
 import UIKit
 import YandexMapsMobile

@@ -2,8 +2,6 @@
 //  MapViewController.swift
 //  MapSearch
 //
-//  Created by Daniil Pustotin on 14.08.2023.
-//
 
 import Combine
 import UIKit
@@ -78,15 +76,13 @@ class MapViewController: UIViewController {
         map.mapObjects.clear()
 
         items.forEach { item in
-            let placemark = map.mapObjects.addPlacemark(
-                with: item.point,
-                view: YRTViewProvider(
-                    uiView: UIImageView(
-                        image: UIImage(systemName: "circle.circle.fill")?
-                            .withTintColor(.tintColor)
-                    )
-                )
-            )
+            let image = UIImage(systemName: "circle.circle.fill")!
+                .withTintColor(.tintColor)
+
+            let placemark = map.mapObjects.addPlacemark()
+            placemark.geometry = item.point
+            placemark.setViewWithView(YRTViewProvider(uiView: UIImageView(image: image)))
+
             placemark.userData = item.geoObject
             placemark.addTapListener(with: mapObjectTapListener)
         }

@@ -2,8 +2,6 @@
 //  RoutingViewModel.swift
 //  MapRouting
 //
-//  Created by Daniil Pustotin on 28.08.2023.
-//
 
 import UIKit
 import YandexMapsMobile
@@ -87,7 +85,7 @@ final class RoutingViewModel {
                 )
             ]
 
-        let drivingOptions = YMKDrivingDrivingOptions()
+        let drivingOptions = YMKDrivingOptions()
         let vehicleOptions = YMKDrivingVehicleOptions()
 
         drivingSession = drivingRouter.requestRoutes(
@@ -136,7 +134,9 @@ final class RoutingViewModel {
 
     // MARK: - Private properties
 
-    private lazy var drivingRouter: YMKDrivingRouter = YMKDirections.sharedInstance().createDrivingRouter()
+    private lazy var drivingRouter: YMKDrivingRouter = YMKDirections.sharedInstance().createDrivingRouter(
+        withType: .combined
+    )
     private var drivingSession: YMKDrivingSession?
 
     private weak var controller: UIViewController?

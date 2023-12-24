@@ -2,8 +2,6 @@
 //  MapViewController.swift
 //  MapWithPlacemark
 //
-//  Created by Daniil Pustotin on 07.07.2023.
-//
 
 import UIKit
 import YandexMapsMobile
