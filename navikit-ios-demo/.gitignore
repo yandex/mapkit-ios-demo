@@ -1,0 +1,6 @@
+Pods
+bundle/*/*
+!bundle/*/*.podspec
+*.xcworkspace
+*.xcodeproj/*
+!*/project.pbxproj
