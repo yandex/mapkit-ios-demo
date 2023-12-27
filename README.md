@@ -9,7 +9,7 @@ The current repository contains sample code for how to use the MapKit and NaviKi
 
 ## Project structures
 
-There are two iOS projects in the repository:
+There are three iOS projects in the repository:
 
 1. [__`MapkitSamples`__](mapkit-samples): Contains several iOS applications with sample code in Swift, all of which are demonstrated in the MapKit SDK Tutorials documentation.
 
