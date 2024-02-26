@@ -272,7 +272,6 @@
 				BD533AEA2930E29600E85891 /* Sources */,
 				BD533AFD2930E29600E85891 /* Frameworks */,
 				BD533AFF2930E29600E85891 /* Resources */,
-				94001DF68CFF95407A6B4668 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -291,6 +290,7 @@
 				E73A65D7204E9E060056E380 /* Sources */,
 				E73A65D8204E9E060056E380 /* Frameworks */,
 				E73A65D9204E9E060056E380 /* Resources */,
+				88B1F58F2887C88419DFC5BE /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -394,13 +394,13 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		94001DF68CFF95407A6B4668 /* [CP] Copy Pods Resources */ = {
+		88B1F58F2887C88419DFC5BE /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Lite/Pods-Lite-resources.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-Full/Pods-Full-resources.sh",
 				"${PODS_ROOT}/YandexMapsMobile/YandexMapsMobile.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
@@ -409,7 +409,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Lite/Pods-Lite-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Full/Pods-Full-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		955340E910903CF3AA8BA9C0 /* [CP] Check Pods Manifest.lock */ = {
