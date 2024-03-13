@@ -1,14 +1,15 @@
-# Yandex MapKit Demo Apps
+# Yandex MapKit and NaviKit Demo Apps
 
-Yandex MapKit is a cross-platform library that lets you use the capabilities of Yandex Maps in mobile applications for iOS and Android. Learn more about the MapKit SDK on the [documentation](https://yandex.ru/dev/mapkit/doc/en/?from=github-demo) page.
+Yandex MapKit and NaviKit are cross-platform libraries that let you use the capabilities of Yandex Maps in mobile applications for iOS and Android. Learn more about the MapKit and NaviKit SDKs on the [documentation](https://yandex.ru/dev/mapkit/doc/en/?from=github-demo) page.
 
-Visit the [Getting started](https://yandex.ru/dev/mapkit/doc/en/ios/generated/getting_started) page for quick start development with the MapKit SDK.
+Visit the [Getting started](https://yandex.ru/dev/mapkit/doc/en/ios/generated/getting_started) page for quick start development with the MapKit SDK. 
+Visit the [Getting started](https://yandex.ru/dev/mapkit/doc/en/ios/generated/navigation/getting_started) page for quick start development with the NaviKit SDK. 
 
-The current repository contains sample code for how to use the MapKit SDK for iOS applications.
+The current repository contains sample code for how to use the MapKit and NaviKit SDKs for iOS applications.
 
 ## Project structures
 
-There are two iOS projects in the repository:
+There are three iOS projects in the repository:
 
 1. [__`MapkitSamples`__](mapkit-samples): Contains several iOS applications with sample code in Swift, all of which are demonstrated in the MapKit SDK Tutorials documentation.
 
@@ -24,6 +25,8 @@ There are two iOS projects in the repository:
 
 2. [__`MapKitDemo`__](mapkit-demo): A demo application that contains the basic functionality of the lite and full MapKit SDK versions. It is not supported with Tutorials documentation, unlike the `MapkitSamples` project.
 
+3. [__`NaviKitDemo`__](navikit-ios-demo): A demo application showcasing the basic navigation features you can implement with NaviKit SDK.
+
 ## Build locally
 
 1. Clone the repository:
@@ -36,7 +39,7 @@ There are two iOS projects in the repository:
     pod install
     ```
 
-3. Demo applications use the MapKit SDK, which requires __API key__. You can get a free MapKit __API key__ in the [Get the MapKit API Key](https://yandex.ru/dev/mapkit/doc/en/ios/generated/getting_started#key) documentation.
+3. MapKit SDK demo application and samples require __API key__. You can get a free MapKit __API key__ in the [Get the MapKit API Key](https://yandex.ru/dev/mapkit/doc/en/ios/generated/getting_started#key) documentation. To obtain an API key for the NaviKit SDK demo application, please contact us at [paid-api-maps@yandex-team.ru](mailto:paid-api-maps@yandex-team.ru). 
 
 4. Depending on the project you want to build, follow the steps in the following sections.
 
@@ -62,9 +65,19 @@ There are two iOS projects in the repository:
 
 2. Build and run the MapKitDemo target in Xcode.
 
+### NaviKitDemo
+
+1. Open the project's build settings and edit the `MAPKIT_API_KEY` parameter, setting its value with your __API key__ in place of the `YOUR_MAPKIT_API_KEY` placeholder:
+
+    ```MAPKIT_API_KEY = YOUR_MAPKIT_API_KEY;```
+
+    You can as well store this __API key__ in your `Info.plist` file.
+
+2. Build and run the NaviKitDemo target in Xcode.
+
 ## Support
 
-If you have problems or suggestions while using MapKit, visit the [contact](https://yandex.ru/dev/mapkit/doc/en/feedback/) page.
+If you have problems or suggestions while using MapKit or NaviKit, visit the [contact](https://yandex.ru/dev/mapkit/doc/en/feedback/) page.
 
 ## Sample overview
 
