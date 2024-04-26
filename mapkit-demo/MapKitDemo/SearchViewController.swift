@@ -13,7 +13,7 @@ class SearchViewController: BaseMapViewController, YMKMapCameraListener {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        searchManager = YMKSearch.sharedInstance().createSearchManager(with: .combined)
+        searchManager = YMKSearchFactory.instance().createSearchManager(with: .combined)
 
         mapView.mapWindow.map.addCameraListener(with: self)
 

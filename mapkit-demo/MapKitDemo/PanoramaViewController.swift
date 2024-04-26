@@ -25,7 +25,7 @@ class PanoramaViewController: UIViewController {
             }
         }
 
-        let panoramaService = YMKPlaces.sharedInstance().createPanoramaService()
+        let panoramaService = YMKPlacesFactory.instance().createPanoramaService()
         panoramaSession = panoramaService.findNearest(
             withPosition: Const.targetLocation,
             searchHandler: responseHandler)

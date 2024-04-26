@@ -134,7 +134,7 @@ final class RoutingViewModel {
 
     // MARK: - Private properties
 
-    private lazy var drivingRouter: YMKDrivingRouter = YMKDirections.sharedInstance().createDrivingRouter(
+    private lazy var drivingRouter: YMKDrivingRouter = YMKDirectionsFactory.instance().createDrivingRouter(
         withType: .combined
     )
     private var drivingSession: YMKDrivingSession?

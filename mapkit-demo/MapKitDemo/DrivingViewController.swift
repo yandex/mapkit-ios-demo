@@ -32,7 +32,7 @@ class DrivingViewController: BaseMapViewController {
             }
         }
 
-        let drivingRouter = YMKDirections.sharedInstance().createDrivingRouter(withType: .combined)
+        let drivingRouter = YMKDirectionsFactory.instance().createDrivingRouter(withType: .combined)
         drivingSession = drivingRouter.requestRoutes(
             with: requestPoints,
             drivingOptions: YMKDrivingOptions(),

@@ -40,6 +40,7 @@ final class SettingsBinderImpl: SettingsBinder {
         bindNavigationLayer()
         bindNavigation()
         bindspeaker()
+        bindAnnotationsManager()
     }
 
     // MARK: - Private methods

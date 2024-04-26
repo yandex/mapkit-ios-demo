@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		81B488499176C91E9FDB7737 /* libPods-NavikitDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AD13137ADA4C0CD80FBA5E5B /* libPods-NavikitDemo.a */; };
+		9F576CC62B67041500D4106B /* DeviceCheck.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F576CC52B67041500D4106B /* DeviceCheck.framework */; };
 		B23539922AB45E10000A633E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B23539912AB45E10000A633E /* LaunchScreen.storyboard */; };
 		B23539A82AB464BE000A633E /* MapLongTapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23539A72AB464BE000A633E /* MapLongTapViewModel.swift */; };
 		B23539AA2AB465D2000A633E /* RoutingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23539A92AB465D2000A633E /* RoutingManager.swift */; };
@@ -88,6 +89,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		9F576CC52B67041500D4106B /* DeviceCheck.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DeviceCheck.framework; path = System/Library/Frameworks/DeviceCheck.framework; sourceTree = SDKROOT; };
 		AD13137ADA4C0CD80FBA5E5B /* libPods-NavikitDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-NavikitDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B23539912AB45E10000A633E /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B23539A72AB464BE000A633E /* MapLongTapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapLongTapViewModel.swift; sourceTree = "<group>"; };
@@ -164,6 +166,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9F576CC62B67041500D4106B /* DeviceCheck.framework in Frameworks */,
 				81B488499176C91E9FDB7737 /* libPods-NavikitDemo.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -174,6 +177,7 @@
 		60DFE454C21C77E903B6C51D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9F576CC52B67041500D4106B /* DeviceCheck.framework */,
 				AD13137ADA4C0CD80FBA5E5B /* libPods-NavikitDemo.a */,
 			);
 			name = Frameworks;

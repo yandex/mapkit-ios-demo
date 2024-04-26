@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		5CB3FE1324DE3E5C005BC102 /* MapSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CB3FE1224DE3E5C005BC102 /* MapSelectionViewController.swift */; };
 		5CB3FE1524DE4682005BC102 /* MapSelection.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5CB3FE1424DE4682005BC102 /* MapSelection.storyboard */; };
+		9F5806382B61BEAE003E88DD /* DeviceCheck.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F5806372B61BEAE003E88DD /* DeviceCheck.framework */; };
+		9F5806392B61BEB7003E88DD /* DeviceCheck.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F5806372B61BEAE003E88DD /* DeviceCheck.framework */; };
 		A9BF62B52A5D8FE300DF2077 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9BF62B42A5D8FE300DF2077 /* AboutViewController.swift */; };
 		A9BF62B62A5D8FE300DF2077 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9BF62B42A5D8FE300DF2077 /* AboutViewController.swift */; };
 		B229F9E02AAF5E1B00AA75D1 /* Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = B229F9DF2AAF5E1B00AA75D1 /* Const.swift */; };
@@ -91,6 +93,7 @@
 		5BE8D89165E82A9A8968421C /* Pods-MapkitSample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MapkitSample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MapkitSample/Pods-MapkitSample.debug.xcconfig"; sourceTree = "<group>"; };
 		5CB3FE1224DE3E5C005BC102 /* MapSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapSelectionViewController.swift; sourceTree = "<group>"; };
 		5CB3FE1424DE4682005BC102 /* MapSelection.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MapSelection.storyboard; sourceTree = "<group>"; };
+		9F5806372B61BEAE003E88DD /* DeviceCheck.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DeviceCheck.framework; path = System/Library/Frameworks/DeviceCheck.framework; sourceTree = SDKROOT; };
 		9FE1FE4E9A3DC621035BAB0D /* Pods-MapkitSample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MapkitSample.release.xcconfig"; path = "Pods/Target Support Files/Pods-MapkitSample/Pods-MapkitSample.release.xcconfig"; sourceTree = "<group>"; };
 		A9BF62B42A5D8FE300DF2077 /* AboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		B229F9DF2AAF5E1B00AA75D1 /* Const.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Const.swift; sourceTree = "<group>"; };
@@ -144,6 +147,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9F5806392B61BEB7003E88DD /* DeviceCheck.framework in Frameworks */,
 				DDF9DAE6299A7CBB00A3B38D /* CoreMotion.framework in Frameworks */,
 				BC9B295B223B4674BAE9FD0B /* libPods-Lite.a in Frameworks */,
 			);
@@ -153,6 +157,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9F5806382B61BEAE003E88DD /* DeviceCheck.framework in Frameworks */,
 				DDF9DAE7299A7CC400A3B38D /* CoreMotion.framework in Frameworks */,
 				C5720131B262D28665D2B278 /* libPods-Full.a in Frameworks */,
 			);
@@ -164,6 +169,7 @@
 		03BAF3E6E802BD671B589C43 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9F5806372B61BEAE003E88DD /* DeviceCheck.framework */,
 				DDF9DAE5299A7CBB00A3B38D /* CoreMotion.framework */,
 				457AD6E4C4817CA27BF3E070 /* Pods_MapkitSample.framework */,
 				352F1A70DFFCEB801A40AB99 /* libPods-Lite.a */,
@@ -309,7 +315,6 @@
 			attributes = {
 				LastSwiftUpdateCheck = 0920;
 				LastUpgradeCheck = 1010;
-				ORGANIZATIONNAME = Yandex;
 				TargetAttributes = {
 					BD533AE82930E29600E85891 = {
 						ProvisioningStyle = Automatic;

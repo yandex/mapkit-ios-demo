@@ -222,7 +222,7 @@ class SearchViewModel {
 
     // MARK: - Private properties
 
-    private lazy var searchManager = YMKSearch.sharedInstance().createSearchManager(with: .combined)
+    private lazy var searchManager = YMKSearchFactory.instance().createSearchManager(with: .combined)
     private var searchSession: YMKSearchSession?
     private lazy var suggestSession: YMKSearchSuggestSession = searchManager.createSuggestSession()
     private var zoomToSearchResult = false

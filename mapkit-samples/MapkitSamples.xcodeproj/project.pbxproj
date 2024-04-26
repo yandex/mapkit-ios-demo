@@ -10,6 +10,11 @@
 		6F9044962DC7354CAB52D5C3 /* libPods-MapObjects.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F5EBD9B0CAA5062026C5A403 /* libPods-MapObjects.a */; };
 		71B0A398FF9ADDE1A9D2D1D6 /* libPods-MapInteraction.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C4817A7A6B8F04206D17C4A2 /* libPods-MapInteraction.a */; };
 		755E718517F5F29B8796A442 /* libPods-MapWithPlacemark.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8420C1C67B164494687E0618 /* libPods-MapWithPlacemark.a */; };
+		9F576CC02B66F48B00D4106B /* DeviceCheck.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F576CBF2B66F48B00D4106B /* DeviceCheck.framework */; };
+		9F576CC12B66F49300D4106B /* DeviceCheck.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F576CBF2B66F48B00D4106B /* DeviceCheck.framework */; };
+		9F576CC22B66F49C00D4106B /* DeviceCheck.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F576CBF2B66F48B00D4106B /* DeviceCheck.framework */; };
+		9F576CC32B66F4A400D4106B /* DeviceCheck.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F576CBF2B66F48B00D4106B /* DeviceCheck.framework */; };
+		9F576CC42B66F4AB00D4106B /* DeviceCheck.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F576CBF2B66F48B00D4106B /* DeviceCheck.framework */; };
 		B209ADEF2A5BFA7300399A79 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B2DCDED82A55AF1900FA8948 /* Assets.xcassets */; };
 		B209ADF02A5BFA8200399A79 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2DCDEDA2A55AF1900FA8948 /* LaunchScreen.storyboard */; };
 		B209AE0A2A5C35B200399A79 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2DCDECF2A55AF1800FA8948 /* AppDelegate.swift */; };
@@ -83,6 +88,7 @@
 		61AA67B1BD26F1C3452843FE /* Pods-MapWithPlacemark.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MapWithPlacemark.debug.xcconfig"; path = "Target Support Files/Pods-MapWithPlacemark/Pods-MapWithPlacemark.debug.xcconfig"; sourceTree = "<group>"; };
 		8420C1C67B164494687E0618 /* libPods-MapWithPlacemark.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MapWithPlacemark.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		98538E3305B7A48793C98835 /* Pods-MapWithPlacemark.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MapWithPlacemark.release.xcconfig"; path = "Target Support Files/Pods-MapWithPlacemark/Pods-MapWithPlacemark.release.xcconfig"; sourceTree = "<group>"; };
+		9F576CBF2B66F48B00D4106B /* DeviceCheck.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DeviceCheck.framework; path = System/Library/Frameworks/DeviceCheck.framework; sourceTree = SDKROOT; };
 		B209ADF62A5C359400399A79 /* MapInteraction.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MapInteraction.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B209AE102A5C387100399A79 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		B22C84FB2A9CD3EF0040B0AF /* MapRouting.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MapRouting.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -135,6 +141,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9F576CC12B66F49300D4106B /* DeviceCheck.framework in Frameworks */,
 				71B0A398FF9ADDE1A9D2D1D6 /* libPods-MapInteraction.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -143,6 +150,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9F576CC42B66F4AB00D4106B /* DeviceCheck.framework in Frameworks */,
 				B6277A557F259E771B4B7A9C /* libPods-MapRouting.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -151,6 +159,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9F576CC32B66F4A400D4106B /* DeviceCheck.framework in Frameworks */,
 				D7A4DE2081C5DD7CC437DEC8 /* libPods-MapSearch.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -159,6 +168,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9F576CC02B66F48B00D4106B /* DeviceCheck.framework in Frameworks */,
 				755E718517F5F29B8796A442 /* libPods-MapWithPlacemark.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -167,6 +177,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9F576CC22B66F49C00D4106B /* DeviceCheck.framework in Frameworks */,
 				6F9044962DC7354CAB52D5C3 /* libPods-MapObjects.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -194,6 +205,7 @@
 		629DFE2F96087820F6AC692A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9F576CBF2B66F48B00D4106B /* DeviceCheck.framework */,
 				C4817A7A6B8F04206D17C4A2 /* libPods-MapInteraction.a */,
 				F5EBD9B0CAA5062026C5A403 /* libPods-MapObjects.a */,
 				5F837C7C4EC92C1C612520C7 /* libPods-MapRouting.a */,
@@ -437,25 +449,29 @@
 		B2DCDEC42A55AF1800FA8948 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1430;
 				LastUpgradeCheck = 1430;
 				TargetAttributes = {
 					B209ADF52A5C359400399A79 = {
 						CreatedOnToolsVersion = 14.3.1;
+						ProvisioningStyle = Automatic;
 					};
 					B22C84FA2A9CD3EF0040B0AF = {
 						CreatedOnToolsVersion = 14.3.1;
+						ProvisioningStyle = Automatic;
 					};
 					B257C50A2A8A3D4D00602FEF = {
 						CreatedOnToolsVersion = 14.3.1;
+						ProvisioningStyle = Automatic;
 					};
 					B25B31B62A570C0400F3455F = {
 						CreatedOnToolsVersion = 14.3.1;
+						ProvisioningStyle = Automatic;
 					};
 					B2B99A8B2A77E91700861554 = {
 						CreatedOnToolsVersion = 14.3.1;
 						LastSwiftMigration = 1430;
+						ProvisioningStyle = Automatic;
 					};
 				};
 			};
