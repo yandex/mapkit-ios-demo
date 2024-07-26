@@ -265,6 +265,7 @@ extension MapViewModel {
                     minDistance: 0,
                     allowUseInBackground: true,
                     filteringMode: .on,
+                    purpose: .navigation,
                     locationListener: mockLocationDelegate
                 )
             }

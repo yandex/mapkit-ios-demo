@@ -242,7 +242,8 @@ class SearchViewModel {
         static let suggestOptions = YMKSuggestOptions(
             suggestTypes: [.biz, .geo, .transit],
             userPosition: nil,
-            suggestWords: true
+            suggestWords: true,
+            strictBounds: false
         )
         static let searchOptions: YMKSearchOptions = {
             let options = YMKSearchOptions()
