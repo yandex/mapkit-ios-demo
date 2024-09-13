@@ -48,6 +48,8 @@ class MapViewController: UIViewController {
         searchBarController.searchBar.delegate = self
         searchBarController.searchBar.showsBookmarkButton = false
 
+        resultsTableController.tableView.delegate = self
+
         setupStateUpdates()
     }
 
@@ -77,8 +79,8 @@ class MapViewController: UIViewController {
 
         items.forEach { item in
             let image = UIImage(systemName: "circle.circle.fill")!
-                .withTintColor(.tintColor)
-
+                .withTintColor(view.tintColor)
+    
             let placemark = map.mapObjects.addPlacemark()
             placemark.geometry = item.point
             placemark.setViewWithView(YRTViewProvider(uiView: UIImageView(image: image)))
@@ -95,7 +97,8 @@ class MapViewController: UIViewController {
     private let buttonsView = UIStackView()
     private lazy var mapCameraListener = MapCameraListener(searchViewModel: searchViewModel)
 
-    private let searchBarController = UISearchController()
+    private lazy var resultsTableController = ResultsTableController()
+    private lazy var searchBarController = UISearchController(searchResultsController: resultsTableController)
     private let searchViewModel = SearchViewModel()
     private var bag = Set<AnyCancellable>()
 
@@ -137,14 +140,6 @@ extension MapViewController: UISearchResultsUpdating, UISearchControllerDelegate
         }
     }
 
-    func updateSearchResults(for searchController: UISearchController, selecting searchSuggestion: UISearchSuggestion) {
-        guard let item = searchSuggestion.representedObject as? SuggestItem else {
-            return
-        }
-
-        item.onClick()
-    }
-
     func setupStateUpdates() {
         searchViewModel.$mapUIState.sink { [weak self] state in
             let query = state?.query ?? String()
@@ -167,19 +162,8 @@ extension MapViewController: UISearchResultsUpdating, UISearchControllerDelegate
     private func updateSuggests(with suggestState: SuggestState) {
         switch suggestState {
         case .success(let items):
-            searchBarController.searchSuggestions = items.map { item in
-                let title = AttributedString(item.title.text)
-                let subtitle = AttributedString(item.subtitle?.text ?? "")
-                    .settingAttributes(
-                        AttributeContainer([.foregroundColor: UIColor.secondaryLabel])
-                    )
-
-                let suggestString = NSAttributedString(title + AttributedString(" ") + subtitle)
-
-                let suggest = UISearchSuggestionItem(localizedAttributedSuggestion: suggestString)
-                suggest.representedObject = item
-                return suggest
-            }
+            resultsTableController.items = items
+            resultsTableController.tableView.reloadData()
 
         default:
             return
@@ -188,5 +172,64 @@ extension MapViewController: UISearchResultsUpdating, UISearchControllerDelegate
 
     private func updatePlaceholder(with text: String = String()) {
         searchBarController.searchBar.placeholder = text.isEmpty ? "Search places" : text
+    }
+}
+
+extension MapViewController: UITableViewDelegate {
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard indexPath.row < resultsTableController.items.count else { return }
+
+        searchBarController.isActive = false
+
+        let item = resultsTableController.items[indexPath.row]
+        item.onClick()
+    }
+}
+
+fileprivate class ResultsTableController: UITableViewController {
+
+    private let cellIdentifier = "cellIdentifier"
+
+    var items = [SuggestItem]()
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellIdentifier)
+    }
+    
+    // MARK: - UITableViewDataSource
+    
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return items.count
+    }
+
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath)
+        cell.textLabel?.numberOfLines = 0
+
+        let item = items[indexPath.row]
+
+        cell.textLabel?.attributedText = item.cellText
+
+        return cell
+    }
+}
+
+fileprivate extension SuggestItem {
+
+    var cellText: NSAttributedString {
+        let result = NSMutableAttributedString(string: title.text)
+        result.append(NSAttributedString(string: " "))
+
+        let subtitle = NSMutableAttributedString(string: subtitle?.text ?? "")
+        subtitle.setAttributes(
+            [.foregroundColor: UIColor.secondaryLabel],
+            range: NSRange(location: 0, length: subtitle.string.count)
+        )
+        result.append(subtitle)
+
+        return result
     }
 }

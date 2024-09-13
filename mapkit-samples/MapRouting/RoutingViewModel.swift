@@ -42,6 +42,8 @@ final class RoutingViewModel {
     // MARK: - Private methods
 
     private func onRoutingPointsUpdated() {
+        guard let image = UIImage(systemName: "circle.fill") else { return }
+        
         placemarksCollection.clear()
 
         if routePoints.isEmpty {
@@ -50,7 +52,6 @@ final class RoutingViewModel {
             return
         }
 
-        let image = UIImage(systemName: "circle.circle.fill")!
         let iconStyle = YMKIconStyle()
         iconStyle.scale = 0.5
         iconStyle.zIndex = 20.0

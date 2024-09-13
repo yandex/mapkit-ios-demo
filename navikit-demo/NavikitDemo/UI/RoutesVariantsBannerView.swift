@@ -41,7 +41,7 @@ final class RoutesVariantsBannerView: UIView {
 
         [cancelButton, startButton]
             .forEach {
-                $0.setTitleColor(.tintColor, for: .normal)
+                $0.setTitleColor(tintColor, for: .normal)
                 $0.backgroundColor = Palette.background
                 $0.layer.cornerRadius = Layout.cornerRadius
             }

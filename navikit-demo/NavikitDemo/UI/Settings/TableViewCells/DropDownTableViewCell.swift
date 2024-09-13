@@ -27,7 +27,7 @@ final class DropDownTableViewCell: UITableViewCell {
         addSubview(label)
 
         let picker = UILabel()
-        picker.textColor = .tintColor
+        picker.textColor = tintColor
 
         value
             .selected

@@ -33,9 +33,10 @@ class MasstransitRoutingViewController : BaseMapViewController {
         }
         
         let options = YMKTransitOptions(avoid: YMKFilterVehicleTypes(rawValue: 0), timeOptions: YMKTimeOptions())
+        let routeOptions = YMKRouteOptions()
         
         router = YMKTransportFactory.instance().createMasstransitRouter()
-        masstransitSession = router?.requestRoutes(with: requestPoints, transitOptions: options, avoidSteep: false, routeHandler: responseHandler)
+        masstransitSession = router?.requestRoutes(with: requestPoints, transitOptions: options, routeOptions: routeOptions, routeHandler: responseHandler)
     }
     
     private func onRoutesReceived(_ routes: [YMKMasstransitRoute]) {

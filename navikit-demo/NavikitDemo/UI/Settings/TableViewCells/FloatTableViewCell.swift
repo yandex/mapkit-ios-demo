@@ -27,7 +27,7 @@ final class FloatTableViewCell: UITableViewCell {
         addSubview(label)
 
         let number = UILabel()
-        number.textColor = .tintColor
+        number.textColor = tintColor
 
         value
             .sink { newValue in

@@ -57,7 +57,7 @@ final class GuidanceBannerView: UIView {
         stack.translatesAutoresizingMaskIntoConstraints = false
 
         cancelButton.setImage(UIImage(systemName: "xmark"), for: .normal)
-        cancelButton.setTitleColor(.tintColor, for: .normal)
+        cancelButton.setTitleColor(tintColor, for: .normal)
         cancelButton.backgroundColor = Palette.background
         cancelButton.layer.cornerRadius = Layout.cornerRadius
         cancelButton.addTarget(self, action: #selector(handleCancelButtonTap), for: .touchUpInside)
@@ -81,8 +81,8 @@ final class GuidanceBannerView: UIView {
         speedStack.translatesAutoresizingMaskIntoConstraints = false
         addSubview(speedStack)
 
-        buttonSimulationSpeedMinus.setTitleColor(.tintColor, for: .normal)
-        buttonSimulationSpeedPlus.setTitleColor(.tintColor, for: .normal)
+        buttonSimulationSpeedMinus.setTitleColor(tintColor, for: .normal)
+        buttonSimulationSpeedPlus.setTitleColor(tintColor, for: .normal)
 
         buttonSimulationSpeedMinus.setImage(UIImage(systemName: "minus"), for: .normal)
         buttonSimulationSpeedPlus.setImage(UIImage(systemName: "plus"), for: .normal)
