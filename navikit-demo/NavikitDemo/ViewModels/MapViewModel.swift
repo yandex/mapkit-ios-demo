@@ -40,6 +40,8 @@ final class MapViewModel {
         self.controller = controller
 
         map = mapWindow.map
+        map.isAwesomeModelsEnabled = true
+        map.isHdModeEnabled = true
     }
 
     func setController(with controller: UIViewController) {
