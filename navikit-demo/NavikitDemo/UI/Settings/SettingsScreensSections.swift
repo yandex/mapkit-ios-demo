@@ -58,6 +58,14 @@ enum SettingsScreensSections {
                         value: .toggle(settingsRepository.trafficLights)
                     ),
                     SettingItem(
+                        title: "HD maps",
+                        value: .toggle(settingsRepository.mapsHD)
+                    ),
+                    SettingItem(
+                        title: "3D SuperPOI",
+                        value: .toggle(settingsRepository.maps3D)
+                    ),
+                    SettingItem(
                         title: "Show Predicted",
                         value: .toggle(settingsRepository.showPredicted)
                     ),
