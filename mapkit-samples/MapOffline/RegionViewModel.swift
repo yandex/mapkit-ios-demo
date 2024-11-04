@@ -25,9 +25,9 @@ class RegionViewModel {
 
     private func setupRegionSubscription() {
         $regionId
-            .map { [weak self] regionId in
+            .sink { [weak self ] regionId in
                 let cacheRegion = self?.offlineManager.regions().first { $0.id == regionId ?? .zero }
-                return RegionInfo(
+                self?.region = RegionInfo(
                     id: "\(cacheRegion?.id ?? .zero)",
                     name: cacheRegion?.name ?? "",
                     country: cacheRegion?.country ?? "",
@@ -37,7 +37,7 @@ class RegionViewModel {
                     size: cacheRegion?.size.text ?? "",
                     downloadProgress: self?.offlineManager.getProgressWithRegionId(UInt(regionId ?? .zero)) ?? .zero,
                     parentId: "\(cacheRegion?.parentId ?? NSNumber())",
-                    state: self?.getDownloadState() ?? "",
+                    state: self?.getDownloadState(regionId: regionId ?? .zero) ?? "",
                     realeseTime: self?.convertTimeString(with: cacheRegion?.releaseTime ?? Date()) ?? "",
                     downloadedReleaseTime: self?.convertTimeString(
                         with: self?.offlineManager
@@ -45,12 +45,11 @@ class RegionViewModel {
                     ) ?? ""
                 )
             }
-            .assign(to: \.region, on: self)
             .store(in: &bag)
     }
 
-    private func getDownloadState() -> String {
-        switch self.offlineManager.getStateWithRegionId(UInt(regionId ?? .zero)) {
+    private func getDownloadState(regionId: Int) -> String {
+        switch self.offlineManager.getStateWithRegionId(UInt(regionId)) {
         case .available:
             return "AVAILABLE"
         case .downloading:
