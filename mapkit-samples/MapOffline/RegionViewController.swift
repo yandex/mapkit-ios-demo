@@ -16,6 +16,7 @@ class RegionViewController: UIViewController {
         self.init()
         self.regionId = regionId
         regionViewModel.setRegion(with: regionId)
+        regionViewModel.setRegionOpened(with: regionId)
     }
 
     override func viewDidLoad() {
@@ -210,32 +211,27 @@ class RegionViewController: UIViewController {
 
     @objc
     private func showButtonTapHandler() {
-        guard !isModalInPresentation else { return }
         dismiss(animated: true)
     }
 
     @objc
     private func startButtonTapHandler() {
         guard !offlineManager.mayBeOutOfAvailableSpace(withRegionId: UInt(regionId ?? .zero)) else { return }
-        isModalInPresentation = true
         offlineManager.startDownload(withRegionId: UInt(regionId ?? .zero))
     }
 
     @objc
     private func stopButtonTapHandler() {
-        isModalInPresentation = false
         offlineManager.stopDownload(withRegionId: UInt(regionId ?? .zero))
     }
 
     @objc
     private func pauseButtonTapHandler() {
-        isModalInPresentation = false
         offlineManager.pauseDownload(withRegionId: UInt(regionId ?? .zero))
     }
 
     @objc
     private func dropButtonTapHandler() {
-        isModalInPresentation = false
         offlineManager.drop(withRegionId: UInt(regionId ?? .zero))
     }
 

@@ -21,6 +21,10 @@ class RegionViewModel {
         self.regionId = regionId
     }
 
+    func setRegionOpened(with regionId: Int) {
+        self.regionIdOpened = regionId
+    }
+
     deinit {
         bag.removeAll()
     }
@@ -30,6 +34,7 @@ class RegionViewModel {
     private func setupRegionSubscription() {
         $regionId
             .sink { [weak self] regionId in
+                guard self?.regionIdOpened == regionId else { return }
                 let cacheRegion = self?.offlineManager.regions().first { $0.id == regionId ?? .zero }
                 self?.region = RegionInfo(
                     id: "\(cacheRegion?.id ?? .zero)",
@@ -84,6 +89,7 @@ class RegionViewModel {
     private lazy var offlineManager = YMKMapKit.sharedInstance().offlineCacheManager
 
     @Published private var regionId: Int?
+    private var regionIdOpened: Int?
 
     private var bag = Set<AnyCancellable>()
 
