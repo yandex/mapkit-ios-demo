@@ -12,9 +12,17 @@ class RegionViewController: UIViewController {
 
     // MARK: - Public methods
 
+    convenience init(regionId: Int) {
+        self.init()
+        self.regionId = regionId
+        regionViewModel.setRegion(with: regionId)
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        offlineCacheRegionListener = OfflineCacheRegionListener(regionViewModel: regionViewModel)
+        guard let offlineCacheRegionListener = offlineCacheRegionListener else { return }
         offlineManager.addRegionListener(with: offlineCacheRegionListener)
         regionViewModel.setupSubscriptions()
 
@@ -23,9 +31,16 @@ class RegionViewController: UIViewController {
         view.backgroundColor = .white
     }
 
-    func setRegion(with regionId: Int) {
-        self.regionId = regionId
-        regionViewModel.setRegion(with: regionId)
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+    }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        guard let offlineCacheRegionListener = offlineCacheRegionListener else { return }
+        self.offlineCacheRegionListener = nil
+        offlineManager.removeRegionListener(with: offlineCacheRegionListener)
+        bag.removeAll()
     }
 
     // MARK: - Private methods
@@ -41,6 +56,7 @@ class RegionViewController: UIViewController {
         idLabel.font = UIFont.systemFont(ofSize: 20, weight: .bold)
         nameLabel.textColor = .black
         nameLabel.font = UIFont.systemFont(ofSize: 20, weight: .bold)
+        nameLabel.numberOfLines = .zero
         countyLabel.textColor = .black
         citiesLabel.textColor = .black
         citiesLabel.numberOfLines = .zero
@@ -89,7 +105,8 @@ class RegionViewController: UIViewController {
             showButton.leadingAnchor.constraint(equalTo: regionView.trailingAnchor, constant: Layout.defaultInset),
             showButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -Layout.defaultInset),
             showButton.centerYAnchor.constraint(equalTo: centerLabel.centerYAnchor),
-            showButton.heightAnchor.constraint(equalToConstant: Layout.buttonHeight)
+            showButton.heightAnchor.constraint(equalToConstant: Layout.buttonHeight),
+            showButton.widthAnchor.constraint(equalToConstant: Layout.buttonWidth)
         ]
         .forEach { $0.isActive = true }
 
@@ -193,27 +210,32 @@ class RegionViewController: UIViewController {
 
     @objc
     private func showButtonTapHandler() {
+        guard !isModalInPresentation else { return }
         dismiss(animated: true)
     }
 
     @objc
     private func startButtonTapHandler() {
         guard !offlineManager.mayBeOutOfAvailableSpace(withRegionId: UInt(regionId ?? .zero)) else { return }
+        isModalInPresentation = true
         offlineManager.startDownload(withRegionId: UInt(regionId ?? .zero))
     }
 
     @objc
     private func stopButtonTapHandler() {
+        isModalInPresentation = false
         offlineManager.stopDownload(withRegionId: UInt(regionId ?? .zero))
     }
 
     @objc
     private func pauseButtonTapHandler() {
+        isModalInPresentation = false
         offlineManager.pauseDownload(withRegionId: UInt(regionId ?? .zero))
     }
 
     @objc
     private func dropButtonTapHandler() {
+        isModalInPresentation = false
         offlineManager.drop(withRegionId: UInt(regionId ?? .zero))
     }
 
@@ -245,7 +267,7 @@ class RegionViewController: UIViewController {
     private var regionInfo: RegionInfo?
     private var regionId: Int?
 
-    private lazy var offlineCacheRegionListener = OfflineCacheRegionListener(regionViewModel: regionViewModel)
+    private var offlineCacheRegionListener: OfflineCacheRegionListener?
     private lazy var offlineManager = YMKMapKit.sharedInstance().offlineCacheManager
 
     private var bag = Set<AnyCancellable>()
@@ -254,6 +276,7 @@ class RegionViewController: UIViewController {
 
     private enum Layout {
         static let buttonHeight: CGFloat = 36.0
+        static let buttonWidth: CGFloat = 80.0
         static let defaultInset: CGFloat = 20.0
         static let downloadViewSpace: CGFloat = 60.0
         static let progressViewHeight = 6.0

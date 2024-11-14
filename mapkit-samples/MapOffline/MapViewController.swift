@@ -109,6 +109,7 @@ class MapViewController: UIViewController {
 
     @objc
     private func optionsButtonTapHandler() {
+        let optionsViewController = OptionsViewController()
         present(optionsViewController, animated: true)
     }
 
@@ -155,8 +156,6 @@ class MapViewController: UIViewController {
     private lazy var offlineManager = YMKMapKit.sharedInstance().offlineCacheManager
     private lazy var resultsTableController = ResultsTableController()
     private lazy var searchBarController = UISearchController(searchResultsController: resultsTableController)
-    private lazy var regionViewController = RegionViewController()
-    private lazy var optionsViewController = OptionsViewController()
     private let searchViewModel = SearchViewModel()
     private var bag = Set<AnyCancellable>()
 
@@ -214,7 +213,7 @@ extension MapViewController: UISearchResultsUpdating, UISearchControllerDelegate
     }
 
     private func showRegionInfo(regionId: Int) {
-        regionViewController.setRegion(with: regionId)
+        let regionViewController = RegionViewController(regionId: regionId)
         present(regionViewController, animated: true)
     }
 
@@ -222,10 +221,10 @@ extension MapViewController: UISearchResultsUpdating, UISearchControllerDelegate
         switch regionListState {
         case .success:
             resultsTableController.items = offlineManager.regions()
-                .map { region in
+                .map { [weak self] region in
                     RegionItem(model: region) {
-                        self.searchViewModel.startSearch(with: region.name)
-                        self.showRegionInfo(regionId: Int(region.id))
+                        self?.searchViewModel.startSearch(with: region.name)
+                        self?.showRegionInfo(regionId: Int(region.id))
                     }
                 }
                 .filter { $0.model.name.contains(query) }

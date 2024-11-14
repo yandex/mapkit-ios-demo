@@ -21,11 +21,15 @@ class RegionViewModel {
         self.regionId = regionId
     }
 
+    deinit {
+        bag.removeAll()
+    }
+
     // MARK: - Private methods
 
     private func setupRegionSubscription() {
         $regionId
-            .sink { [weak self ] regionId in
+            .sink { [weak self] regionId in
                 let cacheRegion = self?.offlineManager.regions().first { $0.id == regionId ?? .zero }
                 self?.region = RegionInfo(
                     id: "\(cacheRegion?.id ?? .zero)",
