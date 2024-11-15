@@ -37,6 +37,10 @@ final class NavigationStyleManagerImpl: NSObject, NavigationStyleManager {
         carNavigationStyleProvider.routePinsStyleProvider()
     }
 
+    func highlight() -> YMKHighlightStyleProvider {
+        carNavigationStyleProvider.highlight()
+    }
+
     // MARK: - Private properties
 
     private let carNavigationStyleProvider = YMKAutomotiveNavigationStyleProvider()

@@ -61,8 +61,9 @@ final class NavigationManagerImpl: NSObject, NavigationManager, ObservableObject
         navigation.vehicleOptions = vehicleOptionManager.vehicleOptions
         navigation.requestRoutes(
             with: requestPointsFromCurrent(via: points),
-            initialAzimuth: locationManager.location.value?.heading,
-            routesCount: nil
+            routeOptions: YMKAutomotiveRouteOptions(
+                initialAzimuth: locationManager.location.value?.heading,
+                routesCount: nil)
         )
     }
 

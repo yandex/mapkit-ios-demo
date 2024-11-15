@@ -57,7 +57,6 @@ final class MapViewModel {
 
     private var navigation: YMKNavigation!
     private var camera: YMKCamera!
-    private var roadEventsLayer: YMKRoadEventsLayer!
     private var navigationLayer: YMKNavigationLayer!
     private var mapObjectCollection: YMKMapObjectCollection!
 
@@ -194,7 +193,6 @@ extension MapViewModel {
         settingsBinder = SettingsBinderImpl(
             settingsRepository: settingsRepository,
             simulationManager: simulationManager,
-            roadEventsLayer: roadEventsLayer,
             navigationStyleManager: navigationStyleManager,
             navigationLayer: navigationLayer,
             navigation: navigation,
@@ -265,7 +263,7 @@ extension MapViewModel {
                     minDistance: 0,
                     allowUseInBackground: true,
                     filteringMode: .on,
-                    purpose: .navigation,
+                    purpose: .automotiveNavigation,
                     locationListener: mockLocationDelegate
                 )
             }
@@ -339,17 +337,9 @@ private extension MapViewModel {
         navigation.removeListener(with: navigationListener)
         locationManager.removeGuidanceListener()
 
-        if roadEventsLayer == nil {
-            roadEventsLayer =
-                YMKMapKit.sharedInstance().createRouteRoadEventsLayer(
-                    with: mapWindow,
-                    styleProvider: roadEventsStyleProvider
-                )
-        }
-
         navigationLayer = YMKNavigationLayerFactory.createNavigationLayer(
             with: mapWindow,
-            roadEventsLayer: roadEventsLayer,
+            roadEventsLayerStyleProvider: roadEventsStyleProvider,
             styleProvider: navigationStyleManager,
             navigation: navigation
         )

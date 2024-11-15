@@ -7,7 +7,7 @@ import YandexMapsMobile
  */
 class MapObjectsViewController: BaseMapViewController {
 
-	let OBJECT_SIZE: Double = 0.0015
+    let OBJECT_SIZE: Double = 0.0015
 
     private var animationIsActive = true
     private var circleMapObjectTapListener: YMKMapObjectTapListener!

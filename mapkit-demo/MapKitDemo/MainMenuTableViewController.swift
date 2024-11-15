@@ -1,7 +1,7 @@
 import UIKit
 
 class MainMenuTableViewController: UITableViewController {
-    
+
     #if FULL_VERSION
     let STORYBOARDS = [
         "About",
@@ -30,11 +30,11 @@ class MainMenuTableViewController: UITableViewController {
         "Jams",
         "MapSelection"]
     #endif
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-    
+
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let storyboardName = STORYBOARDS[indexPath.row]
         let storyboard = UIStoryboard(name: storyboardName, bundle: nil)

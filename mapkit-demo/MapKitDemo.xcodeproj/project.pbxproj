@@ -278,6 +278,7 @@
 				BD533AEA2930E29600E85891 /* Sources */,
 				BD533AFD2930E29600E85891 /* Frameworks */,
 				BD533AFF2930E29600E85891 /* Resources */,
+				1D4E10D073740E205E2D332C /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -327,7 +328,7 @@
 				};
 			};
 			buildConfigurationList = E73A65D6204E9E060056E380 /* Build configuration list for PBXProject "MapKitDemo" */;
-			compatibilityVersion = "Xcode 8.0";
+			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -399,18 +400,34 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		1D4E10D073740E205E2D332C /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Lite/Pods-Lite-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Lite/Pods-Lite-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Lite/Pods-Lite-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		88B1F58F2887C88419DFC5BE /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Full/Pods-Full-resources.sh",
-				"${PODS_ROOT}/YandexMapsMobile/YandexMapsMobile.bundle",
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Full/Pods-Full-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/YandexMapsMobile.bundle",
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Full/Pods-Full-resources-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;

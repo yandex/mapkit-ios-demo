@@ -8,6 +8,6 @@ final class NavigationLayerListener: NSObject, YMKNavigationLayerListener {
     func onSelectedRouteChanged() {
     }
 
-    func onRoutesSourceChanged() {
+    func onModeChanged() {
     }
 }
