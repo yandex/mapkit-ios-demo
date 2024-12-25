@@ -14,6 +14,9 @@ final class NavigationListener: NSObject, YMKNavigationListener {
     func onUriResolvingRequested(withUri uri: String) {
     }
 
+    func onMatchRouteResolvingRequested() {
+    }
+
     func onParkingRoutesRequested() {
     }
 

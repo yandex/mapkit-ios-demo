@@ -258,12 +258,7 @@ extension MapViewModel {
             if simulationManager.isSimulationActive.value {
                 // Subscription is just for keeping app alive in background
                 mockLocationManager.subscribeForLocationUpdates(
-                    withDesiredAccuracy: 1,
-                    minTime: 0,
-                    minDistance: 0,
-                    allowUseInBackground: true,
-                    filteringMode: .on,
-                    purpose: .automotiveNavigation,
+                    with: YMKLocationSubscriptionSettings(useInBackground: .allow, purpose: .automotiveNavigation),
                     locationListener: mockLocationDelegate
                 )
             }

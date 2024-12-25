@@ -18,10 +18,10 @@ class MasstransitRoutingViewController : BaseMapViewController {
         let requestPoints : [YMKRequestPoint] = [
             YMKRequestPoint(
                 point: Const.masstransitRouteStartLocation, type: .waypoint,
-                pointContext: nil, drivingArrivalPointId: nil),
+                pointContext: nil, drivingArrivalPointId: nil, indoorLevelId: nil),
             YMKRequestPoint(
                 point: Const.masstransitRouteEndLocation, type: .waypoint,
-                pointContext: nil, drivingArrivalPointId: nil),
+                pointContext: nil, drivingArrivalPointId: nil, indoorLevelId: nil),
             ]
 
         let responseHandler = {(routesResponse: [YMKMasstransitRoute]?, error: Error?) -> Void in

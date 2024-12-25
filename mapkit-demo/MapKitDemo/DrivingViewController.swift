@@ -18,10 +18,10 @@ class DrivingViewController: BaseMapViewController {
         let requestPoints : [YMKRequestPoint] = [
             YMKRequestPoint(
                 point: Const.routeStartPoint, type: .waypoint,
-                pointContext: nil, drivingArrivalPointId: nil),
+                pointContext: nil, drivingArrivalPointId: nil, indoorLevelId: nil),
             YMKRequestPoint(
                 point: Const.routeEndPoint, type: .waypoint,
-                pointContext: nil, drivingArrivalPointId: nil),
+                pointContext: nil, drivingArrivalPointId: nil, indoorLevelId: nil),
             ]
 
         let responseHandler = {(routesResponse: [YMKDrivingRoute]?, error: Error?) -> Void in
