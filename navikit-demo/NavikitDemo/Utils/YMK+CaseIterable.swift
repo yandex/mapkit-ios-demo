@@ -23,11 +23,12 @@ extension YMKRoadEventsEventTag: CaseIterable {
             .overtakingDanger,
             .pedestrianDanger,
             .police,
+            .policePatrol,
             .reconstruction,
             .roadMarkingControl,
             .school,
             .speedControl,
-            .trafficAlert
+            .trafficControl
         ]
     }
 }

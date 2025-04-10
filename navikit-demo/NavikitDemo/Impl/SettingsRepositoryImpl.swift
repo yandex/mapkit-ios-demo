@@ -67,7 +67,12 @@ class SettingsRepositoryImpl: SettingsRepository {
     // Driving Options
     var avoidTolls: CurrentValueSubject<Bool, Never> = setting("avoidTolls", false)
     var avoidUnpaved: CurrentValueSubject<Bool, Never> = setting("avoidUnpaved", false)
-    var avoidPoorConditions: CurrentValueSubject<Bool, Never> = setting("avoidPoorConditions", false)
+    var avoidPoorCondition: CurrentValueSubject<Bool, Never> = setting("avoidPoorCondition", false)
+    var avoidRailwayCrossing: CurrentValueSubject<Bool, Never> = setting("avoidRailwayCrossing", false)
+    var avoidBoatFerry: CurrentValueSubject<Bool, Never> = setting("avoidBoatFerry", false)
+    var avoidFordCrossing: CurrentValueSubject<Bool, Never> = setting("avoidFordCrossing", false)
+    var avoidTunnel: CurrentValueSubject<Bool, Never> = setting("avoidTunnel", false)
+    var avoidHighway: CurrentValueSubject<Bool, Never> = setting("avoidHighway", false)
 
     // Navigation Layer
     var jamsMode: CurrentValueSubject<JamsMode, Never> = setting("jamsMode", .enabledForCurrentRoute)

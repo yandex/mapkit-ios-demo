@@ -1,7 +1,7 @@
 platform :ios, '13.0'
 
 target 'NavikitDemo' do
-    pod 'YandexMapsMobile', '4.13.0-navikit'
-    pod 'YMKStylingAutomotiveNavigation', '4.13.0'
-    pod 'YMKStylingRoadEvents', '4.13.0'
+    pod 'YandexMapsMobile', '4.14.0-navikit'
+    pod 'YMKStylingAutomotiveNavigation', '4.14.0'
+    pod 'YMKStylingRoadEvents', '4.14.0'
 end

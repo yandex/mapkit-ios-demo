@@ -234,7 +234,27 @@ enum SettingsScreensSections {
                     ),
                     SettingItem(
                         title: "Avoid Poor Conditions Routes",
-                        value: .toggle(settingsRepository.avoidPoorConditions)
+                        value: .toggle(settingsRepository.avoidPoorCondition)
+                    ),
+                    SettingItem(
+                        title: "Avoid Railway Crossings",
+                        value: .toggle(settingsRepository.avoidRailwayCrossing)
+                    ),
+                    SettingItem(
+                        title: "Avoid Boat Ferries",
+                        value: .toggle(settingsRepository.avoidBoatFerry)
+                    ),
+                    SettingItem(
+                        title: "Avoid Ford Crossings",
+                        value: .toggle(settingsRepository.avoidFordCrossing)
+                    ),
+                    SettingItem(
+                        title: "Avoid Tunnels",
+                        value: .toggle(settingsRepository.avoidTunnel)
+                    ),
+                    SettingItem(
+                        title: "Avoid Highways",
+                        value: .toggle(settingsRepository.avoidHighway)
                     )
                 ]
             )

@@ -191,7 +191,12 @@ protocol SettingsRepository {
     // Driving Options
     var avoidTolls: CurrentValueSubject<Bool, Never> { get }
     var avoidUnpaved: CurrentValueSubject<Bool, Never> { get }
-    var avoidPoorConditions: CurrentValueSubject<Bool, Never> { get }
+    var avoidPoorCondition: CurrentValueSubject<Bool, Never> { get }
+    var avoidRailwayCrossing: CurrentValueSubject<Bool, Never> { get }
+    var avoidBoatFerry: CurrentValueSubject<Bool, Never> { get }
+    var avoidFordCrossing: CurrentValueSubject<Bool, Never> { get }
+    var avoidTunnel: CurrentValueSubject<Bool, Never> { get }
+    var avoidHighway: CurrentValueSubject<Bool, Never> { get }
 
     // Navigation Layer
     var jamsMode: CurrentValueSubject<JamsMode, Never> { get }

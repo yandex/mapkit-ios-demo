@@ -109,15 +109,34 @@ final class SettingsBinderImpl: SettingsBinder {
             }
             .store(in: &cancellablesBag)
 
-        Publishers.CombineLatest3(
-            settingsRepository.avoidTolls,
-            settingsRepository.avoidUnpaved,
-            settingsRepository.avoidPoorConditions
+        Publishers.CombineLatest(
+            Publishers.CombineLatest4(
+                settingsRepository.avoidTolls,
+                settingsRepository.avoidUnpaved,
+                settingsRepository.avoidPoorCondition,
+                settingsRepository.avoidRailwayCrossing
+            ),
+            Publishers.CombineLatest4(
+                settingsRepository.avoidBoatFerry,
+                settingsRepository.avoidFordCrossing,
+                settingsRepository.avoidTunnel,
+                settingsRepository.avoidHighway
+            )
         )
-        .sink { [weak self] avoidTolls, avoidUnpaved, avoidPoorConditions in
-            self?.navigation.isAvoidTolls = avoidTolls
-            self?.navigation.isAvoidUnpaved = avoidUnpaved
-            self?.navigation.isAvoidPoorConditions = avoidPoorConditions
+        .sink { [weak self] combo0, combo1 in
+            let (avoidTolls, avoidUnpaved, avoidPoorCondition, avoidRailwayCrossing) = combo0
+            let (avoidBoatFerry, avoidFordCrossing, avoidTunnel, avoidHighway) = combo1
+
+            self?.navigation.avoidanceFlags = YMKDrivingAvoidanceFlags(
+                avoidTolls: avoidTolls,
+                avoidUnpaved: avoidUnpaved,
+                avoidPoorCondition: avoidPoorCondition,
+                avoidRailwayCrossing: avoidRailwayCrossing,
+                avoidBoatFerry: avoidBoatFerry,
+                avoidFordCrossing: avoidFordCrossing,
+                avoidTunnel: avoidTunnel,
+                avoidHighway: avoidHighway
+            )
         }
         .store(in: &cancellablesBag)
     }
