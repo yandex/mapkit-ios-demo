@@ -1,7 +1,7 @@
 platform :ios, '12.0'
 
 def mapkit_pod
-  pod 'YandexMapsMobile', '4.14.1-full'
+  pod 'YandexMapsMobile', '4.15.0-full'
 end
 
 target 'MapWithPlacemark' do
