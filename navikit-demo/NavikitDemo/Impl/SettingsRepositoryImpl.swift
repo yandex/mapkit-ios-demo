@@ -78,6 +78,8 @@ class SettingsRepositoryImpl: SettingsRepository {
     var jamsMode: CurrentValueSubject<JamsMode, Never> = setting("jamsMode", .enabledForCurrentRoute)
     var balloons: CurrentValueSubject<Bool, Never> = setting("balloons", true)
     var trafficLights: CurrentValueSubject<Bool, Never> = setting("trafficLights", true)
+    var mapsHD: CurrentValueSubject<Bool, Never> = setting("mapsHD", true)
+    var maps3D: CurrentValueSubject<Bool, Never> = setting("map3D", true)
     var showPredicted: CurrentValueSubject<Bool, Never> = setting("showPredicted", false)
     var balloonsGeometry: CurrentValueSubject<Bool, Never> = setting("balloonsGeometry", false)
 
