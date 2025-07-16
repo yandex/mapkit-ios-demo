@@ -43,7 +43,7 @@ final class RoutingViewModel {
 
     private func onRoutingPointsUpdated() {
         guard let image = UIImage(systemName: "circle.fill") else { return }
-        
+
         placemarksCollection.clear()
 
         if routePoints.isEmpty {

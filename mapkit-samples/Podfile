@@ -23,3 +23,7 @@ end
 target 'MapRouting' do
   mapkit_pod
 end
+  
+target 'MapOffline' do
+  mapkit_pod
+end
