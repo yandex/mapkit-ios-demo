@@ -19,10 +19,13 @@ class MapViewController: UIViewController {
         map = mapView.mapWindow.map
 
         map.addCameraListener(with: mapCameraListener)
+        offlineManager.addRegionListUpdatesListener(with: regionListUpdatesListener)
 
         searchViewModel.setupSubscriptions()
 
         setupSearchController()
+
+        setupSubviews()
 
         moveToStartPoint()
     }
@@ -35,22 +38,79 @@ class MapViewController: UIViewController {
     }
 
     private func setupSearchController() {
-        self.searchBarController.searchResultsUpdater = self
-        self.searchBarController.obscuresBackgroundDuringPresentation = true
-        self.searchBarController.hidesNavigationBarDuringPresentation = false
+        navigationController?.setNavigationBarHidden(true, animated: false)
         self.searchBarController.searchBar.placeholder = "Search places"
-
-        self.navigationItem.searchController = searchBarController
-        self.definesPresentationContext = true
-        self.navigationItem.hidesSearchBarWhenScrolling = false
 
         searchBarController.delegate = self
         searchBarController.searchBar.delegate = self
         searchBarController.searchBar.showsBookmarkButton = false
 
+        searchBarController.view.backgroundColor = .white
+        resultsTableController.view.backgroundColor = .white
+        searchBarController.searchResultsController?.view.isHidden = false
+
+        resultsTableController.tableView.contentInset = .init(top: 50, left: .zero, bottom: .zero, right: .zero)
+        resultsTableController.edgesForExtendedLayout = .bottom
         resultsTableController.tableView.delegate = self
 
         setupStateUpdates()
+    }
+
+    private func setupSubviews() {
+        view.addSubview(menuView)
+        menuView.axis = .horizontal
+        menuView.alignment = .fill
+        menuView.distribution = .equalSpacing
+        menuView.spacing = 15
+        menuView.translatesAutoresizingMaskIntoConstraints = false
+
+        [
+            menuView.topAnchor.constraint(equalTo: view.topAnchor, constant: 80),
+            menuView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20)
+        ]
+        .forEach { $0.isActive = true }
+
+        [regionListButton, optionsButton]
+            .forEach {
+                menuView.addArrangedSubview($0)
+
+                $0.translatesAutoresizingMaskIntoConstraints = false
+                [
+                    $0.heightAnchor.constraint(equalToConstant: 36)
+                ]
+                .forEach { $0.isActive = true }
+
+                $0.layer.cornerRadius = 4
+                $0.setTitleColor(.black, for: .normal)
+                $0.contentMode = .scaleAspectFill
+                $0.backgroundColor = Palette.background
+            }
+
+        regionListButton.addTarget(
+            self,
+            action: #selector(regionListButtonTapHandler),
+            for: .touchUpInside
+        )
+        regionListButton.setTitle("REGION LIST", for: .normal)
+
+        optionsButton.addTarget(
+            self,
+            action: #selector(optionsButtonTapHandler),
+            for: .touchUpInside
+        )
+        optionsButton.setTitle("OPTIONS", for: .normal)
+    }
+
+    @objc
+    private func regionListButtonTapHandler() {
+        present(searchBarController, animated: true)
+        searchViewModel.setQueryText(with: "")
+    }
+
+    @objc
+    private func optionsButtonTapHandler() {
+        let optionsViewController = OptionsViewController()
+        present(optionsViewController, animated: true)
     }
 
     private func focusCamera(points: [YMKPoint], boundingBox: YMKBoundingBox) {
@@ -58,14 +118,7 @@ class MapViewController: UIViewController {
             return
         }
 
-        let position = points.count == 1
-            ? YMKCameraPosition(
-                target: points.first!,
-                zoom: map.cameraPosition.zoom,
-                azimuth: map.cameraPosition.azimuth,
-                tilt: map.cameraPosition.tilt
-            )
-            : map.cameraPosition(with: YMKGeometry(boundingBox: boundingBox))
+        let position = map.cameraPosition(with: YMKGeometry(boundingBox: boundingBox))
 
         map.move(with: position, animation: YMKAnimation(type: .smooth, duration: 0.5))
     }
@@ -86,7 +139,6 @@ class MapViewController: UIViewController {
             placemark.setViewWithView(YRTViewProvider(uiView: UIImageView(image: image)))
 
             placemark.userData = item.geoObject
-            placemark.addTapListener(with: mapObjectTapListener)
         }
     }
 
@@ -94,17 +146,18 @@ class MapViewController: UIViewController {
 
     private var mapView: YMKMapView!
     private lazy var map: YMKMap = mapView.mapWindow.map
-    private let buttonsView = UIStackView()
     private lazy var mapCameraListener = MapCameraListener(searchViewModel: searchViewModel)
 
+    private let menuView = UIStackView()
+    private let regionListButton = UIButton()
+    private let optionsButton = UIButton()
+
+    private lazy var regionListUpdatesListener = OfflineMapRegionListUpdatesListener(searchViewModel: searchViewModel)
+    private lazy var offlineManager = YMKMapKit.sharedInstance().offlineCacheManager
     private lazy var resultsTableController = ResultsTableController()
     private lazy var searchBarController = UISearchController(searchResultsController: resultsTableController)
     private let searchViewModel = SearchViewModel()
     private var bag = Set<AnyCancellable>()
-
-    @Published private var searchSuggests: [SuggestItem] = []
-
-    private lazy var mapObjectTapListener = MapObjectTapListener(controller: self)
 
     // MARK: - Private nesting
 
@@ -147,24 +200,35 @@ extension MapViewController: UISearchResultsUpdating, UISearchControllerDelegate
             self?.updatePlaceholder(with: query)
 
             if case let .success(items, zoomToItems, itemsBoundingBox) = state?.searchState {
-                self?.displaySearchResults(items: items, zoomToItems: zoomToItems, itemsBoundingBox: itemsBoundingBox)
                 if zoomToItems {
                     self?.focusCamera(points: items.map { $0.point }, boundingBox: itemsBoundingBox)
                 }
             }
-            if let suggestState = state?.suggestState {
-                self?.updateSuggests(with: suggestState)
+            if let regionState = state?.regionListState,
+               case .success = state?.regionListState {
+                self?.updateRegions(with: regionState, query: query)
             }
         }
         .store(in: &bag)
     }
 
-    private func updateSuggests(with suggestState: SuggestState) {
-        switch suggestState {
-        case .success(let items):
-            resultsTableController.items = items
-            resultsTableController.tableView.reloadData()
+    private func showRegionInfo(regionId: Int) {
+        let regionViewController = RegionViewController(regionId: regionId)
+        present(regionViewController, animated: true)
+    }
 
+    private func updateRegions(with regionListState: RegionListState, query: String) {
+        switch regionListState {
+        case .success:
+            resultsTableController.items = offlineManager.regions()
+                .map { [weak self] region in
+                    RegionItem(model: region) {
+                        self?.searchViewModel.startSearch(with: region.name)
+                        self?.showRegionInfo(regionId: Int(region.id))
+                    }
+                }
+                .filter { $0.model.name.contains(query) }
+            resultsTableController.tableView.reloadData()
         default:
             return
         }
@@ -191,7 +255,7 @@ private class ResultsTableController: UITableViewController {
 
     private let cellIdentifier = "cellIdentifier"
 
-    var items = [SuggestItem]()
+    var items = [RegionItem]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -217,13 +281,13 @@ private class ResultsTableController: UITableViewController {
     }
 }
 
-fileprivate extension SuggestItem {
+fileprivate extension RegionItem {
 
     var cellText: NSAttributedString {
-        let result = NSMutableAttributedString(string: title.text)
+        let result = NSMutableAttributedString(string: model.name)
         result.append(NSAttributedString(string: " "))
 
-        let subtitle = NSMutableAttributedString(string: subtitle?.text ?? "")
+        let subtitle = NSMutableAttributedString(string: "")
         subtitle.setAttributes(
             [.foregroundColor: UIColor.secondaryLabel],
             range: NSRange(location: 0, length: subtitle.string.count)
