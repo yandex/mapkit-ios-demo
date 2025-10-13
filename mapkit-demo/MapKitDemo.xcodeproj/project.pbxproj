@@ -3,11 +3,10 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 48;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3E0F7DC42E5745050047D044 /* NetworkExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E0F7DC32E5745050047D044 /* NetworkExtension.framework */; };
 		5CB3FE1324DE3E5C005BC102 /* MapSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CB3FE1224DE3E5C005BC102 /* MapSelectionViewController.swift */; };
 		5CB3FE1524DE4682005BC102 /* MapSelection.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5CB3FE1424DE4682005BC102 /* MapSelection.storyboard */; };
 		9F5806382B61BEAE003E88DD /* DeviceCheck.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F5806372B61BEAE003E88DD /* DeviceCheck.framework */; };
@@ -88,7 +87,6 @@
 /* Begin PBXFileReference section */
 		352F1A70DFFCEB801A40AB99 /* libPods-Lite.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Lite.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		35C3252C62DF7978466C62E1 /* Pods-Lite.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Lite.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Lite/Pods-Lite.debug.xcconfig"; sourceTree = "<group>"; };
-		3E0F7DC32E5745050047D044 /* NetworkExtension.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NetworkExtension.framework; path = System/Library/Frameworks/NetworkExtension.framework; sourceTree = SDKROOT; };
 		41209B3F1C20F2644270AD83 /* libPods-Full.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Full.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		457AD6E4C4817CA27BF3E070 /* Pods_MapkitSample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MapkitSample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5439E9AE80E2CF2E97E467D6 /* Pods-Full.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Full.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Full/Pods-Full.debug.xcconfig"; sourceTree = "<group>"; };
@@ -159,7 +157,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3E0F7DC42E5745050047D044 /* NetworkExtension.framework in Frameworks */,
 				9F5806382B61BEAE003E88DD /* DeviceCheck.framework in Frameworks */,
 				DDF9DAE7299A7CC400A3B38D /* CoreMotion.framework in Frameworks */,
 				C5720131B262D28665D2B278 /* libPods-Full.a in Frameworks */,
@@ -172,7 +169,6 @@
 		03BAF3E6E802BD671B589C43 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				3E0F7DC32E5745050047D044 /* NetworkExtension.framework */,
 				9F5806372B61BEAE003E88DD /* DeviceCheck.framework */,
 				DDF9DAE5299A7CBB00A3B38D /* CoreMotion.framework */,
 				457AD6E4C4817CA27BF3E070 /* Pods_MapkitSample.framework */,
@@ -560,10 +556,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "$(SRCROOT)/MapKitDemo/LiteInfo.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.yandex.maps.mapkitdemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -582,10 +575,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "$(SRCROOT)/MapKitDemo/LiteInfo.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.yandex.maps.mapkitdemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -701,8 +691,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
-				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -717,10 +706,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "$(SRCROOT)/MapKitDemo/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.yandex.maps.mapkitdemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "FULL_VERSION DEBUG";
@@ -740,10 +726,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "$(SRCROOT)/MapKitDemo/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.yandex.maps.mapkitdemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = FULL_VERSION;

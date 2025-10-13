@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3E0F7DC62E5745270047D044 /* NetworkExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E0F7DC52E5745270047D044 /* NetworkExtension.framework */; };
 		6F9044962DC7354CAB52D5C3 /* libPods-MapObjects.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F5EBD9B0CAA5062026C5A403 /* libPods-MapObjects.a */; };
 		71B0A398FF9ADDE1A9D2D1D6 /* libPods-MapInteraction.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C4817A7A6B8F04206D17C4A2 /* libPods-MapInteraction.a */; };
 		755E718517F5F29B8796A442 /* libPods-MapWithPlacemark.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8420C1C67B164494687E0618 /* libPods-MapWithPlacemark.a */; };
@@ -84,7 +83,6 @@
 		1FEBBECC65E06B4ADA6FEB04 /* Pods-MapInteraction.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MapInteraction.release.xcconfig"; path = "Target Support Files/Pods-MapInteraction/Pods-MapInteraction.release.xcconfig"; sourceTree = "<group>"; };
 		21AB4751AEEFFEE83B858758 /* Pods-MapRouting.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MapRouting.release.xcconfig"; path = "Target Support Files/Pods-MapRouting/Pods-MapRouting.release.xcconfig"; sourceTree = "<group>"; };
 		29B7FDA28317D6E47B8F4425 /* Pods-MapObjects.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MapObjects.release.xcconfig"; path = "Target Support Files/Pods-MapObjects/Pods-MapObjects.release.xcconfig"; sourceTree = "<group>"; };
-		3E0F7DC52E5745270047D044 /* NetworkExtension.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NetworkExtension.framework; path = System/Library/Frameworks/NetworkExtension.framework; sourceTree = SDKROOT; };
 		5C822D66C99F665A68E1309F /* Pods-MapRouting.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MapRouting.debug.xcconfig"; path = "Target Support Files/Pods-MapRouting/Pods-MapRouting.debug.xcconfig"; sourceTree = "<group>"; };
 		5F837C7C4EC92C1C612520C7 /* libPods-MapRouting.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MapRouting.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		61AA67B1BD26F1C3452843FE /* Pods-MapWithPlacemark.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MapWithPlacemark.debug.xcconfig"; path = "Target Support Files/Pods-MapWithPlacemark/Pods-MapWithPlacemark.debug.xcconfig"; sourceTree = "<group>"; };
@@ -170,7 +168,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3E0F7DC62E5745270047D044 /* NetworkExtension.framework in Frameworks */,
 				9F576CC02B66F48B00D4106B /* DeviceCheck.framework in Frameworks */,
 				755E718517F5F29B8796A442 /* libPods-MapWithPlacemark.a in Frameworks */,
 			);
@@ -208,7 +205,6 @@
 		629DFE2F96087820F6AC692A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				3E0F7DC52E5745270047D044 /* NetworkExtension.framework */,
 				9F576CBF2B66F48B00D4106B /* DeviceCheck.framework */,
 				C4817A7A6B8F04206D17C4A2 /* libPods-MapInteraction.a */,
 				F5EBD9B0CAA5062026C5A403 /* libPods-MapObjects.a */,
