@@ -10,6 +10,7 @@ enum Const {
     ]
 
     static let targetLocation = YMKPoint(latitude: 59.945933, longitude: 30.320045)
+    static let panoramaSearchLocation = YMKPoint(latitude: 55.733330, longitude: 37.587649)
 
     static let routeStartPoint = YMKPoint(latitude: 59.959194, longitude: 30.407094)
     static let routeEndPoint = YMKPoint(latitude: 55.733330, longitude: 37.587649)
