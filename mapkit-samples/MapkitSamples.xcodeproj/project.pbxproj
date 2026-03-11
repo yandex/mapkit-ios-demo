@@ -930,6 +930,7 @@
 				DEVELOPMENT_TEAM = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.yandex.maps.MapkitSamples;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				MAPKIT_API_KEY = YOUR_MAPKIT_API_KEY;
 			};
 			name = Debug;
 		};
@@ -939,6 +940,7 @@
 			buildSettings = {
 				PRODUCT_BUNDLE_IDENTIFIER = com.yandex.maps.MapkitSamples;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				MAPKIT_API_KEY = YOUR_MAPKIT_API_KEY;
 			};
 			name = Release;
 		};
@@ -949,6 +951,7 @@
 				DEVELOPMENT_TEAM = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.yandex.maps.MapkitSamples;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				MAPKIT_API_KEY = YOUR_MAPKIT_API_KEY;
 			};
 			name = Debug;
 		};
@@ -959,6 +962,7 @@
 				DEVELOPMENT_TEAM = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.yandex.maps.MapkitSamples;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				MAPKIT_API_KEY = YOUR_MAPKIT_API_KEY;
 			};
 			name = Release;
 		};
@@ -969,6 +973,7 @@
 				DEVELOPMENT_TEAM = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.yandex.maps.MapkitSamples;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				MAPKIT_API_KEY = YOUR_MAPKIT_API_KEY;
 			};
 			name = Debug;
 		};
@@ -979,6 +984,7 @@
 				DEVELOPMENT_TEAM = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.yandex.maps.MapkitSamples;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				MAPKIT_API_KEY = YOUR_MAPKIT_API_KEY;
 			};
 			name = Release;
 		};
@@ -991,6 +997,7 @@
 				DEVELOPMENT_TEAM = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.yandex.maps.MapkitSamples;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				MAPKIT_API_KEY = YOUR_MAPKIT_API_KEY;
 			};
 			name = Debug;
 		};
@@ -1003,6 +1010,7 @@
 				DEVELOPMENT_TEAM = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.yandex.maps.MapkitSamples;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				MAPKIT_API_KEY = YOUR_MAPKIT_API_KEY;
 			};
 			name = Release;
 		};
@@ -1013,6 +1021,7 @@
 				DEVELOPMENT_TEAM = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.yandex.maps.MapkitSamples;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				MAPKIT_API_KEY = YOUR_MAPKIT_API_KEY;
 			};
 			name = Debug;
 		};
@@ -1022,6 +1031,7 @@
 			buildSettings = {
 				PRODUCT_BUNDLE_IDENTIFIER = com.yandex.maps.MapkitSamples;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				MAPKIT_API_KEY = YOUR_MAPKIT_API_KEY;
 			};
 			name = Release;
 		};

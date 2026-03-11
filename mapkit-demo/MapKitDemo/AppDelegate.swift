@@ -5,10 +5,7 @@ import YandexMapsMobile
 class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
-    /**
-     * Replace "your_api_key" with a valid developer key.
-     */
-    let MAPKIT_API_KEY = "your_api_key"
+    let MAPKIT_API_KEY = Bundle.main.object(forInfoDictionaryKey: "MAPKIT_API_KEY") as? String ?? ""
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         /**
