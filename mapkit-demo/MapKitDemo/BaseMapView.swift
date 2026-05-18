@@ -21,7 +21,7 @@ class BaseMapView: UIView {
         Bundle.main.loadNibNamed("BaseMapView", owner: self, options: nil)
         addSubview(contentView)
         contentView.frame = self.bounds
-        mapView = YMKMapView(frame: bounds, vulkanPreferred: true)
+        mapView = YMKMapView(frame: bounds, vulkanPreferred: true, transparencySupport: false)
         mapView.mapWindow.map.mapType = .vectorMap
         contentView.insertSubview(mapView, at: 0)
     }

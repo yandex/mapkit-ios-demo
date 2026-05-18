@@ -30,7 +30,7 @@ struct UpcomingManeuverViewState {
     // MARK: - Public properties
 
     let distance: String
-    let action: NSNumber?
+    let action: YMKDrivingAction
     let nextStreet: String?
     let laneSign: YMKDrivingLaneSign?
 }

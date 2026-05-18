@@ -34,7 +34,6 @@ private enum LaneActionImageFactory {
         private static let finish = UIImage(named: "context_ra_finish")!
 
         static let actionImages = [
-            unknown,
             forward,
             takeLeft,
             takeRight,
@@ -56,11 +55,12 @@ private enum LaneActionImageFactory {
         ]
     }
 
-    static func make(for action: NSNumber) -> UIImage {
-        guard Int(truncating: action) < Holder.actionImages.count else {
+    static func make(for action: YMKDrivingAction) -> UIImage {
+        let index = Int(action.rawValue);
+        guard index < Holder.actionImages.count else {
             return Holder.unknown
         }
-        return Holder.actionImages[Int(truncating: action)]
+        return Holder.actionImages[index]
     }
 }
 
@@ -156,11 +156,7 @@ final class UpcomingManeuverView: UIView {
                 } else {
                     self?.laneSignImageView.image = nil
                 }
-                if let action = viewState.action {
-                    self?.actionImageView.image = LaneActionImageFactory.make(for: action)
-                } else {
-                    self?.actionImageView.image = nil
-                }
+                self?.actionImageView.image = LaneActionImageFactory.make(for: viewState.action)
 
                 self?.updateStack()
             }
