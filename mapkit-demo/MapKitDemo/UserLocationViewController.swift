@@ -39,6 +39,7 @@ class UserLocationViewController: BaseMapViewController, YMKUserLocationObjectLi
                 flat: true,
                 visible: true,
                 scale: 1.5,
+                opacity: 1.0,
                 tappableArea: nil))
 
         pinPlacemark.setIconWithName(
@@ -50,7 +51,8 @@ class UserLocationViewController: BaseMapViewController, YMKUserLocationObjectLi
                 zIndex: 1,
                 flat: true,
                 visible: true,
-                scale: 1,
+                scale: 1.0,
+                opacity: 1.0,
                 tappableArea: nil))
 
         view.accuracyCircle.fillColor = UIColor.blue
