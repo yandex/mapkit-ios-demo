@@ -202,6 +202,8 @@ protocol SettingsRepository {
     var jamsMode: CurrentValueSubject<JamsMode, Never> { get }
     var balloons: CurrentValueSubject<Bool, Never> { get }
     var trafficLights: CurrentValueSubject<Bool, Never> { get }
+    var mapsHD: CurrentValueSubject<Bool, Never> { get }
+    var maps3D: CurrentValueSubject<Bool, Never> { get }
     var showPredicted: CurrentValueSubject<Bool, Never> { get }
     var balloonsGeometry: CurrentValueSubject<Bool, Never> { get }
 
