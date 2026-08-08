@@ -40,6 +40,8 @@ final class MapViewModel {
         self.controller = controller
 
         map = mapWindow.map
+        map.isAwesomeModelsEnabled = settingsRepository.maps3D.value
+        map.isHdModeEnabled = settingsRepository.mapsHD.value
     }
 
     func setController(with controller: UIViewController) {
@@ -109,6 +111,8 @@ extension MapViewModel {
         start()
 
         setupNightModeSubscription()
+        setupMapsHDSubscription()
+        setupMaps3DSubscription()
 
         setupBackground()
         setupSerialization()
@@ -223,6 +227,22 @@ extension MapViewModel {
         settingsRepository.styleMode
             .sink { [weak self] _ in
                 self?.updateColorScheme()
+            }
+            .store(in: &cancellablesBag)
+    }
+
+    private func setupMapsHDSubscription() {
+        settingsRepository.mapsHD
+            .sink { [weak self] _ in
+                self?.map.isHdModeEnabled = self?.settingsRepository.mapsHD.value ?? true
+            }
+            .store(in: &cancellablesBag)
+    }
+
+    private func setupMaps3DSubscription() {
+        settingsRepository.maps3D
+            .sink { [weak self] _ in
+                self?.map.isAwesomeModelsEnabled = self?.settingsRepository.maps3D.value ?? true
             }
             .store(in: &cancellablesBag)
     }
