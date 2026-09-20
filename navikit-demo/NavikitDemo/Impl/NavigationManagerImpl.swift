@@ -182,5 +182,7 @@ private class NavigationManagerWindshieldListener: NSObject, YMKNavigationWindsh
 
     func onRoadEventsChanged() {}
 
+    func onActiveSpeedCamerasChanged() {}
+
     private weak var navigationManager: NavigationManagerImpl?
 }
